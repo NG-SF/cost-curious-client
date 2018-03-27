@@ -1,7 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './Dashboard.css';
-import {reduxForm, Field} from 'redux-form';
-import Input from '../Input/Input';
 
 export class Dashboard extends React.Component {
 
@@ -9,21 +9,19 @@ onSubmit(values) {
   console.log(values);
 }
   render() {
+    const list = this.props.items.map((item) => {
+      return (<p key={item.id}>
+              <Link to={`/api/{item.id}`}> {item.description} </Link>
+              </p>);
+    });
     return (
       <div>
-        <h3>Items</h3>
-        <div>Input to filter items by keywords</div>
-
-      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}> 
-            <Field name='searchText' type='text' component={Input}  />
-            <button type="submit">Filter items</button>
-      </form>
-
-      <div>Totals for filtered/all items</div>
-      <div>List of items</div>
+        <h3>Items</h3>        
+          {list}       
       </div>
     );
   }
 }
 
-export default reduxForm({form: 'filteredItems'})(Dashboard);
+const mapStateToProps = state => ({items: state.items});
+export default connect(mapStateToProps)(Dashboard);
