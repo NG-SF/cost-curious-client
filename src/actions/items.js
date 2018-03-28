@@ -35,8 +35,9 @@ export const removeItem = (itemId='', id='') => ({
 });
 
 export const EDIT_ITEM = 'EDIT_ITEM';
-export const editItem = (itemId, updates) => ({
+export const editItem = (itemId, id, updates) => ({
   type: EDIT_ITEM,
   itemId,
+  id,
   updates
 });

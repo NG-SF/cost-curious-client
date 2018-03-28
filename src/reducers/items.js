@@ -95,9 +95,18 @@ export default (state = seedData, action) => {
       return newState;
     
     case EDIT_ITEM:
+    //find parent obj
       objToUpdate = state.filter(el => el.id === action.itemId);
-     //add item to history 
-      newHistory =  [...objToUpdate[0].history, {...action.item}];
+    //find history obj to update  
+      let historyObjToUpdate = objToUpdate[0].history.filter(el => el.id === action.id);
+      let historyObjUpdated = Object.assign({}, historyObjToUpdate[0], action.updates);
+     //update total history array
+      newHistory = objToUpdate[0].history.map(item => {
+        if(item.id === action.id) {
+          return historyObjUpdated;
+        }
+        return item;
+      });
       // update whole object 
       newObj = Object.assign({}, objToUpdate[0], { history: newHistory });
       //update state

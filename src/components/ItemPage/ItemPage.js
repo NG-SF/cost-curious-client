@@ -2,28 +2,26 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {removeItem} from '../../actions/items';
-import {BarChart} from 'react-easy-chart';
+import Chart from '../Chart/Chart';
 import moment from 'moment';
 import numeral from 'numeral';
 
 export class ItemPage extends React.Component {
-
   render() {
     const itemId = this.props.match.params.id;
     const singleItem = this.props.items.filter(item => item.id === itemId);
  //console.log(itemId, singleItem);
     let total = 0;
-    let chartData =[];
-//    console.log(chartData);
+    let lineData = [[]];
 
     const row = singleItem[0].history.map((item, i) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
       const date = moment(item.createdAt).format('MMMM Do, YYYY');
-      const chartDate = moment(item.createdAt).format('MMM/D/YY');
-      const chartAmount = item.amount/100;
+      const lineDate = moment(item.createdAt).format('D-MMM-YY');
+      const lineAmount = (item.amount/100).toFixed(2);
       const id = item.id;
       total += item.amount;
-      chartData.push({x: chartDate, y: chartAmount});
+      lineData[0].push({x: lineDate, y: lineAmount});
  //  console.log(item.id);      
       return (
             <tr key={i}>
@@ -32,6 +30,8 @@ export class ItemPage extends React.Component {
               <th><Link to={`/api/edit/${itemId}/${item.id}`}>Go</Link></th>
               <th><button onClick={() => this.props.removeItem(itemId, id)}>Remove</button></th>
             </tr>);               
+    }).sort((a,b) => {
+     return a.createdAt > b.createdAt;
     });
 
     return (
@@ -42,8 +42,9 @@ export class ItemPage extends React.Component {
 
         <Link to={`/api/create/${itemId}`}>+ add additional expense</Link>
         <br/> <br/> <br/>
-        <BarChart axisLabels={{x: 'Amount', y: 'Date'}} axes colorBars grid
-                   data={chartData} />
+        
+        <Chart lineData={lineData} />
+
           <table>
               <thead>
                 <tr>

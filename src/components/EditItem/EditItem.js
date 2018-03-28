@@ -4,21 +4,18 @@ import {editItem} from '../../actions/items';
 import NewItemForm from '../NewItemForm/NewItemForm';
 
 export class EditItem extends React.Component {
-constructor(props) {
-  super(props);
-}
 
-  onSubmit = (item) => {
+  onSubmit = (updates) => {
     const itemId = this.props.match.params.itemId;
-
-console.log('Item =>', this.item);
-    this.props.editItem(itemId, item);
-    console.log(item);
+    const id = this.props.match.params.id;
+// console.log('Item =>', this.item);
+    this.props.editItem(itemId, id, updates);
+    console.log(updates);
     this.props.history.goBack();
   };
 
   render() {
-    const item = this.props.item[0].history.filter(el => el.id === this.props.match.params.id)[0];
+    const item = this.props.parentItem[0].history.filter(el => el.id === this.props.match.params.id)[0];
     return (
   <div>
     <h1>Item</h1>
@@ -29,10 +26,10 @@ console.log('Item =>', this.item);
 }
 const mapStateToProps = (state, props) => {
   return {
-    item: state.items.filter(item => item.id === props.match.params.itemId)
+    parentItem: state.items.filter(item => item.id === props.match.params.itemId)
   }
 };
 const mapDispatchToProps = (dispatch) => ({
-    editItem: (itemId, item) => dispatch(editItem(itemId, item))
+    editItem: (itemId, id, updates) => dispatch(editItem(itemId, id, updates))
   });
 export default connect(mapStateToProps, mapDispatchToProps)(EditItem);
