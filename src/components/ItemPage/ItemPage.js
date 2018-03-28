@@ -7,21 +7,35 @@ import moment from 'moment';
 import numeral from 'numeral';
 
 export class ItemPage extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      isHidden: true
+    }
+  }
+  toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
   render() {
     const itemId = this.props.match.params.id;
     const singleItem = this.props.items.filter(item => item.id === itemId);
  //console.log(itemId, singleItem);
     let total = 0;
-    let lineData = [[]];
+    let chartData = [];
 
-    const row = singleItem[0].history.map((item, i) => {
+    const row = singleItem[0].history.sort((a,b) => {
+     return a.createdAt > b.createdAt;
+    }).map((item, i) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
       const date = moment(item.createdAt).format('MMMM Do, YYYY');
       const lineDate = moment(item.createdAt).format('D-MMM-YY');
       const lineAmount = (item.amount/100).toFixed(2);
       const id = item.id;
       total += item.amount;
-      lineData[0].push({x: lineDate, y: lineAmount});
+      chartData.push({x: lineDate, y: lineAmount});
  //  console.log(item.id);      
       return (
             <tr key={i}>
@@ -30,8 +44,6 @@ export class ItemPage extends React.Component {
               <th><Link to={`/api/edit/${itemId}/${item.id}`}>Go</Link></th>
               <th><button onClick={() => this.props.removeItem(itemId, id)}>Remove</button></th>
             </tr>);               
-    }).sort((a,b) => {
-     return a.createdAt > b.createdAt;
     });
 
     return (
@@ -42,9 +54,11 @@ export class ItemPage extends React.Component {
 
         <Link to={`/api/create/${itemId}`}>+ add additional expense</Link>
         <br/> <br/> <br/>
-        
-        <Chart lineData={lineData} />
+        <button onClick={this.toggleHidden.bind(this)}>Show / Hide details</button>
 
+        <Chart data={chartData} />
+
+        { !this.state.isHidden && 
           <table>
               <thead>
                 <tr>
@@ -58,6 +72,7 @@ export class ItemPage extends React.Component {
                 {row}             
               </tbody>
               </table>               
+        }
       </div>
     );
   }
