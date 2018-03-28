@@ -9,9 +9,8 @@ export default class NewItemForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    description: props.expense ? props.expense.description : '',
-    amount: props.expense ? (props.expense.amount/100).toString() : '',
-    createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+    amount: props.item ? (props.item.amount/100).toString() : '',
+    createdAt: props.item ? moment(props.item.createdAt) : moment(),
     calendarFocused: false,
     error: ''
   };
@@ -40,13 +39,12 @@ export default class NewItemForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if(!this.state.description || !this.state.amount) {
-      const error = 'Please provide descritption and amount';
+    if(!this.state.amount) {
+      const error = 'Please provide amount';
       this.setState(() => ({error}));
     } else {
       this.setState(() => ({error:''}));
-      this.props.onSubmit({
-        description: this.state.description,
+      this.props.onSubmit( {
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt.valueOf()
       });
@@ -58,9 +56,6 @@ export default class NewItemForm extends React.Component {
       <div className='form-newItem'>
         {this.state.error && <h3>{this.state.error}</h3>}
         <form onSubmit={this.onSubmit}>
-          <input type="text" placeholder="Description" autoFocus 
-                 value={this.state.description} onChange={this.onDescriptionChange} 
-                 required />
 
           <input type="text" placeholder="Amount" value={this.state.amount} 
                  onChange={this.onAmountChange} required />
@@ -69,7 +64,7 @@ export default class NewItemForm extends React.Component {
                             onFocusChange={this.onFocusChange}
                             numberOfMonths={1} isOutsideRange={() => false} />
 
-          <button className='button' type="submit">Add item</button>
+          <button className='button' type="submit">Submit</button>
         </form>
       </div>
     );

@@ -5,9 +5,11 @@ import NewItemForm from '../NewItemForm/NewItemForm';
 
 export class AddItem extends React.Component {
   onSubmit = (item) => {
-    this.props.addItem(item);
-    console.log(item);
-    this.props.history.push('/api/dashboard')
+    let itemId = this.props.match.params.id;
+//    console.log(name, item);
+    this.props.addItem(itemId, item);
+//    console.log(item);
+    this.props.history.goBack();
   };
 
   render() {
@@ -21,6 +23,6 @@ export class AddItem extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addItem: (item) => dispatch(addItem(item))
+    addItem: (itemId, item) => dispatch(addItem(itemId, item))
   });
 export default connect(undefined, mapDispatchToProps)(AddItem);
