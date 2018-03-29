@@ -4,6 +4,13 @@ export const addDashboardItem = (name = '') => ({
   name
 });
 
+export const ADD_CHART_DATA = 'ADD_CHART_DATA';
+export const addChartData = (id, data = []) => ({
+  type: ADD_CHART_DATA,
+  id,
+  data
+});
+
 export const EDIT_DSBRD_ITEM = 'EDIT_DSBRD_ITEM';
 export const editDashboardItem = (itemId='', name) => ({
   type: EDIT_DSBRD_ITEM,

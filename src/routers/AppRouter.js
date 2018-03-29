@@ -16,6 +16,7 @@ const AppRouter = () => (
     <Header />
     <Switch>
       <Route path='/' component={App} exact={true} />
+      <Route path='/#about' component={App} exact={true} />
       <Route path='/api/dashboard' component={Dashboard} />
       <Route path="/api/create/:id" component={AddItem} />
       <Route path="/api/edit/:itemId/:id" component={EditItem} />

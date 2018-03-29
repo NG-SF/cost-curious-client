@@ -27,7 +27,7 @@ export default class JsChart extends React.Component {
                 }
                 },
               scaleLabel: {
-                labelString: 'Date',
+                labelString: 'Time',
                 display: true,
                 fontColor: 'darkblue',
                 fontSize: 14
@@ -35,8 +35,7 @@ export default class JsChart extends React.Component {
             }],
             yAxes: [{
                 ticks: {
-                    beginAtZero:true,
-                    stepSize: 1.0
+                    beginAtZero:false
                 },
                 scaleLabel: {
                 labelString: 'Amount, $',
@@ -58,9 +57,9 @@ export default class JsChart extends React.Component {
           titleMarginBottom: 10,
           displayColors: false
         },
-        maintainAspectRatio: false
+        maintainAspectRatio: false    
+    } 
     }
-    };
   }
 
   render() {
@@ -68,6 +67,7 @@ export default class JsChart extends React.Component {
       <div>
         <Line data={this.state.chartData} options={this.state.chartOptions}
               width={550} height={250} />
+        
       </div>
     );
   }

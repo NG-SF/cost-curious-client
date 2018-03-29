@@ -5,10 +5,13 @@ import {addDashboardItem, removeDashboardItem, editDashboardItem} from '../../ac
 import './Dashboard.css';
 
 export class Dashboard extends React.Component {
-  state = {
-    clicked: false,
-    itemId: ''
-  };
+  constructor () {
+    super()
+    this.state = {
+      selected: false,
+      itemId: ''
+    }
+  }
 
 onSubmit(e) {
   e.preventDefault();
@@ -20,7 +23,7 @@ onSubmit(e) {
 }
 
 onClick(itemId) {
-  this.setState(() => ({clicked: true, itemId}));
+  this.setState(() => ({itemId, selected: true}));
 }
 
 onChangeName(e) {
@@ -29,7 +32,7 @@ onChangeName(e) {
 //console.log('name=========', name);
   this.props.editDashboardItem(this.state.itemId, name)
   this.textInput.value = '';
-  this.setState(() => ({clicked: false}));
+  this.setState(() => ({selected: false}));
 }
 
   render() {
@@ -38,13 +41,14 @@ onChangeName(e) {
      
       return (<div key={i}>
 
-              {this.state.clicked && this.state.itemId === item.id && 
+              {this.state.selected && this.state.itemId === item.id && 
+              <div className='editName-form'>
               <form onSubmit={(e) => this.onChangeName(e)}>
                 <label htmlFor='editItem'>Edit {item.description}</label>
                 <input type='text' name='editItem' id='editItem' 
                  ref={input => this.textInput = input} />
                 <button type="submit">Update</button>
-                </form>}
+                </form></div>}
 
                 <Link to={`/api/${item.id}`}> <h2 className='item-descr'>{item.description}</h2> </Link>
 
@@ -54,11 +58,12 @@ onChangeName(e) {
     });
     return (
       <div className='add-container'>
-        <div className='add-form'>
+        <p>This section contains the list of item categories that you want to start collecting information about. Selecting each item will bring you to that individual item section.</p>
         <h3>My items</h3>  
 
+        <div className='add-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>
-          <label htmlFor='newItem'>Add new item</label>
+          <label htmlFor='newItem'>Add new category</label>
           <input type='text' name='newItem' id='newItem' ref={input => this.textInput = input} />
           <button type="submit" className='btn plus' >+</button>
         </form>

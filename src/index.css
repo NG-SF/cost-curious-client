@@ -6,7 +6,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color:  rgb(246, 255, 246);
+  background-color: snow;
+}
+
+section {
+  padding: 20px;
 }
 
 .container {
@@ -16,4 +20,18 @@ body {
 
 h1 {
   text-align: center;
+}
+
+img {
+margin: 5px auto;
+display: block;
+}
+
+@media screen and (max-width: 430px) {
+  main, section, p, ol {
+    padding: 10px;
+  }
+  img {
+    width: 60%;
+  }
 }

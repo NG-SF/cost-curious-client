@@ -1,4 +1,4 @@
-import {ADD_DSBRD_ITEM, EDIT_DSBRD_ITEM, REMOVE_DSBRD_ITEM, ADD_ITEM, REMOVE_ITEM, EDIT_ITEM} from '../actions/items';
+import {ADD_DSBRD_ITEM, EDIT_DSBRD_ITEM, REMOVE_DSBRD_ITEM, ADD_ITEM, REMOVE_ITEM, EDIT_ITEM, ADD_CHART_DATA} from '../actions/items';
 
 let itemId = (Math.random() * 40).toString();
 let seedData = [ {
@@ -11,7 +11,7 @@ let seedData = [ {
   }, {
     id: itemId,
     amount: 300,
-    createdAt: 1524950400000
+    createdAt: 1534950400000
   }, {
     id: itemId,
     amount: 500,
@@ -39,7 +39,7 @@ let seedData = [ {
   }, {
     id: itemId,
     amount: 580,
-    createdAt: 1524950400000
+    createdAt: 1514990400000
   }
   ]
 }, {
@@ -65,6 +65,47 @@ let seedData = [ {
     id: '007',
     amount: 1200,
     createdAt: 1522151900000
+  }
+  ]
+}, {
+  id: '02',
+  description: 'Saving for vacation',
+  history: [ {
+    id: itemId,
+    amount: 2000,
+    createdAt: 1521240500000
+  }, {
+    id: itemId,
+    amount: 3000,
+    createdAt: 1524950400000
+  }, {
+    id: itemId,
+    amount: 1500,
+    createdAt: 1526440400000
+  },  {
+    id: '000',
+    amount: 5000,
+    createdAt: 1521149500000
+  }, {
+    id: '001',
+    amount: 40000,
+    createdAt: 1523940400000
+  }, {
+    id: '002',
+    amount: 5500,
+    createdAt: 1526750400000
+  }, {
+    id: itemId,
+    amount: 2550,
+    createdAt: 1527140500000
+  }, {
+    id: itemId,
+    amount: 3900,
+    createdAt: 1522950400000
+  }, {
+    id: itemId,
+    amount: 5800,
+    createdAt: 1525950400000
   }
   ]
 }
@@ -145,7 +186,17 @@ export default (state = seedData, action) => {
         return item;
       });
       return newState;
-
+    
+    case ADD_CHART_DATA:
+      objToUpdate = state.filter(el => el.id === action.id);
+      newObj = Object.assign({}, objToUpdate[0], { chartData: action.data });
+      newState = state.map(item => {
+        if(item.id === action.itemId) {
+        return newObj;
+      }
+        return item;
+      });
+      return newState;
     default:
     return state;
   }
