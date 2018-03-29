@@ -2,7 +2,11 @@ h1 {
   text-align: center;
 }
 
-.form-newItem {
-  width: 80%;
+.addItem-form {
+  width: 70%;
   margin: 7% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
+
