@@ -16,7 +16,7 @@ onSubmit(e) {
   console.log(name);
   this.props.addDashboardItem(name);
   this.textInput.value = '';
-  console.log('state', this.props.items);
+//console.log('state', this.props.items);
 }
 
 onClick(itemId) {
@@ -46,21 +46,24 @@ onChangeName(e) {
                 <button type="submit">Update</button>
                 </form>}
 
-                <Link to={`/api/${item.id}`}> {item.description} </Link>
-                <button onClick={() => this.props.removeDashboardItem({id: item.id})} >Remove</button>
-                <button onClick={() => this.onClick(item.id)}>Edit</button>   
+                <Link to={`/api/${item.id}`}> <h2 className='item-descr'>{item.description}</h2> </Link>
+
+                <button className='btn' onClick={() => this.props.removeDashboardItem({id: item.id})} >Remove</button>
+                <button className='btn' onClick={() => this.onClick(item.id)}>Edit</button>   
               </div>);
     });
     return (
-      <div>
+      <div className='add-container'>
+        <div className='add-form'>
+        <h3>My items</h3>  
+
         <form onSubmit={(e) => this.onSubmit(e)}>
-          <label htmlFor='newItem'>Add item</label>
-          <input type='text' name='newItem' id='newItem' 
-                 ref={input => this.textInput = input} />
-          <button type="submit">+ Add</button>
+          <label htmlFor='newItem'>Add new item</label>
+          <input type='text' name='newItem' id='newItem' ref={input => this.textInput = input} />
+          <button type="submit" className='btn plus' >+</button>
         </form>
-        
-        <h3>My items</h3>            
+        </div>
+
           {list}  
       </div>
     );

@@ -1,0 +1,33 @@
+.itemPage-container {
+  max-width: 800px;
+  margin: 5% auto;
+}
+
+.table {
+  margin: 20px auto;
+  padding: 10px;
+  display: block;
+  max-width: 500px;
+}
+
+td, th {
+  border-bottom: 1px solid cadetblue;
+  padding: 5px 25px 5px 10px;
+}
+th {
+  background-color:cadetblue;
+  color:lavender;
+  padding: 5px;
+  text-align: center;
+}
+
+tr:nth-child(even){
+  background-color:lavender
+}
+
+.show-hide {
+  margin: 25px auto;
+  display: block;
+  width: 20%; 
+}
+

@@ -5,6 +5,7 @@ import {removeItem} from '../../actions/items';
 import Chart from '../Chart/Chart';
 import moment from 'moment';
 import numeral from 'numeral';
+import './ItemPage.css';
 
 export class ItemPage extends React.Component {
   constructor () {
@@ -39,27 +40,26 @@ export class ItemPage extends React.Component {
  //  console.log(item.id);      
       return (
             <tr key={i}>
-              <th>{amount}</th>
-              <th>{date}</th>
-              <th><Link to={`/api/edit/${itemId}/${item.id}`}>Go</Link></th>
-              <th><button onClick={() => this.props.removeItem(itemId, id)}>Remove</button></th>
+              <td>{amount}</td>
+              <td>{date}</td>
+              <td><Link to={`/api/edit/${itemId}/${item.id}`}>Go</Link></td>
+              <td><button className='btn' onClick={() => this.props.removeItem(itemId, id)}>Remove</button></td>
             </tr>);               
     });
 
     return (
-      <div>
-        <p>Individual item page</p>
+      <div className='itemPage-container' >
         <h3>{singleItem[0].description}</h3> 
-        <p>Total amount: {numeral(total/100).format('$0,0.00')}</p>
+        <p>Total amount: <strong>{numeral(total/100).format('$0,0.00')}</strong> </p>
 
         <Link to={`/api/create/${itemId}`}>+ add additional expense</Link>
         <br/> <br/> <br/>
-        <button onClick={this.toggleHidden.bind(this)}>Show / Hide details</button>
 
         <Chart data={chartData} />
 
+        <button className='btn show-hide' onClick={this.toggleHidden.bind(this)}>Show / Hide details</button>
         { !this.state.isHidden && 
-          <table>
+          <table className='table'>
               <thead>
                 <tr>
                   <th>Amount</th>

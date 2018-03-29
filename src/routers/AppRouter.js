@@ -7,7 +7,8 @@ import AddItem from '../components/AddItem/AddItem';
 import EditItem from '../components/EditItem/EditItem';
 import ItemPage from '../components/ItemPage/ItemPage';
 import NotFound from '../components/NotFound/NotFound';
-
+import RegisterPage from '../components/Auth/Register/RegisterPage';
+import LoginPage from '../components/Auth/Login/LoginPage';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -19,6 +20,8 @@ const AppRouter = () => (
       <Route path="/api/create/:id" component={AddItem} />
       <Route path="/api/edit/:itemId/:id" component={EditItem} />
       <Route path="/api/:id" component={ItemPage} />
+      <Route path="/register" component={RegisterPage} />
+      <Route path="/login" component={LoginPage} />
       <Route component={NotFound} />      
     </Switch>
   </div>

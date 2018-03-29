@@ -1,3 +1,15 @@
 .App {
-  padding: 0 40px 40px 40px;
+  max-width: 60%;
+  min-width: 320px;
+  margin: 5% auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.articles > li {
+  display: block;
+  padding: 10px;
 }

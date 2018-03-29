@@ -1,9 +1,19 @@
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+.add-container {
+  margin: 5% auto;
+  max-width: 500px;
+  min-width: 320px;
 }
 
-div {
-  padding: 10px;
+.btn {
+  padding: 5px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.item-descr {
+  padding: 3px 15px 3px 3px;
+  display: inline-block;
+  margin: 5px;
 }

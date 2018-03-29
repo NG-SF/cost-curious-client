@@ -14,6 +14,9 @@ export default class JsChart extends React.Component {
         }]
       },
       chartOptions: {
+        legend: {
+            display: false
+          },
         scales: {
             xAxes: [{
               type: 'time',
@@ -22,11 +25,38 @@ export default class JsChart extends React.Component {
                 displayFormats: {
                   week: 'MMM D YY'
                 }
-                }
+                },
+              scaleLabel: {
+                labelString: 'Date',
+                display: true,
+                fontColor: 'darkblue',
+                fontSize: 14
+              }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    stepSize: 1.0
+                },
+                scaleLabel: {
+                labelString: 'Amount, $',
+                display: true,
+                fontColor: 'darkblue',
+                fontSize: 14
+              }
             }]
         },
         tooltips: {
-          enabled: true
+          enabled: true,
+          backgroundColor: 'azure',
+          titleFontColor: 'black',
+          bodyFontColor: 'black',
+          xPadding: 15,
+          yPadding: 15,
+          bodyFontSize: 15,
+          titleFontSize: 15,
+          titleMarginBottom: 10,
+          displayColors: false
         },
         maintainAspectRatio: false
     }
