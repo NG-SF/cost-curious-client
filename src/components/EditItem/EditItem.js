@@ -18,7 +18,7 @@ export class EditItem extends React.Component {
     const item = this.props.parentItem[0].history.filter(el => el.id === this.props.match.params.id)[0];
     return (
   <div>
-    <h1>Item</h1>
+    <h1>Edit Item</h1>
     <NewItemForm onSubmit={this.onSubmit} item={item} />
   </div>
     );

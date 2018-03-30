@@ -28,7 +28,7 @@ export class ItemPage extends React.Component {
     let chartData = [];
 
     const row = singleItem[0].history.sort((a,b) => {
-     return a.createdAt > b.createdAt;
+     return a.createdAt < b.createdAt ? 1 : -1;
     }).map((item, i) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
       const date = moment(item.createdAt).format('MMMM Do, YYYY');
