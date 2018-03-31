@@ -25,12 +25,13 @@ export const removeDashboardItem = ({id} = {}) => ({
 });
 
 export const ADD_ITEM = 'ADD_ITEM';
-export const addItem = (itemId= '', {amount=0, createdAt=0} = {}) => ({
+export const addItem = (itemId= '', {amount=0, createdAt=0, place=''} = {}) => ({
   type: ADD_ITEM,
   itemId,
   item: {
     amount,
-    createdAt
+    createdAt,
+    place
   }
 });
 

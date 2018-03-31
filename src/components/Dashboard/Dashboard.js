@@ -43,7 +43,7 @@ onChangeName(e) {
 
               {this.state.selected && this.state.itemId === item.id && 
               <div className='editName-form'>
-              <form onSubmit={(e) => this.onChangeName(e)}>
+              <form method='POST' action='/api/dashboard/edit' onSubmit={(e) => this.onChangeName(e)}>
                 <label htmlFor='editItem'>Edit {item.description}</label>
                 <input type='text' name='editItem' id='editItem' 
                  ref={input => this.textInput = input} />
@@ -62,7 +62,7 @@ onChangeName(e) {
         <h3>My items</h3>  
 
         <div className='add-form'>
-        <form onSubmit={(e) => this.onSubmit(e)}>
+        <form method='POST' action='/api/dashboard/add' onSubmit={(e) => this.onSubmit(e)}>
           <label htmlFor='newItem'>Add new category</label>
           <input type='text' name='newItem' id='newItem' ref={input => this.textInput = input} />
           <button type="submit" className='btn plus' >+</button>

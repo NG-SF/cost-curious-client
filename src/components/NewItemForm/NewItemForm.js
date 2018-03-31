@@ -10,11 +10,11 @@ export default class NewItemForm extends React.Component {
     this.state = {
     amount: props.item ? (props.item.amount/100).toString() : '',
     createdAt: props.item ? moment(props.item.createdAt) : moment(),
+    place: props.item ? props.item.place : '',
     calendarFocused: false,
     error: ''
   };
   }
-
   onAmountChange = (e) => {
     const amount = e.target.value;
     if(!amount || amount.match(/^\d{1,10}(\.\d{0,2})?$/)) {
@@ -26,6 +26,11 @@ export default class NewItemForm extends React.Component {
     if(createdAt) {
       this.setState(() => ({createdAt}));
     }
+  };
+
+   onPlaceChange = (e) => {
+    const place = e.target.value;
+    this.setState(() => ({place}));
   };
 
   onFocusChange = ({focused}) => {
@@ -41,7 +46,8 @@ export default class NewItemForm extends React.Component {
       this.setState(() => ({error:''}));
       this.props.onSubmit( {
         amount: parseFloat(this.state.amount, 10) * 100,
-        createdAt: this.state.createdAt.valueOf()
+        createdAt: this.state.createdAt.valueOf(),
+        place: this.state.place
       });
     }
   };
@@ -56,6 +62,8 @@ export default class NewItemForm extends React.Component {
           <SingleDatePicker date={this.state.createdAt} onDateChange={this.onDateChange}                    focused={this.state.calendarFocused} required
                             onFocusChange={this.onFocusChange}
                             numberOfMonths={1} isOutsideRange={() => false} />
+          <input type="text" placeholder="place" value={this.state.place} 
+                 onChange={this.onPlaceChange} />
           <button className='button' type="submit">Submit</button>
         </form>
       </div>

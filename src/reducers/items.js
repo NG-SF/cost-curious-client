@@ -7,39 +7,48 @@ let seedData = [ {
   history: [ {
     id: faker.random.uuid(),
     amount: 400,
-    createdAt: 1521240500000
+    createdAt: 1521240500000,
+    place: 'Peets'
   }, {
     id: faker.random.uuid(),
     amount: 300,
-    createdAt: 1534950400000
+    createdAt: 1534950400000,
+    place: 'Peets'
   }, {
     id: faker.random.uuid(),
     amount: 500,
-    createdAt: 1526440400000
+    createdAt: 1526440400000,
+    place: 'Peets'
   },  {
     id: faker.random.uuid(),
     amount: 700,
-    createdAt: 1521149500000
+    createdAt: 1521149500000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 900,
-    createdAt: 1524940400000
+    createdAt: 1524940400000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 500,
-    createdAt: 1526750400000
+    createdAt: 1526750400000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 550,
-    createdAt: 1527140500000
+    createdAt: 1527140500000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 390,
-    createdAt: 1522950400000
+    createdAt: 1522950400000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 580,
-    createdAt: 1514990400000
+    createdAt: 1514990400000,
+    place: faker.lorem.words()
   }
   ]
 }, {
@@ -49,26 +58,32 @@ let seedData = [ {
     id: faker.random.uuid(),
     amount: 2500,
     createdAt: 1521140500000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 1500,
-    createdAt: 1519156800000
+    createdAt: 1519156800000,
+    place: faker.lorem.words()
   },{
     id: faker.random.uuid(),
     amount: 2000,
-    createdAt: 1521155500000
+    createdAt: 1521155500000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 2200,
-    createdAt: 1521540500000
+    createdAt: 1521540500000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 2500,
-    createdAt: 1521951900000
+    createdAt: 1521951900000,
+    place: faker.lorem.words()
   }, {
     id: faker.random.uuid(),
     amount: 1200,
-    createdAt: 1522151900000
+    createdAt: 1522151900000,
+    place: faker.lorem.words()
   }
   ]
 }, {

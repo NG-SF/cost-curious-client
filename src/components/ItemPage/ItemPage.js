@@ -5,6 +5,7 @@ import {removeItem, addChartData} from '../../actions/items';
 import Chart from '../Chart/Chart';
 import moment from 'moment';
 import numeral from 'numeral';
+import { API_BASE_URL } from '../../config';
 import './ItemPage.css';
 
 export class ItemPage extends React.Component {
@@ -20,12 +21,31 @@ export class ItemPage extends React.Component {
     })
   }
 
+  componentDidMount() {
+    fetch(`${API_BASE_URL}/dashboard`).then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    }).then(data => {
+        console.log('My data from server',data);
+    }); 
+  }
+
   render() {
     const itemId = this.props.match.params.id;
     const singleItem = this.props.items.filter(item => item.id === itemId);
- //console.log(itemId, singleItem);
     let total = 0;
     let chartData = [];
+    
+    // let max = singleItem[0].history.sort((a,b) => {
+    //  return a.amount - b.amount;
+    // });
+    
+    // let data = singleItem[0].history;
+
+// console.log('Max=====', max);
+// console.log('Data=====', data);
 
     const row = singleItem[0].history.sort((a,b) => {
      return a.createdAt < b.createdAt ? 1 : -1;
@@ -42,6 +62,7 @@ export class ItemPage extends React.Component {
             <tr key={i}>
               <td>{amount}</td>
               <td>{date}</td>
+              <td>{item.place}</td>
               <td><Link to={`/api/edit/${itemId}/${item.id}`}>Edit</Link></td>
               <td><button className='btn' onClick={() => this.props.removeItem(itemId, id)}>Remove</button></td>
             </tr>);               
@@ -67,6 +88,7 @@ export class ItemPage extends React.Component {
                 <tr>
                   <th>Amount</th>
                   <th>Date</th>
+                  <th>Place</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>

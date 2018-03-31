@@ -7,12 +7,13 @@
   margin: 20px auto;
   padding: 10px;
   display: block;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 td, th {
   border-bottom: 1px solid cadetblue;
-  padding: 5px 25px 5px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 th {
   background-color:cadetblue;
@@ -28,6 +29,6 @@ tr:nth-child(even){
 .show-hide {
   margin: 25px auto;
   display: block;
-  width: 20%; 
+  width: 50%; 
 }
 
