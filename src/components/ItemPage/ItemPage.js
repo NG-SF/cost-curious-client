@@ -6,6 +6,7 @@ import Chart from '../Chart/Chart';
 import moment from 'moment';
 import numeral from 'numeral';
 import { API_BASE_URL } from '../../config';
+import RequiresLogin from '../Auth/RequiresLogin';
 import './ItemPage.css';
 
 export class ItemPage extends React.Component {
@@ -22,13 +23,13 @@ export class ItemPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${API_BASE_URL}/dashboard`).then(res => {
+    fetch(`${API_BASE_URL}/api/Coffee`).then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
       return res.json();
     }).then(data => {
-        console.log('My data from server',data);
+        console.log('My data from server', data);
     }); 
   }
 
@@ -109,4 +110,4 @@ const mapDispatchToProps = (dispatch) => ({
     removeItem: (itemId, id) => dispatch(removeItem(itemId, id)),
     addChartData: (id, data) => dispatch(addChartData(id, data))
   });
-export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);
+export default RequiresLogin()(connect(mapStateToProps, mapDispatchToProps)(ItemPage));

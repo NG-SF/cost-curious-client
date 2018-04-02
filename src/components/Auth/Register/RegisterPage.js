@@ -1,26 +1,26 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import RegisterForm from './RegisterForm';
+import {Link, Redirect} from 'react-router-dom';
 
-export function RegisterPage(props) {
+import RegistrationForm from './RegistrationForm';
+
+export function RegistrationPage(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
-    // if (props.loggedIn) {
-    //     return <Redirect to="/dashboard" />;
-    // }
+    if (props.loggedIn) {
+        return <Redirect to="/api/dashboard" />;
+    }
     return (
-        <div className='container'>
-            <h1>Register</h1>
-            <h3>not connected yet</h3>
-            <RegisterForm />
-            <Link to="/login">Login</Link>
+        <div className="container">
+            <h2>Register</h2>
+            <RegistrationForm />
+            <Link to="/">Login</Link>
         </div>
     );
 }
 
-// const mapStateToProps = state => ({
-//     loggedIn: state.auth.currentUser !== null
-// });
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
 
-export default connect()(RegisterPage);
+export default connect(mapStateToProps)(RegistrationPage);

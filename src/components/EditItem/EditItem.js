@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {editItem} from '../../actions/items';
 import NewItemForm from '../NewItemForm/NewItemForm';
+import RequiresLogin from '../Auth/RequiresLogin';
 
 export class EditItem extends React.Component {
 
@@ -32,4 +33,4 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch) => ({
     editItem: (itemId, id, updates) => dispatch(editItem(itemId, id, updates))
   });
-export default connect(mapStateToProps, mapDispatchToProps)(EditItem);
+export default RequiresLogin()(connect(mapStateToProps, mapDispatchToProps)(EditItem));

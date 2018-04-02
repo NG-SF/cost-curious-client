@@ -15,7 +15,7 @@ class App extends Component {
           <blockquote cite="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10">
             <p>...if you opt to buy coffee at a cafe, you're spending between $5 and $25 a week — and thus, $20 to $100 a month, and between $240 and $1,200 a year — on coffee (while someone who brews at home is spending around $45 a year on coffee).</p>
             <p>Yes, the difference between $45 and $1,200 is pretty stark, so obviously, making your own coffee is an opportunity to save some money.</p>
-            <footer>— <a href="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10">read more...</a></footer>
+            <footer>— <a href="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10" target="_blank" rel="noopener noreferrer">read more...</a></footer>
           </blockquote>
           <p>These articles got me curious to know how much I spend on coffee and other smaller puchases. So I made this app to help me track the expenses of select items and see the results in nice charts.</p>
           <p>This app can also be used to keep track of savings.</p>

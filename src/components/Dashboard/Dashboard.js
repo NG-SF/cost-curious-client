@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {addDashboardItem, removeDashboardItem, editDashboardItem} from '../../actions/items';
+import {addDashboardItem, removeDashboardItem, 
+        editDashboardItem} from '../../actions/items';
+import requiresLogin from '../Auth/RequiresLogin';
 import './Dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -81,4 +83,4 @@ const mapDispatchToProps = (dispatch) => ({
     editDashboardItem: (itemId, name) => dispatch(editDashboardItem(itemId, name)),
     removeDashboardItem: (id) => dispatch(removeDashboardItem(id))
   });
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default requiresLogin()(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addItem} from '../../actions/items';
 import NewItemForm from '../NewItemForm/NewItemForm';
+import RequiresLogin from '../Auth/RequiresLogin';
 
 export class AddItem extends React.Component {
   onSubmit = (item) => {
@@ -25,4 +26,4 @@ export class AddItem extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
     addItem: (itemId, item) => dispatch(addItem(itemId, item))
   });
-export default connect(undefined, mapDispatchToProps)(AddItem);
+export default RequiresLogin()(connect(undefined, mapDispatchToProps)(AddItem));

@@ -1,13 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from '../Input/Input';
-// import {login} from '../actions/auth';
+import {login} from '../../../actions/auth';
 import {required, nonEmpty} from '../../../validators';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
-        //return this.props.dispatch(login(values.username, values.password));
-        this.props.history.push('/api/dashboard');
+        return this.props.dispatch(login(values.username, values.password));
     }
 
     render() {
@@ -20,7 +19,6 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-          <div className='form'> 
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
@@ -47,7 +45,6 @@ export class LoginForm extends React.Component {
                     Log in
                 </button>
             </form>
-          </div>
         );
     }
 }
