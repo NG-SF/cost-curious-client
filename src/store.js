@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import itemsReducer from './reducers/items';
 import authReducer from './reducers/auth';
-import protectedDataReducer from './reducers/protected-data';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
@@ -11,8 +10,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const reducer = combineReducers({
     items: itemsReducer,
     form: formReducer,
-    auth: authReducer,
-    protectedData: protectedDataReducer
+    auth: authReducer
   });
 
 const store = createStore(reducer,  composeWithDevTools(applyMiddleware(thunk)));

@@ -20,7 +20,7 @@ const AppRouter = () => (
       <Route path='/api/dashboard' component={Dashboard} />
       <Route path="/api/create/:id" component={AddItem} />
       <Route path="/api/edit/:itemId/:id" component={EditItem} />
-      <Route path="/api/:id" component={ItemPage} />
+      <Route path="/api/:dataId" component={ItemPage} />
       <Route path="/register" component={RegisterPage} />
       <Route path="/login" component={LoginPage} />
       <Route component={NotFound} />      
