@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { fetchData, removeItemData, setItemData,
         updateItemData } from '../../actions/items';
 import requiresLogin from '../Auth/RequiresLogin';
-import { Pie } from 'react-chartjs-2';
 import pieChartData from './pieData';
+import {Pie} from 'react-chartjs-2';
 import colors from '../colors';
 import './Dashboard.css';
 
@@ -24,11 +24,11 @@ onSubmit(e) {
   this.props.setItemData(this.props.userId, name);
   this.textInput.value = '';
 //console.log('state', this.props.items);
-}
+  }
 
 onClick(itemId) {
   this.setState(() => ({itemId, selected: true}));
-}
+  }
 
 onChangeName(e) {
   e.preventDefault();
@@ -36,11 +36,12 @@ onChangeName(e) {
   this.props.updateItemData(this.props.userId, this.state.itemId, name)
   this.textInput.value = '';
   this.setState(() => ({selected: false}));
-}
+  }
 
 componentDidMount() {
     this.props.fetchData(this.props.userId);
   }
+
   render() {
     const list = this.props.items.map((item, i) => {    
       return (<div key={i} className='category'>
@@ -60,26 +61,25 @@ componentDidMount() {
                   <button className='btn' onClick={() => this.onClick(item._id)}>Edit</button>  
                 </div>
               </div>);
-    }); 
-
-    let pieData =  {
+      }); 
+  let pieData = {
         datasets: [{
         data: pieChartData(this.props.items)[0],
         backgroundColor: colors,
-        hoverBackgroundColor: 'LightSeaGreen',
+        hoverBackgroundColor: 'Lavender',
         hoverBorderColor: 'ForestGreen'
         }],
         labels: pieChartData(this.props.items)[1]
-      };;
-    let pieOptions = {
-      tooltips: {
+      };
+  let pieOptions = {
+        redraw: true,
+        tooltips: {
           enabled: true,
-          backgroundColor: 'azure',
+          backgroundColor: 'cornsilk',
           titleFontColor: 'black',
           bodyFontColor: 'black',
-          bodyFontSize: 15,
-          titleFontSize: 15,
-          titleMarginBottom: 10,
+          bodyFontSize: 18,
+          bodySpacing: 55,
           displayColors: false
         },
       legend: {
@@ -106,7 +106,6 @@ componentDidMount() {
         </form>
         </div> 
        </div>
-
           {list}  
       </div>
     );

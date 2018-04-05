@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {removeTransaction, fetchData} from '../../actions/items';
-import Chart from '../Chart/Chart';
+import {Line} from 'react-chartjs-2';
+import colors from '../colors';
 import moment from 'moment';
 import numeral from 'numeral';
 import RequiresLogin from '../Auth/RequiresLogin';
@@ -50,8 +51,7 @@ export class ItemPage extends React.Component {
       const chartAmount = (item.amount/100).toFixed(2);
       const itemId = item._id;
       total += item.amount;
-      chartData.push({x: chartDate, y: chartAmount});
-     
+      chartData.push({x: chartDate, y: chartAmount});     
       return (
             <tr key={itemId}>
               <td>{amount}</td>
@@ -61,6 +61,62 @@ export class ItemPage extends React.Component {
               <td><button onClick={() => this.props.removeTransaction(dataId, itemId)}>Remove</button></td>
             </tr>);               
     }) : [];
+
+  let lineData = {
+        datasets: [{
+          data: chartData,
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          borderColor: 'ForestGreen',
+          pointBackgroundColor: colors
+        }]
+      };
+  let lineOptions = {
+        redraw: true,
+        legend: { display: false },
+        scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                unit: 'day',
+                stepSize: 7,
+                displayFormats: { week: 'MMM D YY' }
+                },
+              scaleLabel: {
+                labelString: 'Time',
+                display: true,
+                fontColor: 'darkblue',
+                fontSize: 14
+              }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false,
+                    callback: function(label, index, labels) {
+                       return `$ ${label.toFixed(2)}`;
+                     }
+                },
+                scaleLabel: {
+                labelString: 'Amount',
+                display: true,
+                fontColor: 'darkblue',
+                fontSize: 14
+              }
+            }]
+        },
+        tooltips: {
+          enabled: true,
+          backgroundColor: 'cornsilk',
+          titleFontColor: 'black',
+          bodyFontColor: 'black',
+          xPadding: 15,
+          yPadding: 15,
+          bodyFontSize: 16,
+          titleFontSize: 16,
+          titleMarginBottom: 10,
+          displayColors: false
+        },
+        maintainAspectRatio: true    
+    }; 
 
     return (
       <section id='item-page'> 
@@ -72,10 +128,10 @@ export class ItemPage extends React.Component {
         <p>Most expensive: {numeral(max.amount/100).format('$ 0,0.00')} on {moment(max.createdAt).format('MMMM Do, YYYY')} at {max.place}</p>
         <p>Least expensive: {numeral(min.amount/100).format('$ 0,0.00')} on {moment(min.createdAt).format('MMMM Do, YYYY')} at {min.place}</p>
 
-        <Link className='btn add-trns' to={`/api/create/${dataId}`}>+ add additional transaction</Link>
-      <br/><br/>
+        <Link className='btn add-trns' to={`/api/create/${dataId}`}>+ add additional transaction</Link><br/><br/>
 
-    { chartData.length > 0 && <Chart ref='chart' data={chartData} /> }
+      { chartData.length > 0 && <Line data={lineData} options={lineOptions} 
+                                      width={550} height={250} />}
 
         <button className='btn show-hide' onClick={this.toggleHidden.bind(this)}>Show all transactions</button>
         { !this.state.isHidden && 
