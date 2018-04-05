@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { fetchData, removeItemData, setItemData,
         updateItemData } from '../../actions/items';
 import requiresLogin from '../Auth/RequiresLogin';
+import { Pie } from 'react-chartjs-2';
+import pieChartData from './pieData';
+import colors from '../colors';
 import './Dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -39,38 +42,70 @@ componentDidMount() {
     this.props.fetchData(this.props.userId);
   }
   render() {
-    
-    const list = this.props.items.map((item, i) => {
-     
-      return (<div key={i}>
-
+    const list = this.props.items.map((item, i) => {    
+      return (<div key={i} className='category'>
               {this.state.selected && this.state.itemId === item._id && 
               <div className='editName-form'>
               <form onSubmit={(e) => this.onChangeName(e)}>
                 <label htmlFor='editItem'>Edit {item.description}</label>
                 <input type='text' name='editItem' id='editItem' 
                  ref={input => this.textInput = input} />
-                <button type="submit">Update</button>
+                <button className='btn' type="submit">Update</button>
                 </form></div>}
 
-                <Link to={`/api/${item._id}`}> <h2 className='item-descr'>{item.description}</h2> </Link>
-
-                <button className='btn' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
-                <button className='btn' onClick={() => this.onClick(item._id)}>Edit</button>  
+                <Link to={`/api/${item._id}`}> <h2 className='category-name'>{item.description}</h2></Link>
+                <div className='btn-group'>
+                <Link to={`/api/${item._id}`}><button className='btn'>Go</button></Link>
+                  <button className='btn' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
+                  <button className='btn' onClick={() => this.onClick(item._id)}>Edit</button>  
+                </div>
               </div>);
-    });
-    return (
-      <div className='add-container'>
-        <p>This section contains the list of item categories that you want to start collecting information about. Selecting each item will bring you to that individual item section.</p>
-        <h3>My items</h3>  
+    }); 
 
-        <div className='add-form'>
+    let pieData =  {
+        datasets: [{
+        data: pieChartData(this.props.items)[0],
+        backgroundColor: colors,
+        hoverBackgroundColor: 'LightSeaGreen',
+        hoverBorderColor: 'ForestGreen'
+        }],
+        labels: pieChartData(this.props.items)[1]
+      };;
+    let pieOptions = {
+      tooltips: {
+          enabled: true,
+          backgroundColor: 'azure',
+          titleFontColor: 'black',
+          bodyFontColor: 'black',
+          bodyFontSize: 15,
+          titleFontSize: 15,
+          titleMarginBottom: 10,
+          displayColors: false
+        },
+      legend: {
+        position: 'left',
+        labels: {
+          fontSize: 16,
+          fontColor: 'black'
+        }
+      },
+      responsive: true
+    };
+
+    return (
+      <div className='add-container dashbrd'>
+       <Pie data={pieData} options={pieOptions} />
+       <div className='dashbrd-p'>
+          <p>Add items that you want to start collecting information about.</p> 
+          <p>Selecting each item will redirect you to that individual item section.</p> 
+        <div className='addCategory-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>
-          <label htmlFor='newItem'>Add new category</label>
-          <input type='text' name='newItem' id='newItem' ref={input => this.textInput = input} />
-          <button type="submit" className='btn plus' >+</button>
+          <label htmlFor='newItem'></label>
+          <input className='add-category' type='text' name='newItem' id='newItem' ref={input => this.textInput = input} required />
+          <button type="submit" className='btn plus' >+ Add new category</button>
         </form>
-        </div>
+        </div> 
+       </div>
 
           {list}  
       </div>
@@ -81,7 +116,6 @@ componentDidMount() {
 const mapStateToProps = state => ({
   items: state.items.data,
   userId: state.auth.currentUser.id
-  
   });
 const mapDispatchToProps = (dispatch) => ({
     fetchData: (userId) => dispatch(fetchData(userId)),

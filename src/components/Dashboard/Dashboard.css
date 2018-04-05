@@ -5,15 +5,49 @@
 }
 
 .btn {
-  padding: 5px;
+  border: 2px solid lightseagreen;
+  border-radius: .6em;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-right: .4em;
+  padding: .4em;
+  vertical-align: baseline;
 }
 
-h3 {
+.btn:hover {
+  background: lightseagreen;
+  color: white;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .2em;
+}
+
+.dashbrd h3 {
   text-align: center;
 }
 
-.item-descr {
+.category-name {
   padding: 3px 15px 3px 3px;
   display: inline-block;
-  margin: 5px;
+  margin: 0;
+}
+
+.dashbrd-p {
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+
+.addCatagory-form {
+  margin: 1.9em auto;
+  width: 70%;
+}
+
+.add-category {
+  height: 34px;
+  width: 65%;
+  margin-right: 2px;
 }

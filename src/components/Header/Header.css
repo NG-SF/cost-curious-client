@@ -1,13 +1,19 @@
 nav {
-  background-color: azure;
+  background-color: lightseagreen;
   padding: 10px;
 }
 
-ul {
+nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+nav li {
+  padding-left: 10px;
 }
 
 @media screen and (max-width: 430px) {

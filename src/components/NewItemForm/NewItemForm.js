@@ -21,18 +21,15 @@ export default class NewItemForm extends React.Component {
     this.setState(() => ({amount}));
     }
   };
-
   onDateChange = (createdAt) => {
     if(createdAt) {
       this.setState(() => ({createdAt}));
     }
   };
-
    onPlaceChange = (e) => {
-    const place = e.target.value;
+    const place = e.target.value ? e.target.value : 'n/a';
     this.setState(() => ({place}));
   };
-
   onFocusChange = ({focused}) => {
     this.setState(() => ({calendarFocused: focused}));
   };
@@ -40,8 +37,7 @@ export default class NewItemForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     if(!this.state.amount) {
-      const error = 'Please provide amount';
-      this.setState(() => ({error}));
+      this.setState(() => ({error: 'Please provide amount'}));
     } else {
       this.setState(() => ({error:''}));
       this.props.onSubmit( {
@@ -59,12 +55,12 @@ export default class NewItemForm extends React.Component {
         <form className='addItem-form' onSubmit={this.onSubmit}>
           <input type="text" placeholder="Amount" value={this.state.amount} 
                  onChange={this.onAmountChange} required />
-          <SingleDatePicker date={this.state.createdAt} onDateChange={this.onDateChange}                    focused={this.state.calendarFocused} required
-                            onFocusChange={this.onFocusChange}
+          <SingleDatePicker date={this.state.createdAt} onDateChange={this.onDateChange}                           focused={this.state.calendarFocused} required
+                            onFocusChange={this.onFocusChange} 
                             numberOfMonths={1} isOutsideRange={() => false} />
           <input type="text" placeholder="place" value={this.state.place} 
                  onChange={this.onPlaceChange} />
-          <button className='button' type="submit">Submit</button>
+          <button className='btn' type="submit">Submit</button>
         </form>
       </div>
     );

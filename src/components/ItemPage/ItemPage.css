@@ -32,3 +32,6 @@ tr:nth-child(even){
   width: 50%; 
 }
 
+.add-trns {
+  margin: 10px 0 25px 0;
+}

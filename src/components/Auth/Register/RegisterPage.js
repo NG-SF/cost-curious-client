@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-
 import RegistrationForm from './RegistrationForm';
+import './Register.css';
 
 export function RegistrationPage(props) {
     // If we are logged in (which happens automatically when registration
@@ -11,10 +11,11 @@ export function RegistrationPage(props) {
         return <Redirect to="/api/dashboard" />;
     }
     return (
-        <div className="container">
+        <div className="container register-form">
             <h2>Register</h2>
             <RegistrationForm />
-            <Link to="/">Login</Link>
+            <p>Already registered?  <Link to="/login">Login</Link></p>
+            
         </div>
     );
 }

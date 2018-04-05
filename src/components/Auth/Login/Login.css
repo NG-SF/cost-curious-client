@@ -1,0 +1,33 @@
+.login-form {
+  width: 300px;
+  margin: 2em auto;
+}
+
+.login-form > .btn {
+  display: block;
+  margin: 1em auto;
+  width: 40%;
+}
+
+.login-form input[type=text],
+.login-form input[type=password] {
+  width: 80%;
+  height: 40px;
+  line-height: .9em;
+  display: block;
+  margin: 1em auto;
+  background: transparent;
+  padding: 0 5px;
+  font-size: 1.1em;
+}
+
+input {
+  outline: none;
+  border: 2px solid lightseagreen;
+  border-radius: .6em;
+}
+
+.login-form label {
+  display: block;
+  padding-left: 30px;
+}

@@ -9,7 +9,7 @@ export default class JsChart extends React.Component {
         datasets: [{
           data: this.props.data,
           backgroundColor: 'rgba(0, 0, 0, 0)',
-          borderColor: 'Aquamarine',
+          borderColor: 'ForestGreen',
           pointBackgroundColor: colors
         }]
       },
@@ -35,10 +35,13 @@ export default class JsChart extends React.Component {
             }],
             yAxes: [{
                 ticks: {
-                    beginAtZero:false
+                    beginAtZero:false,
+                    callback: function(label, index, labels) {
+                       return `$ ${label.toFixed(2)}`;
+                     }
                 },
                 scaleLabel: {
-                labelString: 'Amount, $',
+                labelString: 'Amount',
                 display: true,
                 fontColor: 'darkblue',
                 fontSize: 14
