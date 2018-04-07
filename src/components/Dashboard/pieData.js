@@ -11,3 +11,25 @@ let totals = amounts.map(el => {
   return [totals,labels];
 };
 export default pieChartData;
+
+const pieOptions = {
+        redraw: true,
+        tooltips: {
+          enabled: true,
+          backgroundColor: 'cornsilk',
+          titleFontColor: 'black',
+          bodyFontColor: 'black',
+          bodyFontSize: 18,
+          bodySpacing: 55,
+          displayColors: false
+        },
+      legend: {
+        position: 'left',
+        labels: {
+          fontSize: 16,
+          fontColor: 'black'
+        }
+      },
+      responsive: true
+    };
+export {pieOptions};

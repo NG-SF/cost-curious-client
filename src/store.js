@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import itemsReducer from './reducers/items';
 import authReducer from './reducers/auth';
+import filtersReducer from './reducers/filters';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
@@ -9,6 +10,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({
     items: itemsReducer,
+    filters: filtersReducer,
     form: formReducer,
     auth: authReducer
   });

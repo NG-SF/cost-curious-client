@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchData, removeItemData, setItemData,
         updateItemData } from '../../actions/items';
 import requiresLogin from '../Auth/RequiresLogin';
-import pieChartData from './pieData';
+import pieChartData, {pieOptions} from './pieData';
 import {Pie} from 'react-chartjs-2';
 import colors from '../colors';
 import './Dashboard.css';
@@ -23,7 +23,6 @@ onSubmit(e) {
   const name = this.textInput.value.trim();
   this.props.setItemData(this.props.userId, name);
   this.textInput.value = '';
-//console.log('state', this.props.items);
   }
 
 onClick(itemId) {
@@ -71,27 +70,7 @@ componentDidMount() {
         }],
         labels: pieChartData(this.props.items)[1]
       };
-  let pieOptions = {
-        redraw: true,
-        tooltips: {
-          enabled: true,
-          backgroundColor: 'cornsilk',
-          titleFontColor: 'black',
-          bodyFontColor: 'black',
-          bodyFontSize: 18,
-          bodySpacing: 55,
-          displayColors: false
-        },
-      legend: {
-        position: 'left',
-        labels: {
-          fontSize: 16,
-          fontColor: 'black'
-        }
-      },
-      responsive: true
-    };
-
+  
     return (
       <div className='add-container dashbrd'>
        <Pie data={pieData} options={pieOptions} />
