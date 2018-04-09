@@ -7,7 +7,7 @@ export default  {
               time: {
                 unit: 'day',
                 stepSize: 7,
-                displayFormats: { week: 'MMM D YY' }
+                displayFormats: { week: 'MMM D YYYY' }
                 },
               scaleLabel: {
                 labelString: 'Time',

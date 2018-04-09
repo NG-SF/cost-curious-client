@@ -5,7 +5,8 @@
 }
 
 .btn {
-  border: 2px solid lightseagreen;
+  border: 2px solid lavender;
+  background-color: rgb(182, 182, 249);
   border-radius: .6em;
   cursor: pointer;
   font-weight: 400;
@@ -16,14 +17,26 @@
 }
 
 .btn:hover {
-  background: lightseagreen;
-  color: white;
+  background: snow;
+  color: rgb(182, 182, 249);
 }
 
 .category {
   display: flex;
   justify-content: space-between;
-  margin-bottom: .2em;
+  margin-bottom: .5em;
+  padding: 5px 1px 5px 15px;
+  border: 2px solid rgba(225, 225, 245, 0.927);
+  border-radius: 5px;
+   box-shadow: 7px 7px 5px lightgray;
+}
+
+.category:hover {
+  box-shadow: 10px 10px 5px gray;
+  border: 2px solid rgb(182, 182, 249);
+  padding: 10px 1px 8px 15px;
+  margin-bottom: .9em;
+  height: 50px;
 }
 
 .dashbrd h3 {

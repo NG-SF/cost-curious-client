@@ -4,7 +4,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import store from '../src/store';
 import AppRouter from './routers/AppRouter';
-import 'normalize.css/normalize.css';
+import 'normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './index.css';
 

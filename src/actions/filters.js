@@ -13,12 +13,11 @@ export const fetchFeaturesDataError = (error) => ({
     error
 });
 
-export const fetchFeaturesData = () => (dispatch, getState) => {
-  // const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/features/a/b/c`, {
-                method: 'GET'
-                // Provide our auth token as credentials
-                // headers: { Authorization: `Bearer ${authToken}`} 
+export const fetchFeaturesData = (dataId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/features/${dataId}`, {
+                method: 'GET',
+                headers: { Authorization: `Bearer ${authToken}`} 
                 })
           .then(res => normalizeResponseErrors(res))
           .then(res => res.json())
@@ -26,11 +25,12 @@ export const fetchFeaturesData = () => (dispatch, getState) => {
           .catch(err => dispatch(fetchFeaturesDataError(err)));
 };
 
-export const setLimitAmount = (data) => (dispatch, getState) => {
-  // const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/features/a/b/c`, {
+export const setLimitAmount = (data, dataId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/features/${dataId}`, {
               method: 'POST',
-              headers: {'content-type':'application/json'},
+              headers: {'content-type':'application/json',
+              Authorization: `Bearer ${authToken}`},
               body: JSON.stringify(data) })
           .then(res => normalizeResponseErrors(res))
           .then(res => res.json())
@@ -38,13 +38,12 @@ export const setLimitAmount = (data) => (dispatch, getState) => {
           .catch(err => dispatch(fetchFeaturesDataError(err)));
 };
 
-export const updateLimitAmount = (toUpdate) => (dispatch, getState) => {
-  // const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/features/a/b/c`, {
+export const updateLimitAmount = (toUpdate, dataId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/features/${dataId}`, {
               method: 'PUT',
-              headers: {'content-type':'application/json'
-                        // Authorization: `Bearer ${authToken}`
-                        },
+              headers: {'content-type':'application/json',
+                        Authorization: `Bearer ${authToken}`},
               body: JSON.stringify(toUpdate) })
           .then(res => normalizeResponseErrors(res))
           .then(res => res.json())
@@ -52,11 +51,12 @@ export const updateLimitAmount = (toUpdate) => (dispatch, getState) => {
           .catch(err => dispatch(fetchFeaturesDataError(err)));
 };
 
-export const removeLimitAmount = (limitId) => (dispatch, getState) => {
-  // const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/features/a/b/c`, {
+export const removeLimitAmount = (limitId, dataId) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/features/${dataId}`, {
               method: 'DELETE',
-              headers: {'content-type':'application/json'} ,
+              headers: {'content-type':'application/json',
+                        Authorization: `Bearer ${authToken}`} ,
               body: JSON.stringify({limitId})
               })
           .then(res => normalizeResponseErrors(res))

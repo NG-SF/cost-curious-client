@@ -42,8 +42,8 @@ componentDidMount() {
   }
 
   render() {
-    const list = this.props.items.map((item, i) => {    
-      return (<div key={i} className='category'>
+    const list = this.props.items.map(item => {    
+      return (<div key={item._id} className='category'>
               {this.state.selected && this.state.itemId === item._id && 
               <div className='editName-form'>
               <form onSubmit={(e) => this.onChangeName(e)}>
@@ -55,7 +55,6 @@ componentDidMount() {
 
                 <Link to={`/api/${item._id}`}> <h2 className='category-name'>{item.description}</h2></Link>
                 <div className='btn-group'>
-                <Link to={`/api/${item._id}`}><button className='btn'>Go</button></Link>
                   <button className='btn' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
                   <button className='btn' onClick={() => this.onClick(item._id)}>Edit</button>  
                 </div>

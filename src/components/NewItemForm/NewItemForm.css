@@ -10,3 +10,17 @@ h1 {
   justify-content: space-evenly;
 }
 
+.CalendarDay__highlighted_calendar {
+  background: lavender;
+  color: purple;
+}
+
+.CalendarDay__highlighted_calendar:hover {
+  background: #58D68D;
+  color: #186A3B;
+}
+
+.CalendarDay__highlighted_calendar:active {
+  background: #58D68D;
+  color: #186A3B;
+}
