@@ -25,11 +25,6 @@
   font-size: 1.1em;
 }
 
-input {
-  outline: none;
-  border: 2px solid lightseagreen;
-  border-radius: .6em;
-}
 
 .register-form label {
   display: block;

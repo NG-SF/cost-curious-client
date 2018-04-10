@@ -16,11 +16,11 @@ h1 {
 }
 
 .CalendarDay__highlighted_calendar:hover {
-  background: #58D68D;
-  color: #186A3B;
+  background: lavender;
+  color: violet;
 }
 
 .CalendarDay__highlighted_calendar:active {
-  background: #58D68D;
-  color: #186A3B;
+  background: papayawhip;
+  color: purple;
 }

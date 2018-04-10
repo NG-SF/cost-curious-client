@@ -4,9 +4,8 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 7% 0 0 0;
   font-family: 'Lato', sans-serif;
-  background-color: snow;
 }
 
 button {
@@ -14,8 +13,17 @@ button {
   cursor: pointer;
 }
 
+input {
+  outline: none;
+}
+
 section {
   padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .container {

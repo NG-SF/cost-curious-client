@@ -10,24 +10,42 @@ import moment from 'moment';
 import numeral from 'numeral';
 import RequiresLogin from '../Auth/RequiresLogin';
 import lineOptions from './chartData';
-import './ItemPage.css';
 import LimitContent from './LimitContent';
+import {DateRangePicker} from 'react-dates';
+import dateRange from './dateRange';
+import './ItemPage.css';
 
 export class ItemPage extends React.Component {
   constructor () {
     super()
     this.state = {
       isHidden: true,
+      showFilter: false,
       selected: false,
       amount: '',
       limit: '',
       dataCategory: '',
       limitId: '',
-      error: ''
+      error: '',
+      calendarFocused: null,
+      startDate: moment().startOf('month'),
+      endDate: moment().endOf('month')
     }
   }
+  onDatesChange = ({startDate, endDate}) => {
+    this.setState(() => ({
+      startDate,
+      endDate 
+      }));
+  };
+  onFocusChange = (calendarFocused) => {
+    this.setState(() => ({calendarFocused}));
+  };
   toggleHidden() {
     this.setState(() => ({isHidden: !this.state.isHidden}));
+  }
+  toggleFilter() {
+    this.setState(() => ({showFilter: !this.state.showFilter}));
   }
   changeLimit(dataCategory, limitId, limit) {
   this.setState(() => ({
@@ -79,9 +97,10 @@ export class ItemPage extends React.Component {
   render() {
     const dataId = this.props.match.params.dataId;
     //find obj that holds transactions to display
-    const singleItemObj = this.props.items.filter(item => item._id === dataId);
+    const singleItemObj = this.props.items ? this.props.items.filter(item => item._id === dataId) : [];
     let total = 0;
     let chartData = [];
+
     let max = singleItemObj[0] ? singleItemObj[0].history.sort((a,b) => {
         return a.amount < b.amount ? 1 : -1;
         }).filter((item, i)=> i === 0)[0] : 0;
@@ -89,8 +108,9 @@ export class ItemPage extends React.Component {
         return a.amount > b.amount ? 1 : -1;
         }).filter((item, i)=> i === 0)[0] : 0;  
 
-    const row = singleItemObj[0] ? singleItemObj[0].history.sort((a,b) => {
-     return a.createdAt < b.createdAt ? 1 : -1;
+    const rowData = (data) => {
+      return data.sort((a,b) => {
+      return a.createdAt < b.createdAt ? 1 : -1;
     }).map((item) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
       const date = moment(item.createdAt).format('MMMM Do, YYYY');
@@ -107,7 +127,17 @@ export class ItemPage extends React.Component {
               <td><Link to={`/api/edit/${dataId}/${itemId}`}>Edit</Link></td>
               <td><button onClick={() => this.props.removeTransaction(dataId, itemId)}>Remove</button></td>
             </tr>);               
-    }) : [];
+    }); 
+    };
+        
+  let filteredData = singleItemObj[0] ? dateRange(singleItemObj[0].history, this.state.startDate, this.state.endDate) : [];
+  const row = singleItemObj[0] ? rowData(singleItemObj[0].history) : [];
+  let filteredRow;
+  if(this.state.showFilter) {
+    chartData = [];
+    total = 0;
+   filteredRow = filteredData ? rowData(filteredData) : [];
+  }
 
   let lineData = {
         datasets: [{
@@ -139,10 +169,23 @@ export class ItemPage extends React.Component {
           </form> 
           <button className='btn btn-remove-limit' onClick={() => { this.props.removeLimitAmount(this.state.limitId, dataId);
           this.resetState()}}>Remove limit amount</button>
-      </div>}        
-      <br/><br/><br/>
-      { chartData.length > 0 && <Line data={lineData} options={lineOptions} 
-                                      width={550} height={250} />}
+      </div>} 
+      <div className='dateRange'>
+        <DateRangePicker 
+                    startDate={this.state.startDate} 
+                     startDateId={"start"}
+                     endDate={this.state.endDate}
+                     endDateId={"end"}
+                     onDatesChange={this.onDatesChange}
+                     focusedInput={this.state.calendarFocused}
+                     onFocusChange={this.onFocusChange}
+                     numberOfMonths={1}
+                     showClearDates={true}
+                     isOutsideRange={() => false} />   
+        <button className='btn dateRange' onClick={this.toggleFilter.bind(this)}>Filter by date</button>  
+      </div> 
+      <br/><br/>
+      { chartData.length > 0 && <Line data={lineData} options={lineOptions} />}
 
       <button className='btn show-hide' onClick={this.toggleHidden.bind(this)}>Show all transactions</button>
       { !this.state.isHidden && <table className='table'>
@@ -152,8 +195,13 @@ export class ItemPage extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {row}             
+          {this.state.showFilter ? filteredRow : row}           
         </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>{numeral((total)/100).format('$0,0.00')}</strong></td><td>  <strong>Total</strong></td><td></td><td></td><td></td>
+          </tr> 
+        </tfoot>
         </table> }
   </div>
 </section>

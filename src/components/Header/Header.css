@@ -1,19 +1,48 @@
 nav {
-  background-color:  lavender;
-  padding: 10px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: snow;
+  box-shadow: 0 0 3px #E8D7FF;
+  border-bottom: 1px solid #F2F8F4;
+  z-index: 10;
+}
+
+.title {
+  display: inline-block;
+  padding-left: 35px;
+  color: #3F285D; 
+  font-size: 1.7em;
+}
+
+.nav-container {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: flex-end;
+  width: 80%;
   margin: 0 auto;
   padding: 10px;
 }
 
+.btn-logout {
+  border: none;
+  background: none;
+}
+
 nav li {
   padding-left: 10px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 430px) {

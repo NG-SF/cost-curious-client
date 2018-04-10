@@ -8,11 +8,6 @@
   padding: 20px;
 }
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .articles > li {
   display: block;
   padding: 10px;

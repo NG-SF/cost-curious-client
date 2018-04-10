@@ -78,9 +78,9 @@ componentDidMount() {
           <p>Selecting each item will redirect you to that individual item section.</p> 
         <div className='addCategory-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>
-          <label htmlFor='newItem'></label>
+          <label className='add-category-label' htmlFor='newItem'>Add new category:</label>
           <input className='add-category' type='text' name='newItem' id='newItem' ref={input => this.textInput = input} required />
-          <button type="submit" className='btn plus' >+ Add new category</button>
+          <button type="submit" className='btn-add-category' >Submit</button>
         </form>
         </div> 
        </div>

@@ -5,7 +5,7 @@ componentDidUpdate(prevProps) {
     if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
         }
-    }
+}
     render() {
         const Element = this.props.element || 'input';
 
@@ -21,19 +21,16 @@ componentDidUpdate(prevProps) {
             );
         }
 
-        return (
-            <div className="form-input">
-                <label htmlFor={this.props.input.name}>
-                    {this.props.label}
-                    {error}
-                    {warning}
-                </label>
-                <Element
-                    {...this.props.input}
-                    id={this.props.input.name}
-                    type={this.props.type}
-                    ref={input => (this.input = input)}
-                    placeholer={this.props.name}
+    return (
+        <div className="form-input">
+                {error}
+                {warning}
+            <Element
+                {...this.props.input}
+                id={this.props.input.name}
+                type={this.props.type}
+                ref={input => (this.input = input)}
+                placeholer={this.props.name}
                 />
             </div>
         );

@@ -1,6 +1,11 @@
 .login-form {
   width: 300px;
-  margin: 2em auto;
+  margin: .4em auto;
+  padding: 20px;
+  border: 1px solid #E5F2E9;
+  border-radius: 5px;
+  background-color:  #F2F8F4;
+  box-shadow: 7px 7px 5px lightgray;
 }
 
 .login-form > .btn {
@@ -9,25 +14,44 @@
   width: 40%;
 }
 
+.login-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form-wrapper {
+  margin-top: 5%;
+}
+
+.login-form-wrapper h1 {
+  color: #4F3274;
+  font-size: 2.3em;
+}
+
 .login-form input[type=text],
 .login-form input[type=password] {
-  width: 80%;
-  height: 40px;
+  width: 70%;
+  height: 30px;
   line-height: .9em;
-  display: block;
+  display: inline-block;
   margin: 1em auto;
   background: transparent;
   padding: 0 5px;
   font-size: 1.1em;
 }
 
-input {
-  outline: none;
-  border: 2px solid rgb(182, 182, 249);
-  border-radius: .6em;
+.login-form .form-input {
+  display: inline-block;
+}
+
+.form-input input {
+  border: 2px solid #EFE4FF;
+  border-radius: .4em;
 }
 
 .login-form label {
-  display: block;
-  padding-left: 30px;
+  display: inline-block;
+  padding-top: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
 }

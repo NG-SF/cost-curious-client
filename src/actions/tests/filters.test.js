@@ -1,4 +1,5 @@
-import {FETCH_FEATURES_DATA_SUCCESS, fetchFeaturesDataSuccess,       FETCH_FEATURES_DATA_ERROR, fetchFeaturesDataError} from '../filters';
+import {FETCH_FEATURES_DATA_SUCCESS, fetchFeaturesDataSuccess,       FETCH_FEATURES_DATA_ERROR, fetchFeaturesDataError, fetchFeaturesData} from '../filters';
+import {API_BASE_URL} from '../../config';
 
 describe('fetchFeaturesDataSuccess', () => {
   it('Should return the action', () => {
@@ -22,3 +23,20 @@ describe('fetchFeaturesDataError', () => {
     expect(action.error).toEqual(error);
   });
 });
+
+  describe('fetchFeaturesData', () => {
+  xit('Should dispatch fetchFeaturesDataSuccess', () => {
+    const data = [{}];
+    global.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({ok:true, json(){return data;}
+      }));
+    const dispatch = jest.fn();
+    const dataId = '123';
+    return fetchFeaturesData(dataId)(dispatch)
+            .then(() => {
+              expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/features/${dataId}`);
+              expect(dispatch).toHaveBeenCalledWith(fetchFeaturesDataSuccess(data));
+            });
+    });
+  });
+

@@ -45,3 +45,22 @@ tr:nth-child(even){
   font-family: 'Flamenco', cursive;
   font-size: 1.5em;
 }
+
+.dateRange {
+  margin-top: 15px;
+}
+
+.CalendarDay__highlighted_calendar {
+  background: lavender;
+  color: purple;
+}
+
+.CalendarDay__highlighted_calendar:hover {
+  background: lavender;
+  color: violet;
+}
+
+.CalendarDay__highlighted_calendar:active {
+  background: papayawhip;
+  color: purple;
+}

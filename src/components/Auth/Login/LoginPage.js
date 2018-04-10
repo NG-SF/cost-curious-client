@@ -11,7 +11,7 @@ export function LoginPage(props) {
         return <Redirect to="/api/dashboard" />;
     }
     return (
-        <div className='container login-form'>
+        <div className='login-form-wrapper'>
             <h1>Welcome</h1>
             <LoginForm />
         </div>
