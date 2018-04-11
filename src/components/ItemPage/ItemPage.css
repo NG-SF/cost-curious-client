@@ -50,7 +50,7 @@ tr:nth-child(even){
   margin-top: 15px;
 }
 
-.CalendarDay__highlighted_calendar {
+/* .CalendarDay__highlighted_calendar {
   background: lavender;
   color: purple;
 }
@@ -63,4 +63,4 @@ tr:nth-child(even){
 .CalendarDay__highlighted_calendar:active {
   background: papayawhip;
   color: purple;
-}
+} */

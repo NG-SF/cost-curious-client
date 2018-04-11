@@ -1,22 +1,21 @@
 .add-container {
-  margin: 5% auto;
-  max-width: 500px;
+  margin: 15% auto;
+  max-width: 600px;
   min-width: 320px;
 }
 
 .btn, .btn-add-category {
   border: none;
-  background-color: #E8D7FF;
-  border-radius: .6em;
+  background-color: #71BA88;
+  border-radius: .5em;
   cursor: pointer;
   font-weight: 400;
-  margin-right: 10px;
-  padding: 10px;
   height: 40px;
   box-shadow: 5px 5px 4px lightgray;
 }
 
 .btn-add-category {
+
   display: inline-block;
   margin-right: 2px;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import NewItemForm from './NewItemForm';
+import moment from 'moment';
 
 describe('<NewItemForm />', () => {
     it('Renders without crashing', () => {
@@ -12,18 +13,27 @@ describe('<NewItemForm />', () => {
         expect(wrapper.find('input').length).toEqual(2);
     });
 
-    xit('Should fire onSubmit callback when the form is submitted', () => {
+    it('Should fire onSubmit callback when the form is submitted', () => {
         const dispatch = jest.fn();
-        const wrapper = mount(<GuessForm dispatch={dispatch} />);
+        const wrapper = mount(<NewItemForm onSubmit={dispatch} />);
         dispatch.mockClear();
         const value = {
-          amount: '333',
-          createdAt: 1515009600000,
+          amount: '33300',
+          createdAt: moment(),
           place: 'Rose'
         };
-        wrapper.find('input[type="number"]').instance().value = value;
-        wrapper.simulate('submit');      
-        expect(dispatch).toHaveBeenCalledWith(makeGuess(value));
+        const output = {
+            "amount": parseFloat(value.amount, 10) * 100, 
+            "createdAt": value.createdAt.valueOf(), 
+            "place": "Rose"}
+      
+        // wrapper.find('input[type="text"]').instance().value = value.place;
+        wrapper.setState({  amount: value.amount,
+                            createdAt: value.createdAt,
+                            place: value.place});
+        // wrapper.update();
+        wrapper.instance().onSubmit({preventDefault: ()=>{}});      
+        expect(dispatch).toHaveBeenCalledWith(output);
     });
 
 });

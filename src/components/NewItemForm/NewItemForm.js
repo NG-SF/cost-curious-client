@@ -53,10 +53,10 @@ export default class NewItemForm extends React.Component {
       <div className='form-newItem'>
         {this.state.error && <h3>{this.state.error}</h3>}
         <form className='addItem-form' onSubmit={this.onSubmit}>
-          <input type="text" placeholder="Amount" value={this.state.amount} 
+          <input className='amount' type="text" placeholder="Amount" value={this.state.amount} 
                  onChange={this.onAmountChange} required />
           <SingleDatePicker date={this.state.createdAt} required
-                            onDateChange={this.onDateChange}                         focused={this.state.calendarFocused} 
+                            onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
                             onFocusChange={this.onFocusChange} 
                             numberOfMonths={1} isOutsideRange={() => false} />
           <input type="text" placeholder="place" value={this.state.place} 

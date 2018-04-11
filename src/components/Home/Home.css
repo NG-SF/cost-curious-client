@@ -1,0 +1,187 @@
+.App {
+  height: 100vh;
+}
+
+.img1, .img2, .img3 {
+  position: relative;
+  opacity: 0.80;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* fixed=>parallax scroll=>normal */
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 {
+  background-image: url('./starbucks.jpg');
+  min-height: 100%;
+}
+
+.img2 {
+  background-image: url('./coffeeCalc.jpg');
+  min-height: 100%;
+}
+
+.img3 {
+  background-image: url('./coffeeBeans.jpg');
+  min-height: 600px;
+}
+
+.firstQuestion {
+  margin: 0 40px;
+  font-size: 3.5em;
+  text-shadow: 3px 3px 2px #E5F2E9;
+  letter-spacing: 4px;
+  line-height: 80px;
+  color: black;
+}
+
+.home1, .home2 {
+  display: flex;
+  padding: 5%;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 1.1em;
+  background-color: snow;
+}
+
+.home1-flex1 h3 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin:2px 0;
+}
+
+.home1-flex1 .left {
+  text-align: right;
+  font-size: 1em;
+  margin: 0;
+}
+
+.home1-flex1, .home2-flex2 {
+  width: 50%;
+  padding: 5px;
+}
+
+.home2-flex2 img {
+  margin: 0 auto;
+  display: block;
+}
+
+.home-signup-btn {
+  background-color: #71BA88;
+  width: 110px;
+  height: 45px;
+  line-height: 30px;
+  letter-spacing: normal;
+  border-radius: 4px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-signup-btn:hover {
+  background-color: rgb(88, 148, 107);
+  border: 1px solid rgb(88, 148, 107);
+}
+
+ .box {
+  background-color: snow;
+  opacity: .9;
+  border-radius: 10px;
+  padding: 25px;
+  width: 40%;
+}
+
+.question {
+  font-size: 2.2em;
+  color: black;
+  letter-spacing: 2px;
+  line-height: 40px;
+  text-shadow: 3px 3px 2px #E5F2E9;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.question2 {
+  font-size: 1.3em;
+  color: black;
+  letter-spacing: 2px;
+  line-height: 30px;
+  text-shadow: 3px 3px 2px #E5F2E9;
+}
+
+blockquote {
+  padding: 5px;
+  margin: 5px;
+  background-color: #F2F8F4;
+}
+
+.articles-title {
+  font-size: 1.5em;
+  color: black;
+  letter-spacing: 2px;
+  line-height: 30px;
+  text-shadow: 3px 3px 2px #E5F2E9;
+}
+
+.box a {
+  font-size: 1.1em;
+  color: black;
+}
+
+.articles > li {
+  display: block;
+  padding: 10px;
+}
+
+.footer {
+  padding: 40px;
+  background-color: #E5F2E9;
+  height: 150px;
+  text-align: center;
+}
+
+.footer h3 {
+  margin: 15px 0 2px 0;
+}
+
+.footer h4 {
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .img1, .img2, .img3 {
+    background-attachment: scroll;
+    height: 50%;
+  }
+  .App {
+  margin-top: 35%;
+  align-self: flex-start;
+}
+
+.firstQuestion {
+  margin: 0 10px;
+  font-size: 2.4em;
+  letter-spacing: 2px;
+  line-height: 50px;
+}
+
+.home1-flex1, .home1,
+.home2-flex2, .home2 {
+  display: block;
+  padding: 15px;
+  width: 90%;
+}
+.ptext .title {
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  line-height: 60px;
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+}

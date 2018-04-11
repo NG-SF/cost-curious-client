@@ -19,11 +19,9 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-            <form
-                className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
+            <form className="login-form"
+                  onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values))}>
                 {error}
                 <div className='login-wrapper'> 
                     <label htmlFor="username">Username:</label>

@@ -1,3 +1,11 @@
+.login-form-wrapper {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form {
   width: 300px;
   margin: .4em auto;
@@ -8,29 +16,42 @@
   box-shadow: 7px 7px 5px lightgray;
 }
 
-.login-form > .btn {
-  display: block;
-  margin: 1em auto;
-  width: 40%;
-}
-
-.login-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.login-form-wrapper {
-  margin-top: 5%;
-}
-
 .login-form-wrapper h1 {
   color: #4F3274;
-  font-size: 2.3em;
+  font-size: 2.5em;
+}
+.login-form > .btn,
+.register-form > .btn {
+  display: block;
+  color: black;
+  margin: 1em auto;
+  width: 95%;
+}
+
+.form-error {
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: red;
+}
+
+.demo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1em;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.demo {
+  padding: 5px;
+  margin: 0;
 }
 
 .login-form input[type=text],
 .login-form input[type=password] {
-  width: 70%;
+  width: 95%;
   height: 30px;
   line-height: .9em;
   display: inline-block;
@@ -45,13 +66,46 @@
 }
 
 .form-input input {
-  border: 2px solid #EFE4FF;
+  border: 2px solid #71BA88;
   border-radius: .4em;
 }
 
 .login-form label {
   display: inline-block;
   padding-top: 25px;
+  padding-right: 5px;
   font-size: 1.1em;
   font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+.login-form-wrapper,
+.register-form-wrapper {
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+}
+
+@media screen and (max-width: 425px) {
+.login-form, 
+.register-form {
+  width: 270px;
+  padding: 10px;
+}
+.login-form label {
+  display: block;
+  padding: 0;
+}
+.login-wrapper {
+  margin: 0 auto;
+  padding-left: 5px;
+}
+.login-form input[type=text],
+.login-form input[type=password]{
+  width: 121%;
+}
 }

@@ -4,25 +4,22 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: snow;
-  box-shadow: 0 0 3px #E8D7FF;
+  background-color: #E5F2E9;
   border-bottom: 1px solid #F2F8F4;
   z-index: 10;
 }
 
-.title {
-  display: inline-block;
-  padding-left: 35px;
+.titleName {
+  padding-left: 30px;
   color: #3F285D; 
-  font-size: 1.7em;
+  font-size: 2em;
 }
 
 .nav-container {
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
   display: flex;
+  justify-content: space-around;
+  align-content: center;
   align-items: center;
 }
 
@@ -30,14 +27,15 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  width: 80%;
-  margin: 0 auto;
-  padding: 10px;
+  width: 400px;
+  padding: 0;
 }
 
 .btn-logout {
   border: none;
   background: none;
+  padding: 0;
+  color: #71BA88;
 }
 
 nav li {
@@ -45,10 +43,24 @@ nav li {
   font-size: 18px;
 }
 
+
+/* Responsive for tablet */
+@media screen and (max-width: 770px) and (min-width: 450px) {
+ nav ul {
+   justify-content: center;
+ }
+ .title {
+  font-size: 1.9em;
+  width: 20%;
+}
+}
+/* Responsive for smartphone */
 @media screen and (max-width: 430px) {
  nav ul {
    flex-direction: column;
-   align-items: flex-start;
+   align-items: center;
  }
- 
+ .titleName {
+  font-size: 1.8em;
+}
 }

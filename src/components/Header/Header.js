@@ -25,10 +25,9 @@ export class Header extends React.Component {
     return (
       <nav>   
         <div className='nav-container'>
-        <h1 className='title'>Cost Curious</h1>
+        <h1 className='titleName'>Cost Curious</h1>
           <ul>
             <li><NavLink to='/' activeClassName='is-active' exact={true}>Home</NavLink></li>
-            <li><NavLink to='/about' activeClassName='is-active' exact={true}>About</NavLink></li>
             <li>{login}</li>
             <li>{register}</li>
             <li>{link}</li> 

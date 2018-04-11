@@ -1,11 +1,11 @@
-html {
+html, body {
+  height: 100%;
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  padding: 7% 0 0 0;
+  padding: 0;
   font-family: 'Lato', sans-serif;
+  line-height: 1.8em;
+  font-weight: 400;
 }
 
 button {
@@ -13,39 +13,21 @@ button {
   cursor: pointer;
 }
 
-input {
-  outline: none;
-}
-
-section {
-  padding: 20px;
-}
-
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
-.container {
-  margin: 7% auto;
-  width: 320px;
-}
-
-h1 {
+h1, h2, h3, h4 {
   text-align: center;
   font-family: 'Flamenco', cursive;
 }
 
-img {
-margin: 5px auto;
-display: block;
-}
+
 
 @media screen and (max-width: 430px) {
-  main, section, p, ol {
+   p, ol {
     padding: 10px;
   }
-  img {
-    width: 60%;
-  }
+
 }

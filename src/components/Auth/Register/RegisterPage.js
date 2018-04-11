@@ -11,10 +11,10 @@ export function RegistrationPage(props) {
         return <Redirect to="/api/dashboard" />;
     }
     return (
-        <div className="container register-form">
-            <h2>Register</h2>
+        <div className="register-form-wrapper">
+            <h1>Sign up</h1>
             <RegistrationForm />
-            <p>Already registered?  <Link to="/login">Login</Link></p>
+            <h2>Already registered?  <Link to="/login">Login</Link></h2>
             
         </div>
     );
