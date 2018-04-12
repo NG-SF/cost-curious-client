@@ -5,13 +5,13 @@ export default  {
             xAxes: [{
               type: 'time',
               time: {
-                unit: 'day',
-                stepSize: 10,
+                unit: 'week',
+                stepSize: 2,
                 displayFormats: { week: 'MMM D YYYY' }
                 },
               scaleLabel: {
                 labelString: 'Time',
-                display: true,
+                display: false,
                 fontColor: 'darkblue',
                 fontSize: 14
               }
@@ -25,7 +25,7 @@ export default  {
                 },
                 scaleLabel: {
                 labelString: 'Amount',
-                display: true,
+                display: false,
                 fontColor: 'darkblue',
                 fontSize: 14
               }

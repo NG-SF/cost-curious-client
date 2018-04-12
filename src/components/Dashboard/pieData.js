@@ -1,3 +1,4 @@
+let totalPieAmount = 0;
 let pieChartData = (data) => {
 let labels = data.map(el => el.description);
 let amounts = data.map(el => el.history.map(el => {
@@ -8,6 +9,10 @@ let totals = amounts.map(el => {
     return total + amount;
     },0);
 });
+totalPieAmount = totals.reduce((total,amount) =>{
+  return total + amount;
+},0);
+
   return [totals,labels];
 };
 export default pieChartData;
@@ -24,7 +29,7 @@ const pieOptions = {
           displayColors: false
         },
       legend: {
-        position: 'left',
+        position: 'bottom',
         labels: {
           fontSize: 16,
           fontColor: 'black'
@@ -32,4 +37,4 @@ const pieOptions = {
       },
       responsive: true
     };
-export {pieOptions};
+export {pieOptions, totalPieAmount};

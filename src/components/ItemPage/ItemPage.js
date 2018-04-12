@@ -125,9 +125,9 @@ export class ItemPage extends React.Component {
               <td>{date}</td>
               <td>{item.place}</td>
               <td><Link to={`/api/edit/${dataId}/${itemId}`}>Edit</Link></td>
-              <td><button onClick={() => this.props.removeTransaction(dataId, itemId)}>Remove</button></td>
+              <td><button className='btn-remove-transaction' onClick={() => this.props.removeTransaction(dataId, itemId)}>Remove</button></td>
             </tr>);               
-    }); 
+        }); 
     };
         
   let filteredData = singleItemObj[0] ? dateRange(singleItemObj[0].history, this.state.startDate, this.state.endDate) : [];
@@ -147,47 +147,68 @@ export class ItemPage extends React.Component {
           pointBackgroundColor: colors
         }]
       };
+
   let description = singleItemObj[0] ? singleItemObj[0].description: '';
   let limitObj = this.props.limitData.filter(el => el.dataId === dataId);
   let limit = limitObj[0] ? limitObj[0].limit : '';
   let limitId = limitObj[0] ? limitObj[0]._id : '';
   let diff = Math.abs((total/100) - limit);
+
   return (
-    <section id='item-page'> 
+  <section id='item-page'> 
     <div className='itemPage-container' >
-      <p>This section contains detailed information about single item. Here you can add your transactions. Selecting 'Show/Hide details' will reveal table with all the transactions, where you can edit and delete each transaction. </p>
+    <div className='item-intro'>
+      <p>This section contains summary information about single category item.</p>
+      <p>Selecting Show/Hide transactions button will reveal table with all the transactions, where you can edit and delete each transaction. </p>
       <p>Hovering over each data point on the chart will show the details of that transaction</p>
-      <h1>{description}</h1> 
-      <LimitContent total={total} limit={limit} diff={diff} max={max} min={min} />
-      <Link className='btn add-trns' to={`/api/create/${dataId}`}>+ add additional transaction</Link>
+    </div>
+    <h1 className='item-title'>Category: <strong>{description}</strong></h1> 
+    <LimitContent total={total} limit={limit} diff={diff} max={max} min={min} />
+    
+    <div className='add-edit-group'>
+      <Link className='btn add-trns' to={`/api/create/${dataId}`}>+ add new transaction</Link>
+
       <button className='btn btn-limit' onClick={() => this.changeLimit(description, limitId, limit)}>Add/Edit limit amount</button>
-      {this.state.selected  && <div className='addLimit-form'>
-          <form onSubmit={(e) => this.onSubmit(e)} >
-            <input type="text" placeholder="Amount" value={this.state.amount} 
-                   onChange={this.onAmountChange} required />
-            <button className='btn' type="submit">Add/Edit</button>
-          </form> 
-          <button className='btn btn-remove-limit' onClick={() => { this.props.removeLimitAmount(this.state.limitId, dataId);
-          this.resetState()}}>Remove limit amount</button>
-      </div>} 
+    </div>
+    
+    {this.state.selected  && <div className='add-limit-box'>
+      <form onSubmit={(e) => this.onSubmit(e)} >
+        <label className='add-limit-label' htmlFor='limit'>Add/Edit limit amount:</label>
+        <input className='add-limit-input' type='text' placeholder='Enter limit amount'            id='limit' name='limit' value={this.state.amount} 
+               onChange={this.onAmountChange} required />
+        <button className='btn btn-add-limit' type="submit">Add/Edit</button>
+      </form> 
+      <div className='btn-group-limit'>
+        <button className='btn btn-remove-limit' 
+                onClick={() => { 
+                  this.props.removeLimitAmount(this.state.limitId, dataId);
+                  this.resetState()}}>Remove limit amount</button>
+        <button className='btn btn-cancel-limit' 
+                onClick={() => {this.resetState()}}>Cancel</button>
+      </div>
+      </div>
+      } 
+      
       <div className='dateRange'>
         <DateRangePicker 
-                    startDate={this.state.startDate} 
-                     startDateId={"start"}
-                     endDate={this.state.endDate}
-                     endDateId={"end"}
-                     onDatesChange={this.onDatesChange}
-                     focusedInput={this.state.calendarFocused}
-                     onFocusChange={this.onFocusChange}
-                     numberOfMonths={1}
-                     showClearDates={true}
-                     isOutsideRange={() => false} />   
+                startDate={this.state.startDate} 
+                startDateId={"start"}
+                endDate={this.state.endDate}
+                endDateId={"end"}
+                onDatesChange={this.onDatesChange}
+                focusedInput={this.state.calendarFocused}
+                onFocusChange={this.onFocusChange}
+                numberOfMonths={1}
+                showClearDates={true}
+                isOutsideRange={() => false} />   
         <button className='btn dateRange' onClick={this.toggleFilter.bind(this)}>Filter by date</button>  
       </div> 
-      <br/><br/>
-      { chartData.length > 0 && <Line data={lineData} options={lineOptions} />}
+      <div className='chart-box'>
+        {chartData.length > 0 && <Line data={lineData} options={lineOptions} />}
+      </div>
 
-      <button className='btn show-hide' onClick={this.toggleHidden.bind(this)}>Show all transactions</button>
+      <button className='btn btn-show-hide' onClick={this.toggleHidden.bind(this)}>Show/Hide all transactions</button>
+      <div className='table-box'>
       { !this.state.isHidden && <table className='table'>
         <thead>
           <tr>
@@ -202,7 +223,9 @@ export class ItemPage extends React.Component {
             <td><strong>{numeral((total)/100).format('$0,0.00')}</strong></td><td>  <strong>Total</strong></td><td></td><td></td><td></td>
           </tr> 
         </tfoot>
-        </table> }
+        </table> 
+        }
+        </div>
   </div>
 </section>
     );

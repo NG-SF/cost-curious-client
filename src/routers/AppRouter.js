@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
-import About from '../components/About/About';
 import Dashboard from '../components/Dashboard/Dashboard';
 import AddItem from '../components/AddItem/AddItem';
 import EditItem from '../components/EditItem/EditItem';
@@ -17,7 +16,6 @@ const AppRouter = () => (
     <Header />
     <Switch>
       <Route path='/' component={Home} exact={true} />
-      <Route path='/about' component={About} exact={true} />
       <Route path='/api/dashboard' component={Dashboard} />
       <Route path="/api/create/:dataId" component={AddItem} />
       <Route path="/api/edit/:dataId/:itemId" component={EditItem} />

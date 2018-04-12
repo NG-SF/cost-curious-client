@@ -1,54 +1,208 @@
-.itemPage-container {
+#item-page {
+  margin: 10% auto;
   max-width: 800px;
-  margin: 5% auto;
+  min-width: 320px;
+  padding: 5px 10px;
 }
 
-.table {
-  margin: 20px auto;
-  padding: 10px;
-  display: block;
-  max-width: 700px;
+.item-intro {
+  font-size: 1em;
+  padding: 15px;
+  background-color: #F9F5F1;
+  border: 2px solid #F5EFE8;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px lightgray;
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 30px;
 }
 
-td, th {
-  border-bottom: 1px solid cadetblue;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-th {
-  background-color:cadetblue;
-  color:lavender;
-  padding: 5px;
-  text-align: center;
+.item-title {
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  color: #4F3274;
 }
 
-tr:nth-child(even){
-  background-color:lavender
+.item-title strong {
+  font-size: 1.6em;
 }
 
-.show-hide {
-  margin: 25px auto;
-  display: block;
-  width: 50%; 
+/* limit section */
+.limit-box {
+  font-size: 1.1em;
+  padding: 5px 15px;
 }
 
-.add-trns {
-  margin: 10px 0 25px 0;
+.limit-box strong {
+  color: #4F3274;
 }
 
 .btn-limit {
   display: inline-block;
 }
 
-.limit {
+.limit-alarm {
   color: salmon;
   font-family: 'Flamenco', cursive;
   font-size: 1.5em;
 }
 
+/* Add limit form */
+.add-limit-box {
+  padding: 25px 15px;
+  margin: 25px 0;
+  background-color: #F9F5F1;
+  border: 2px solid #F5EFE8;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px lightgray;
+}
+
+.add-limit-box form{
+  width: 110%;
+  display: inline-block;
+}
+
+.btn-add-limit,
+.btn-remove-limit,
+.btn-cancel-limit {
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 1.1em;
+  border: 2px solid #71BA88;
+  background-color: #71BA88;
+  border-radius: .4em;
+  height: 41px;
+  padding: 0 10px;
+}
+
+.btn-add-limit:hover,
+.btn-remove-limit:hover,
+.btn-cancel-limit:hover,
+.btn-limit:hover, 
+.add-trns:hover,
+.btn-remove-transaction:hover {
+  border: 2px solid #538863;
+  background-color: #538863;
+  border-radius: .4em;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-remove-limit {
+  margin-right: 15px;
+}
+
+.btn-group-limit {
+  margin: 0 auto;
+  margin-top: 35px;
+  width: 300px;
+}
+
+.add-limit-label {
+  display: inline-block;
+  font-size: 17px;
+}
+
+.add-limit-input {
+  border: 2px solid #71BA88;
+  border-radius: .4em;
+  height: 35px;
+  width: 55%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.add-edit-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  padding: 5px 30px;
+}
+
+.btn-limit, .add-trns {
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 1.1em;
+  border: 2px solid #71BA88;
+  background-color: #BEDFC8;
+  border-radius: .4em;
+  height: 41px;
+  padding: 0 10px;
+  width: 40%;
+  height: 45px;
+}
+
+.add-trns a {
+  margin-bottom: 0;
+}
+
+/* date range section */
 .dateRange {
   margin-top: 15px;
 }
+
+.chart-box {
+  margin: 35px 10px;
+}
+
+.btn-show-hide {
+  margin: 25px auto;
+  display: block;
+  width: 50%; 
+  font-size: 1.1em;
+  border: 2px solid #71BA88;
+  background-color: #71BA88;
+  border-radius: .4em;
+  height: 41px;
+  padding: 0 10px;
+  height: 45px;
+}
+
+/* transactions table */
+.table {
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+
+.table a,
+.table a:visited {
+  color: black;
+}
+
+td, th {
+  border-bottom: 1px solid #71BA88;
+  padding: 7px 20px;
+}
+th {
+  background-color:#86D9C9;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even){
+  background-color:#BEDFC8;
+}
+
+tr:hover,
+.table a:hover {
+  background-color: #71BA88;
+  color: white;
+  font-size: 1.18em;
+}
+
+.btn-remove-transaction {
+  border: none;
+  background:none;
+  cursor: pointer;
+  padding: 5px 7px;
+}
+
 
 /* .CalendarDay__highlighted_calendar {
   background: lavender;
@@ -64,3 +218,45 @@ tr:nth-child(even){
   background: papayawhip;
   color: purple;
 } */
+
+/* Responsive for smartphones */
+@media screen and (max-width: 425px) {
+  #item-page {
+  margin: 20% auto;
+}
+.item-title {
+  font-size: 1.9em;
+  color: #4F3274;
+}
+
+.item-title strong {
+  font-size: 1.6em;
+}
+}
+
+@media screen and (max-width: 375px) {
+  #item-page {
+  margin: 40% auto;
+  padding: 0 7px;
+}
+  .item-title {
+  font-size: 1.8em;
+  color: #4F3274;
+  margin-top: 30px;
+}
+
+.item-title strong {
+  font-size: 1.5em;
+}
+
+.item-intro {
+  margin: 0;
+  padding: 0 10px;
+  width: 280px;
+}
+
+.limit-box {
+  font-size: 1.05em;
+  padding: 5px 8px;
+}
+}

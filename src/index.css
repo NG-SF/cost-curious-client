@@ -8,9 +8,13 @@ html, body {
   font-weight: 400;
 }
 
-button {
+.btn {
+  border: none;
   outline: none;
+  border-radius: .5em;
   cursor: pointer;
+  font-weight: 400;
+  box-shadow: 5px 5px 4px lightgray;
 }
 
 a {
@@ -18,16 +22,12 @@ a {
   cursor: pointer;
 }
 
+a:visited {
+  color: #4F3274;
+}
+
 h1, h2, h3, h4 {
   text-align: center;
   font-family: 'Flamenco', cursive;
 }
 
-
-
-@media screen and (max-width: 430px) {
-   p, ol {
-    padding: 10px;
-  }
-
-}

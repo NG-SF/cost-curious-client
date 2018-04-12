@@ -25,16 +25,22 @@ describe('fetchFeaturesDataError', () => {
 });
 
   describe('fetchFeaturesData', () => {
-  xit('Should dispatch fetchFeaturesDataSuccess', () => {
+  it('Should dispatch fetchFeaturesDataSuccess', () => {
     const data = [{}];
     global.fetch = jest.fn().mockImplementation(() => 
       Promise.resolve({ok:true, json(){return data;}
       }));
+    const getState = () => {
+      return {auth: {
+        authToken: '1111111111111'
+      }}
+    };
+
     const dispatch = jest.fn();
     const dataId = '123';
-    return fetchFeaturesData(dataId)(dispatch)
+    return fetchFeaturesData(dataId)(dispatch, getState)
             .then(() => {
-              expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/features/${dataId}`);
+              expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/features/${dataId}`,{"headers": {"Authorization": "Bearer 1111111111111"}, "method": "GET"});
               expect(dispatch).toHaveBeenCalledWith(fetchFeaturesDataSuccess(data));
             });
     });

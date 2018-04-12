@@ -3,7 +3,6 @@
 }
 
 .img1, .img2, .img3 {
-  position: relative;
   opacity: 0.80;
   background-position: center;
   background-size: cover;
@@ -17,12 +16,12 @@
 
 .img1 {
   background-image: url('./starbucks.jpg');
-  min-height: 100%;
+  min-height: 90%;
 }
 
 .img2 {
   background-image: url('./coffeeCalc.jpg');
-  min-height: 100%;
+  min-height: 90%;
 }
 
 .img3 {
@@ -31,18 +30,19 @@
 }
 
 .firstQuestion {
-  margin: 0 40px;
+  /* margin: 0 40px; */
   font-size: 3.5em;
   text-shadow: 3px 3px 2px #E5F2E9;
   letter-spacing: 4px;
   line-height: 80px;
   color: black;
+  align-self: center;
 }
 
 .home1, .home2 {
   display: flex;
   padding: 5%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-content: center;
   font-size: 1.1em;
   background-color: snow;
@@ -61,13 +61,13 @@
 }
 
 .home1-flex1, .home2-flex2 {
-  width: 50%;
+  width: 400px;
   padding: 5px;
 }
 
 .home2-flex2 img {
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
 }
 
 .home-signup-btn {
@@ -121,11 +121,12 @@ blockquote {
 }
 
 .articles-title {
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: black;
   letter-spacing: 2px;
   line-height: 30px;
   text-shadow: 3px 3px 2px #E5F2E9;
+  margin-bottom: 10px;
 }
 
 .box a {
@@ -133,9 +134,13 @@ blockquote {
   color: black;
 }
 
-.articles > li {
-  display: block;
-  padding: 10px;
+.articles {
+  padding-left: 15px;
+  font-size: 1em;
+}
+
+.articles li {
+  padding: 7px 3px;
 }
 
 .footer {
@@ -154,20 +159,30 @@ blockquote {
 }
 
 @media screen and (max-width: 500px) {
-  .img1, .img2, .img3 {
+.img1, .img2, .img3 {
+    background-image: url('./coffeeBeans.jpg');
     background-attachment: scroll;
-    height: 50%;
   }
-  .App {
+
+
+.App {
   margin-top: 35%;
-  align-self: flex-start;
+  /* align-self: flex-start; */
 }
 
 .firstQuestion {
-  margin: 0 10px;
-  font-size: 2.4em;
+  /* align-self: flex-start; */
+  font-size: 2.3em;
   letter-spacing: 2px;
   line-height: 50px;
+}
+
+ .box {
+  width: 75%;
+}
+
+.question {
+  font-size: 1.9em;
 }
 
 .home1-flex1, .home1,
@@ -176,11 +191,10 @@ blockquote {
   padding: 15px;
   width: 90%;
 }
-.ptext .title {
-  font-size: 1.4em;
+ .articles-title  {
   letter-spacing: 2px;
-  line-height: 60px;
-  width: 80%;
+  line-height: 40px;
+  width: 100%;
   margin: 0;
   padding: 0;
 }

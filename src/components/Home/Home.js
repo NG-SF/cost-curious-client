@@ -35,10 +35,14 @@ const Home = () => {
       
     <section className='home2'>
       <div className='home2-flex2'>
-        <h3 className='question2'>Are you curious how much do you spend on coffee?</h3>
-        <p>Check out these articles for the motivation to get your expenses in order.</p>
-        <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and see for yourself how much is your coffee habit costing you.</p>
+        <div className='home2-flex2-box'>
+        <div>
+          <h3 className='question2'>Are you curious how much do you spend on coffee?</h3>
+          <p>Check out these articles for the motivation to get your expenses in order.</p>
+          <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and see for yourself how much is your coffee habit costing you.</p>
+        </div>
         <img src="./images/curious.jpg" alt="questions" width='300px'/>
+        </div>
       </div>
       <div className='home2-flex2'>
         <h3 className='articles-title'>Articles on coffee and savings:</h3> 
@@ -51,10 +55,6 @@ const Home = () => {
         </ol>
       </div>
     </section>
-
-    <div className='img3'>
-
-    </div> 
 
     <footer className='footer'>   
       <h3>Designed and developed</h3>
