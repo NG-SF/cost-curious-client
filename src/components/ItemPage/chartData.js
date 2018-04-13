@@ -21,7 +21,8 @@ export default  {
                     beginAtZero:false,
                     callback: function(label, index, labels) {
                        return `$ ${label.toFixed(2)}`;
-                     }
+                     },
+                     suggestedMin: 3
                 },
                 scaleLabel: {
                 labelString: 'Amount',
