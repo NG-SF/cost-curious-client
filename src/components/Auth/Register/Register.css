@@ -31,13 +31,6 @@
   font-size: 1.3em;
 }
 
-.register-form > .btn {
-  display: block;
-  color: black;
-  margin: 1em auto;
-  width: 95%;
-}
-
 .register-form input[type=text],
 .register-form input[type=password] {
   width: 80%;
@@ -48,6 +41,25 @@
   background: transparent;
   padding: 0 5px;
   font-size: 1.1em;
+}
+
+.btn-signUp {
+  margin: 0 auto;
+  font-size: 1.1em;
+  border: 2px solid #71BA88;
+  background-color: #BEDFC8;
+  border-radius: .4em;
+  height: 41px;
+  padding: 0 10px;
+  width: 40%;
+}
+
+.btn-signUp:hover {
+  border: 2px solid #538863;
+  background-color: #538863;
+  border-radius: .4em;
+  cursor: pointer;
+  font-size: 1.2em;
 }
 
 .input-group {

@@ -1,5 +1,5 @@
 .login-form-wrapper {
-  margin-top: 15%;
+  margin-top: 12%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,13 @@
   justify-content: flex-start;
   font-size: 1em;
   text-align: left;
-  margin-top: 25px;
+  width: 300px;
+  padding: 15px;
+  margin: 25px 0;
+  background-color: #F9F5F1;
+  border: 2px solid #F5EFE8;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px lightgray;
 }
 
 .demo {
@@ -76,6 +82,25 @@
   padding-right: 5px;
   font-size: 1.1em;
   font-weight: bold;
+}
+
+.btn-login {
+  margin: 0 auto;
+  font-size: 1.1em;
+  border: 2px solid #71BA88;
+  background-color: #BEDFC8;
+  border-radius: .4em;
+  height: 41px;
+  padding: 0 10px;
+  width: 40%;
+}
+
+.btn-login:hover {
+  border: 2px solid #538863;
+  background-color: #538863;
+  border-radius: .4em;
+  cursor: pointer;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 500px) {
