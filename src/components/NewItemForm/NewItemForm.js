@@ -61,18 +61,19 @@ export default class NewItemForm extends React.Component {
                  value= {this.state.amount} name='amount' 
                  onChange={this.onAmountChange} required />
           </div>
-          <div className='singleDatePicker'>
-          {/* <label htmlFor="date" className='date'>Date:</label> */}
-            <SingleDatePicker date={this.state.createdAt} required
-                              onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
-                              onFocusChange={this.onFocusChange} 
-                              numberOfMonths={1} isOutsideRange={() => false} />
-          </div>
           <div>
             <label className='add-place-label' htmlFor='place'>Place:</label>
             <input className='place-input' type="text" value={this.state.place} 
                   onChange={this.onPlaceChange} name='place' id='place' />
           </div>
+          <div className='singleDatePicker'>
+          <label htmlFor="date" className='date'>Date:</label>
+            <SingleDatePicker date={this.state.createdAt} required
+                              onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
+                              onFocusChange={this.onFocusChange} 
+                              numberOfMonths={1} isOutsideRange={() => false} />
+          </div>
+
           <button className='btn btn-addItem' type="submit">Submit</button>
         </form>
       </div>

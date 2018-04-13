@@ -132,8 +132,7 @@
   align-items: center;
   margin-bottom: 1.1em;
   padding: 20px;
-  /* background-color: #F9F5F1; */
-  background-color: #F4E5E3;
+  background-color: #F9F5F1;
   border-radius: 5px;
   box-shadow: 7px 7px 5px lightgray;
   height: 150px;
@@ -142,7 +141,7 @@
 
 .category:hover {
   box-shadow: 5px 10px 5px gray;
-  border: 2px solid #71BA88;
+  border: 2px solid #F9F5F1;
   height: 155px;
 }
 
@@ -152,7 +151,7 @@
   padding: 5px 9px;
   height: 35%;
   width: 95%;
-  background-color: #F3EBE3;
+  background-color: #F4E5E3;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,5 +1,5 @@
 #item-page {
-  margin: 10% auto;
+  margin: 7% auto;
   max-width: 800px;
   min-width: 320px;
   padding: 5px 10px;
@@ -14,7 +14,7 @@
   box-shadow: 7px 7px 5px lightgray;
   margin: 0 auto;
   width: 90%;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .item-title {

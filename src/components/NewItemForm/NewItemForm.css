@@ -24,6 +24,11 @@
   display: inline-block;
   font-size: 1.2em;
   padding-right: 3px;
+  margin-bottom: 40px;
+}
+
+.date {
+  margin-right: 10px;
 }
 
 .amount-input,
