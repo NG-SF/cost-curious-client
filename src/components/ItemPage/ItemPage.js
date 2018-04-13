@@ -44,9 +44,15 @@ export class ItemPage extends React.Component {
   toggleHidden() {
     this.setState(() => ({isHidden: !this.state.isHidden}));
   }
-  toggleFilter() {
-    this.setState(() => ({showFilter: !this.state.showFilter}));
+  showFilter() {
+    this.setState(() => ({showFilter: true}));
   }
+
+   hideFilter() {
+     this.setState(() => ({showFilter: false}));
+    // this.setState(() => ({showFilter: !this.state.showFilter}));
+  }
+
   changeLimit(dataCategory, limitId, limit) {
   this.setState(() => ({
     selected: true,
@@ -166,7 +172,9 @@ export class ItemPage extends React.Component {
     <LimitContent total={total} limit={limit} diff={diff} max={max} min={min} />
     
     <div className='add-edit-group'>
-      <Link className='btn add-trns' to={`/api/create/${dataId}`}>+ add new transaction</Link>
+    <div className='btn btn-add-trns'>
+      <Link to={`/api/create/${dataId}`}>Add new transaction</Link>
+    </div>
 
       <button className='btn btn-limit' onClick={() => this.changeLimit(description, limitId, limit)}>Add/Edit limit amount</button>
     </div>
@@ -176,13 +184,13 @@ export class ItemPage extends React.Component {
         <label className='add-limit-label' htmlFor='limit'>Add/Edit limit amount:</label>
         <input className='add-limit-input' type='text' placeholder='Enter limit amount'            id='limit' name='limit' value={this.state.amount} 
                onChange={this.onAmountChange} required />
-        <button className='btn btn-add-limit' type="submit">Add/Edit</button>
+        <button className='btn btn-add-limit' type="submit">Add/Edit limit</button>
       </form> 
       <div className='btn-group-limit'>
         <button className='btn btn-remove-limit' 
                 onClick={() => { 
                   this.props.removeLimitAmount(this.state.limitId, dataId);
-                  this.resetState()}}>Remove limit amount</button>
+                  this.resetState()}}>Remove limit</button>
         <button className='btn btn-cancel-limit' 
                 onClick={() => {this.resetState()}}>Cancel</button>
       </div>
@@ -204,8 +212,8 @@ export class ItemPage extends React.Component {
                 showClearDates={true}
                 isOutsideRange={() => false} />  
         
-          <button className='btn btn-dateRange' onClick={this.toggleFilter.bind(this)}>Filter by date</button>  
-          <button className='btn btn-dateRange' onClick={this.toggleFilter.bind(this)}>Reset</button> 
+          <button className='btn btn-dateRange' onClick={this.showFilter.bind(this)}>Filter by date</button>  
+          <button className='btn btn-dateRange' onClick={this.hideFilter.bind(this)}>Reset</button> 
  
       </div> 
       <div className='chart-box'>

@@ -12,14 +12,15 @@ const LimitContent = (props) => {
   const minPlace = props.min.place ? `at ${props.min.place}` : '';
   const minAmount = numeral(props.min.amount/100).format('$ 0,0.00');
   const minCreatedAt = moment(props.min.createdAt).format('MMMM Do, YYYY');
-  
+ 
   return (
     <div className='limit-box'>
-      <p>Total amount: <strong>{total}</strong></p>      
-      {props.limit && 
+      <p>Total amount: <strong>{total}</strong></p>   
+
+      {parseFloat(props.limit, 10) > props.total/100 &&
         <p><strong>{difference}</strong> untill your reach your limit of <strong>{limit}</strong></p>} 
 
-      {props.total === props.limit && 
+      {parseFloat(props.limit, 10) <= props.total/100 && 
         <h2 className='limit-alarm'>You have reached your limit!</h2>}
 
       {props.max && props.min && 

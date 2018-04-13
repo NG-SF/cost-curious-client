@@ -79,7 +79,7 @@
 .btn-remove-limit:hover,
 .btn-cancel-limit:hover,
 .btn-limit:hover, 
-.add-trns:hover,
+.btn-add-trns:hover,
 .btn-remove-transaction:hover {
   border: 2px solid #538863;
   background-color: #538863;
@@ -122,21 +122,26 @@
   padding: 5px 30px;
 }
 
-.btn-limit, .add-trns {
+.btn-limit, .btn-add-trns {
   display: inline-block;
   margin-right: 2px;
   font-size: 1.1em;
   border: 2px solid #71BA88;
   background-color: #BEDFC8;
   border-radius: .4em;
-  height: 41px;
   padding: 0 10px;
   width: 40%;
   height: 45px;
 }
 
-.add-trns a {
-  margin-bottom: 0;
+.btn-add-trns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add-trns a {
+  color: black;
 }
 
 /* date range section */
@@ -230,14 +235,41 @@ tr:hover,
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
   #item-page {
-  margin: 20% auto;
+  margin-top: 30%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 7px;
+  width: 270px;
+}
+.item-intro {
+  width: 96%;
+  font-size: .9em;
+  margin: 0;
 }
 .item-title {
-  font-size: 1.9em;
+  font-size: 1.7em;
   color: #4F3274;
 }
 .item-title strong {
-  font-size: 1.6em;
+  font-size: 1.5em;
+}
+.limit-box {
+  font-size: .95em;
+}
+.add-edit-group {
+  display: block;
+}
+.btn-add-trns {
+  font-size: .95em;
+  line-height: 16px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 30px;
+}
+.btn-limit {
+  width: 107%;
+  height: 40px;
+  font-size: .95em;
 }
 .btn-dateRange {
   display: block;
@@ -245,31 +277,127 @@ tr:hover,
   font-size: 1.2em;
   width: 70%;
 }
+.btn-show-hide {
+  font-size: .95em;
+  width: 83%;
+  margin: 0 0 25px 0;
+  height: 40px;
+}
+.table {
+  font-size: .7em;
+  padding: 0;
+  margin: 0;
+}
+td {
+  padding: 2px 3px;
+}
+th {
+  padding: 5px;
+}
 }
 
 @media screen and (max-width: 375px) {
   #item-page {
-  margin: 40% auto;
-  padding: 0 7px;
+    margin-top: 40%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 7px;
+    width: 250px;
 }
   .item-title {
-  font-size: 1.8em;
-  color: #4F3274;
-  margin-top: 30px;
+    font-size: 1.5em;
+    color: #4F3274;
+    margin-top: 30px;
+    padding-left: 20px;
+    text-align: left;
 }
-
-.item-title strong {
-  font-size: 1.5em;
+  .item-title strong {
+    font-size: 1.3em;
 }
-
-.item-intro {
-  margin: 0;
-  padding: 0 10px;
-  width: 280px;
+ .item-intro {
+    margin: 0;
+    padding: 0 10px;
+    width: 240px;
 }
-
-.limit-box {
-  font-size: 1.05em;
-  padding: 5px 8px;
+  .limit-box {
+    font-size: 1em;
+    padding: 5px;
+    width: 250px;
+}
+  .add-limit-box {
+    width: 250px;
+    padding: 10px 7px;
+    margin: 15px 0;
+  }
+  .add-limit-box form {
+    width: 95%;
+  }
+  .add-limit-label {
+    margin-bottom: 10px;
+  }
+  .add-limit-input {
+    width: 99%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .btn-add-limit {
+    display: block;
+    width: 105%;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    font-size: 1em;
+  }
+  .btn-group-limit {
+    width: 95%;
+    display: block;
+    font-size: 1em;
+    margin: 0;
+  }
+  .btn-remove-limit {
+    margin-bottom: 10%;
+    margin-top: 10%;
+    margin-right: 0;
+    width: 105%;
+    height: 35px;
+  }
+  .btn-cancel-limit {
+    width: 105%;
+    margin: 0;
+    height: 35px;
+  }
+  .add-edit-group {
+    margin: 0;
+    padding: 0;
+}
+  .btn-add-trns {
+    width: 77%;
+}
+  .btn-limit {
+    width: 83%;
+}
+  .dateRange {
+    width: 250px;
+    padding: 5px;
+  }
+  .btn-dateRange {
+    width: 98%;
+    font-size: 1em;
+    height: 40px;
+  }
+  .chart-box {
+    margin: 20px 0;
+  }
+  .table-box {
+    width: 270px;
+    font-size: .9em;
+  }
+  td {
+    padding:0;
+}
+  th {
+    padding:0;
 }
 }

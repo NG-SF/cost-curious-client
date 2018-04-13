@@ -28,7 +28,7 @@ export default class NewItemForm extends React.Component {
     }
   };
    onPlaceChange = (e) => {
-    const place = e.target.value ? e.target.value : 'n/a';
+    const place = e.target.value ? e.target.value : '';
     this.setState(() => ({place}));
   };
   onFocusChange = ({focused}) => {
