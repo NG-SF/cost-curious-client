@@ -12,7 +12,9 @@ import RequiresLogin from '../Auth/RequiresLogin';
 import lineOptions from './chartData';
 import LimitContent from './LimitContent';
 import {DateRangePicker} from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 import dateRange from './dateRange';
+
 import './ItemPage.css';
 
 export class ItemPage extends React.Component {

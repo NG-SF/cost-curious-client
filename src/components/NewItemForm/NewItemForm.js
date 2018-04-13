@@ -3,6 +3,7 @@ import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
 import moment from 'moment';
 import './NewItemForm.css';
+import 'react-dates/lib/css/_datepicker.css';
 import './react_dates_overrides.css';
 
 export default class NewItemForm extends React.Component {

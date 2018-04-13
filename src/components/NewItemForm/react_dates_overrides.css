@@ -1,14 +1,91 @@
 .singleDatePicker {
-  margin: 25px 0;
-  display: inline-block;
+  margin: 2px 0;
 }
 
-.DateInput_input,
-.DateInput_input__focused,
-.dateInput_input_1 {
+.SingleDatePickerInput  {
   border: 2px solid #71BA88;
   border-radius: .4em;
-  height: 35px;
+  height: 50px;
+  width: 201px;
+  text-align: center;
+}
+
+
+.DateRangePickerInput {
+  border: 2px solid #71BA88;
+  border-radius: .4em;
+  height: 51px;
+  width: 307px;
   padding: 3px 4px;
 }
 
+.CalendarMonth_caption {
+  color: #4F3274;
+  font-size: 21px;
+}
+
+.CalendarDay__highlighted_calendar {
+  background: #BEDFC8;
+}
+
+.CalendarDay__highlighted_calendar:active {
+  background: #BEDFC8;
+
+}
+
+.CalendarDay__selected_span {
+  background: #BEDFC8;
+  font-weight: bold;
+  border: 1px solid lavender;
+  color: black;
+}
+
+.DayPicker_weekHeader_ul {
+  font-size: 19px;
+}
+
+.CalendarMonth_table {
+  margin-top: 15px;
+}
+
+.CalendarDay,
+.CalendarDay_1,
+.CalendarDay__selected {
+  padding: 5px;
+}
+
+/* Responsive for smartphones */
+@media screen and (max-width: 425px) {
+ .DateRangePickerInput {
+  width: 250px;
+  padding: 5px;
+  height: 90px;
+}
+.DateInput_input {
+  width: 80%;
+  font-size: 17px;
+  padding: 10px 5px;
+}
+.DateRangePickerInput_arrow_sv {
+  display: none;
+}
+.DateRangePickerInput_clearDates_svg {
+  width: 11px;
+  vertical-align: text-top;
+}
+
+}
+
+@media screen and (max-width: 375px) {
+.DateRangePickerInput {
+  width: 232px;
+  padding: 5px;
+  height: 100px;
+}
+}
+
+@media screen and (max-width: 320px) {
+  .SingleDatePickerInput {
+    width: 209px;
+  }
+}
