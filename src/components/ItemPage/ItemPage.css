@@ -84,8 +84,8 @@
   border: 2px solid #538863;
   background-color: #538863;
   border-radius: .4em;
-  color: white;
   cursor: pointer;
+  font-size: 1.2em;
 }
 
 .btn-remove-limit {
@@ -141,7 +141,25 @@
 
 /* date range section */
 .dateRange {
-  margin-top: 15px;
+  padding: 23px;
+  margin: 25px 0;
+  background-color: #F9F5F1;
+  border: 2px solid #F5EFE8;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px lightgray;
+  font-size: 1em;
+}
+
+.btn-dateRange {
+  display: inline-block;
+  margin-left: 48px;
+  margin-right: 7px;
+  height: 59px;
+  padding: 0 10px;
+  background-color: #EFD9D5;
+  font-size: 1.2em;
+  width: 20%;
+  border-radius: 0%;
 }
 
 .chart-box {
@@ -154,7 +172,7 @@
   width: 50%; 
   font-size: 1.1em;
   border: 2px solid #71BA88;
-  background-color: #71BA88;
+  background-color: #BEDFC8;
   border-radius: .4em;
   height: 41px;
   padding: 0 10px;
@@ -175,18 +193,18 @@
   color: black;
 }
 
-td, th {
+td {
   border-bottom: 1px solid #71BA88;
   padding: 7px 20px;
 }
 th {
-  background-color:#86D9C9;
+  background-color:#E8C6C0;
   padding: 10px;
   text-align: center;
 }
 
 tr:nth-child(even){
-  background-color:#BEDFC8;
+  background-color:#F4E5E3;
 }
 
 tr:hover,
@@ -203,21 +221,11 @@ tr:hover,
   padding: 5px 7px;
 }
 
-
-/* .CalendarDay__highlighted_calendar {
-  background: lavender;
-  color: purple;
+@media screen and (max-width: 768px) {
+  .btn-dateRange {
+  margin-left: 40px;
 }
-
-.CalendarDay__highlighted_calendar:hover {
-  background: lavender;
-  color: violet;
 }
-
-.CalendarDay__highlighted_calendar:active {
-  background: papayawhip;
-  color: purple;
-} */
 
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
@@ -228,9 +236,14 @@ tr:hover,
   font-size: 1.9em;
   color: #4F3274;
 }
-
 .item-title strong {
   font-size: 1.6em;
+}
+.btn-dateRange {
+  display: block;
+  margin: 30px auto;
+  font-size: 1.2em;
+  width: 70%;
 }
 }
 

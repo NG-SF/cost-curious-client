@@ -3,6 +3,7 @@ import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
 import moment from 'moment';
 import './NewItemForm.css';
+import './react_dates_overrides.css';
 
 export default class NewItemForm extends React.Component {
   constructor(props) {
@@ -50,18 +51,29 @@ export default class NewItemForm extends React.Component {
 
   render() {
     return (
-      <div className='form-newItem'>
-        {this.state.error && <h3>{this.state.error}</h3>}
+      <div className='addItem-box'>
+      <h1>Add / Edit transaction</h1>
+        {this.state.error && <h3 className='form-error'>{this.state.error}</h3>}
         <form className='addItem-form' onSubmit={this.onSubmit}>
-          <input className='amount' type="text" placeholder="Amount" value={this.state.amount} 
+          <div>
+            <label className='add-amount-label' htmlFor='amount'>Amount:</label>
+            <input className='amount-input' type="text" id='amount'
+                 value= {this.state.amount} name='amount' 
                  onChange={this.onAmountChange} required />
-          <SingleDatePicker date={this.state.createdAt} required
-                            onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
-                            onFocusChange={this.onFocusChange} 
-                            numberOfMonths={1} isOutsideRange={() => false} />
-          <input type="text" placeholder="place" value={this.state.place} 
-                 onChange={this.onPlaceChange} />
-          <button className='btn' type="submit">Submit</button>
+          </div>
+          <div className='singleDatePicker'>
+          {/* <label htmlFor="date" className='date'>Date:</label> */}
+            <SingleDatePicker date={this.state.createdAt} required
+                              onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
+                              onFocusChange={this.onFocusChange} 
+                              numberOfMonths={1} isOutsideRange={() => false} />
+          </div>
+          <div>
+            <label className='add-place-label' htmlFor='place'>Place:</label>
+            <input className='place-input' type="text" value={this.state.place} 
+                  onChange={this.onPlaceChange} name='place' id='place' />
+          </div>
+          <button className='btn btn-addItem' type="submit">Submit</button>
         </form>
       </div>
     );

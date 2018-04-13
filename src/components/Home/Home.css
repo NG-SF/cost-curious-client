@@ -37,6 +37,7 @@
   line-height: 80px;
   color: black;
   align-self: center;
+  max-width: 750px;
 }
 
 .home1, .home2 {

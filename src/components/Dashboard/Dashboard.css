@@ -7,6 +7,7 @@
 .dashbrd h1 {
   text-align: left;
   font-size: 1.9em;
+  color: #4F3274;
 }
 
 .dashbrd .total {
@@ -129,10 +130,10 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  margin-bottom: .5em;
+  margin-bottom: 1.1em;
   padding: 20px;
-  background-color: #F9F5F1;
-  border: 2px solid #D9BCFF;
+  /* background-color: #F9F5F1; */
+  background-color: #F4E5E3;
   border-radius: 5px;
   box-shadow: 7px 7px 5px lightgray;
   height: 150px;
@@ -146,7 +147,6 @@
 }
 
 .category-name-box {
-  border: 2px solid #D9BCFF;
   border-radius: 5px;
   box-shadow: 7px 7px 5px lightgray;
   padding: 5px 9px;

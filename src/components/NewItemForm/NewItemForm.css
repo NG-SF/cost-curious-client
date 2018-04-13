@@ -1,22 +1,62 @@
+.addItem-box {
+  max-width: 500px;
+  margin: 10% auto;
+}
+
+.addItem-box > h1 {
+  font-size: 2em;
+  color: #4F3274;
+}
+
 .addItem-form {
-  width: 70%;
-  margin: 7% auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  padding: 35px;
+  margin: 25px 0;
+  background-color: #F9F5F1;
+  border: 2px solid #F5EFE8;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px lightgray;
+  
 }
 
-.CalendarDay__highlighted_calendar {
-  background: lavender;
-  color: purple;
+.add-amount-label,
+.add-place-label,
+.date {
+  display: inline-block;
+  font-size: 1.2em;
+  padding-right: 3px;
 }
 
-.CalendarDay__highlighted_calendar:hover {
-  background: lavender;
-  color: violet;
+.amount-input,
+.place-input {
+  border: 2px solid #71BA88;
+  border-radius: .4em;
+  height: 35px;
+  width: 78%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-.CalendarDay__highlighted_calendar:active {
-  background: papayawhip;
-  color: purple;
+.place-input {
+  width: 82%;
 }
+
+.btn-addItem {
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 0 17px;
+  font-size: 1.2em;
+  border: 2px solid #71BA88;
+  background-color: #71BA88;
+  border-radius: .4em;
+  height: 41px;
+  width: 140px;
+}
+
+.btn-addItem:hover {
+  border: 2px solid #538863;
+  background-color: #538863;
+  color: white;
+}
+

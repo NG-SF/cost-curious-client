@@ -190,6 +190,8 @@ export class ItemPage extends React.Component {
       } 
       
       <div className='dateRange'>
+      <p>To see transactions for specific dates in the chart: select date range and click "Filter by date" button. This will change the chart and the table of transactions to reflect the data for the selected date range.</p>
+      <p>To remove filters and view full data press "Reset" button.</p>
         <DateRangePicker 
                 startDate={this.state.startDate} 
                 startDateId={"start"}
@@ -200,8 +202,11 @@ export class ItemPage extends React.Component {
                 onFocusChange={this.onFocusChange}
                 numberOfMonths={1}
                 showClearDates={true}
-                isOutsideRange={() => false} />   
-        <button className='btn dateRange' onClick={this.toggleFilter.bind(this)}>Filter by date</button>  
+                isOutsideRange={() => false} />  
+        
+          <button className='btn btn-dateRange' onClick={this.toggleFilter.bind(this)}>Filter by date</button>  
+          <button className='btn btn-dateRange' onClick={this.toggleFilter.bind(this)}>Reset</button> 
+ 
       </div> 
       <div className='chart-box'>
         {chartData.length > 0 && <Line data={lineData} options={lineOptions} />}
