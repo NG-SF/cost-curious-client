@@ -7,7 +7,7 @@
 }
 
 .register-form {
-  width: 370px;
+  width: 255px;
   margin: .4em auto;
   padding: 20px;
   border: 1px solid #E5F2E9;
@@ -33,25 +33,25 @@
 
 .register-form input[type=text],
 .register-form input[type=password] {
-  width: 80%;
+  width: 121%;
   height: 30px;
   line-height: .9em;
-  /* display: inline-block; */
-  margin: 1em auto;
+  margin: 10px auto;
   background: transparent;
   padding: 0 5px;
   font-size: 1.1em;
 }
 
 .btn-signUp {
-  margin: 0 auto;
+  margin-top: 20px;
   font-size: 1.1em;
+  font-weight: bold;
   border: 2px solid #71BA88;
   background-color: #BEDFC8;
   border-radius: .4em;
   height: 41px;
   padding: 0 10px;
-  width: 40%;
+  width: 101%;
 }
 
 .btn-signUp:hover {
@@ -63,8 +63,7 @@
 }
 
 .input-group {
-  display: flex;
-  justify-content: space-between;
+  display: block;
 }
 
 .register-form .form-input {
@@ -77,9 +76,8 @@
 }
 
 .register-form label {
-  /* display: inline-block; */
-  padding-top: 25px;
-  padding-right: 5px;
+  display: block;
+  padding: 0;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -87,7 +85,7 @@
 @media screen and (max-width: 500px) {
 .register-form-wrapper,
 .register-form-wrapper {
-  margin-top: 40%;
+  margin-top: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,8 +96,8 @@
 
 @media screen and (max-width: 425px) {
 .register-form {
-  width: 270px;
-  padding: 10px;
+  width: 255px;
+  padding: 20px;
 }
 .register-form label {
   display: block;

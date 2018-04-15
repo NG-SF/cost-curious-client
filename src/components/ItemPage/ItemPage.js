@@ -161,7 +161,9 @@ export class ItemPage extends React.Component {
   let limit = limitObj[0] ? limitObj[0].limit : '';
   let limitId = limitObj[0] ? limitObj[0]._id : '';
   let diff = Math.abs((total/100) - limit);
-
+console.log('max======', max);
+console.log('max type', typeof max.createdAt);
+console.log('min type', typeof min.createdAt);
   return (
   <section id='item-page'> 
     <div className='itemPage-container' >

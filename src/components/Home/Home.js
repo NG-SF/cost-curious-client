@@ -21,7 +21,7 @@ const Home = () => {
           <blockquote cite="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10">
             <p>...if you opt to buy coffee at a cafe, you're spending between $5 and $25 a week — and thus, $20 to $100 a month, and between $240 and $1,200 a year — on coffee (while someone who brews at home is spending around $45 a year on coffee).</p>
             <p>Yes, the difference between $45 and $1,200 is pretty stark, so obviously, making your own coffee is an opportunity to save some money.</p>
-            <footer>— <a href="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10" target="_blank" rel="noopener noreferrer">read more...</a></footer>
+            <footer> <a target="_blank" rel="noopener noreferrer" href="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10" >read more...</a></footer>
           </blockquote>
         </div>
       </section>
@@ -37,11 +37,11 @@ const Home = () => {
       <div className='home2-flex2'>
         <div className='home2-flex2-box'>
         <div>
-          <h3 className='question2'>Are you curious how much do you spend on coffee?</h3>
+          <h3 className='question2'>Are you curious yet how much do you spend on coffee?</h3>
           <p>Check out these articles for the motivation to get your expenses in order.</p>
           <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and see for yourself how much is your coffee habit costing you.</p>
         </div>
-        <img src="./images/curious.jpg" alt="questions" width='300px'/>
+        <img  className='curious-img' src="./images/curious.jpg" alt="questions" />
         </div>
       </div>
       <div className='home2-flex2'>

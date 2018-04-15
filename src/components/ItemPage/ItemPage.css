@@ -1,8 +1,8 @@
 #item-page {
   margin: 7% auto;
   max-width: 800px;
-  min-width: 320px;
-  padding: 5px 10px;
+  min-width: 300px;
+  padding: 5px 20px;
 }
 
 .item-intro {
@@ -72,7 +72,8 @@
   background-color: #71BA88;
   border-radius: .4em;
   height: 41px;
-  padding: 0 10px;
+  padding: 0 12px;
+  color: white;
 }
 
 .btn-add-limit:hover,
@@ -80,12 +81,19 @@
 .btn-cancel-limit:hover,
 .btn-limit:hover, 
 .btn-add-trns:hover,
-.btn-remove-transaction:hover {
+.btn-remove-transaction:hover,
+.btn-show-hide:hover {
   border: 2px solid #538863;
   background-color: #538863;
   border-radius: .4em;
   cursor: pointer;
   font-size: 1.2em;
+  color: white;
+  transition: background-color 0.5s ease-in;
+}
+
+.btn-add-trns:hover a {
+  color: white;
 }
 
 .btn-remove-limit {
@@ -107,7 +115,7 @@
   border: 2px solid #71BA88;
   border-radius: .4em;
   height: 35px;
-  width: 55%;
+  width: 50%;
   display: inline-block;
   margin-right: 5px;
   margin-left: 10px;
@@ -167,6 +175,17 @@
   border-radius: 0%;
 }
 
+.btn-dateRange:hover {
+  border: 2px solid #CFAAA3;
+  background-color: #CFAAA3;
+  border-radius: .4em;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: white;
+  transition: background-color 0.5s ease-in;
+}
+
 .chart-box {
   margin: 35px 10px;
 }
@@ -217,6 +236,7 @@ tr:hover,
   background-color: #71BA88;
   color: white;
   font-size: 1.18em;
+  transition: background-color 0.5s ease-in;
 }
 
 .btn-remove-transaction {
@@ -227,27 +247,36 @@ tr:hover,
 }
 
 @media screen and (max-width: 770px) {
-  .btn-dateRange {
-  margin-left: 40px;
-}
   #item-page {
     margin: 11% auto;
+    max-width: 700px;
 }
+  .btn-dateRange {
+  margin-left: 27px;
+  margin-bottom: 4px;
+  vertical-align: bottom;
+}
+  .add-limit-input {
+    width: 45%;
+  }
+  .table-box {
+    width: 650px;
+    margin: 15px auto;
+  }
+  td {
+    padding: 4px 20px;
+  }
 }
 
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
   #item-page {
-  margin-top: 30%;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0 7px;
-  width: 270px;
+  margin: 30% auto;
+  max-width: 400px;
 }
 .item-intro {
-  width: 96%;
+  width: 92%;
   font-size: .9em;
-  margin: 0;
 }
 .item-title {
   font-size: 1.7em;
@@ -261,16 +290,19 @@ tr:hover,
 }
 .add-edit-group {
   display: block;
+  width: 300px;
+  padding: 5px 15px;
+  margin: 0 auto;
 }
 .btn-add-trns {
   font-size: .95em;
   line-height: 16px;
-  width: 100%;
+  width: 90%;
   height: 40px;
   margin-bottom: 30px;
 }
 .btn-limit {
-  width: 107%;
+  width: 96%;
   height: 40px;
   font-size: .95em;
 }
@@ -278,13 +310,34 @@ tr:hover,
   display: block;
   margin: 30px auto;
   font-size: 1.2em;
-  width: 70%;
+  width: 50%;
+}
+.add-limit-label {
+  margin-bottom: 10px;
+  display: block;
+}
+.add-limit-input {
+  display: inline-block;
+  margin: 0;
+  width: 160px;
+  margin-right: 10px;
+}
+.btn-add-limit {
+  display: inline-block;
+  width: 155px;
+}
+.btn-remove-limit {
+  margin: 0 20px;
 }
 .btn-show-hide {
-  font-size: .95em;
+  font-size: 1em;
   width: 83%;
-  margin: 0 0 25px 0;
+  margin: 0 auto;
   height: 40px;
+}
+.table-box {
+  width: 380px;
+  margin-top: 30px;
 }
 .table {
   font-size: .7em;
@@ -292,10 +345,10 @@ tr:hover,
   margin: 0;
 }
 td {
-  padding: 2px 3px;
+  padding: 1px;
 }
 th {
-  padding: 5px;
+  padding: 3px;
 }
 }
 
@@ -304,31 +357,135 @@ th {
     margin-top: 40%;
     margin-left: 0;
     margin-right: 0;
-    padding: 0 7px;
-    width: 250px;
 }
   .item-title {
     font-size: 1.5em;
     color: #4F3274;
     margin-top: 30px;
     padding-left: 20px;
-    text-align: left;
+    text-align: center;
 }
   .item-title strong {
     font-size: 1.3em;
 }
  .item-intro {
-    margin: 0;
-    padding: 0 10px;
-    width: 240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 260px;
 }
   .limit-box {
     font-size: 1em;
     padding: 5px;
-    width: 250px;
+    width: 260px;
+    margin: 0 auto;
 }
   .add-limit-box {
-    width: 250px;
+    width: 260px;
+    padding: 20px;
+    margin: 20px auto;
+  }
+  .add-limit-box form {
+    width: 95%;
+  }
+  .add-limit-label {
+    margin-bottom: 10px;
+  }
+  .add-limit-input {
+    width: 99%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .btn-add-limit {
+    display: block;
+    width: 105%;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    font-size: 1em;
+    color: white;
+  }
+  .btn-group-limit {
+    width: 95%;
+    display: block;
+    font-size: 1em;
+    margin: 0;
+  }
+  .btn-remove-limit {
+    margin: 10% 0;
+    width: 105%;
+    height: 35px;
+    color: white;
+  }
+  .btn-cancel-limit {
+    width: 105%;
+    margin: 0;
+    height: 35px;
+    color: white;
+  }
+  .add-edit-group {
+    margin: 0;
+    padding: 0 30px;
+}
+  .btn-add-trns {
+    width: 225px;
+    margin: 10px auto;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+  .btn-limit {
+    width: 245px;
+    margin: 10px auto;
+    display: block;
+}
+  .dateRange {
+    width: 265px;
+    padding: 10px 20px;
+    margin: 40px auto;
+  }
+  .btn-dateRange {
+    width: 98%;
+    font-size: 1em;
+    height: 40px;
+  }
+  .chart-box {
+    margin: 20px 0;
+  }
+  .table-box {
+    width: 300px;
+    font-size: .9em;
+  }
+  td, th {
+    padding:0;
+}
+}
+
+@media screen and (max-width: 320px) {
+  #item-page {
+    margin-top: 40%;
+}
+ .item-intro {
+    padding: 15px;
+    width: 270px;
+}
+  .item-title {
+    font-size: 1.5em;
+    color: #4F3274;
+    margin-top: 30px;
+    padding-left: 20px;
+    text-align: center;
+}
+  .item-title strong {
+    font-size: 1.3em;
+}
+  .limit-box {
+    font-size: 1em;
+    padding: 5px;
+
+}
+  .add-limit-box {
+    /* width: 250px; */
     padding: 10px 7px;
     margin: 15px 0;
   }
@@ -383,7 +540,7 @@ th {
 }
   .dateRange {
     width: 250px;
-    padding: 5px;
+    padding: 0 20px;
   }
   .btn-dateRange {
     width: 98%;
@@ -394,7 +551,7 @@ th {
     margin: 20px 0;
   }
   .table-box {
-    width: 270px;
+    /* width: 270px; */
     font-size: .9em;
   }
   td {
@@ -402,5 +559,5 @@ th {
 }
   th {
     padding:0;
-}
+}  
 }

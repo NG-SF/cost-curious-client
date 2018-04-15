@@ -47,7 +47,7 @@ nav li {
 /* Responsive for tablet */
 @media screen and (max-width: 770px) and (min-width: 450px) {
  nav ul {
-   justify-content: center;
+   justify-content: flex-end;
  }
  .title {
   font-size: 1.9em;

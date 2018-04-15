@@ -72,11 +72,11 @@
 }
 
 .home-signup-btn {
-  background-color: #71BA88;
+  background-color: rgb(102, 165, 122);
   width: 110px;
   height: 45px;
   line-height: 30px;
-  letter-spacing: normal;
+  letter-spacing: 1px;
   border-radius: 4px;
   margin: 15px auto;
   display: flex;
@@ -87,6 +87,12 @@
 .home-signup-btn:hover {
   background-color: rgb(88, 148, 107);
   border: 1px solid rgb(88, 148, 107);
+}
+
+.home-signup-btn a,
+.home-signup-btn a:visited,
+.home-signup-btn a:active {
+  color: white;
 }
 
  .box {
@@ -119,6 +125,16 @@ blockquote {
   padding: 5px;
   margin: 5px;
   background-color: #F2F8F4;
+}
+
+blockquote footer {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.curious-img {
+  max-width: 300px;
+  width: 100%;
 }
 
 .articles-title {
@@ -159,23 +175,27 @@ blockquote {
   margin: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+  .firstQuestion {
+    padding: 0 30px;
+    font-size: 3.2em;
+  }
+}
+
+@media screen and (max-width: 425px) {
 .img1, .img2, .img3 {
     background-image: url('./coffeeBeans.jpg');
     background-attachment: scroll;
   }
 
-
 .App {
-  margin-top: 35%;
-  /* align-self: flex-start; */
+  margin-top: 25%;
 }
 
 .firstQuestion {
-  /* align-self: flex-start; */
-  font-size: 2.3em;
+  font-size: 2.5em;
   letter-spacing: 2px;
-  line-height: 50px;
+  line-height: 55px;
 }
 
  .box {
@@ -190,7 +210,7 @@ blockquote {
 .home2-flex2, .home2 {
   display: block;
   padding: 15px;
-  width: 90%;
+  width: 93%;
 }
  .articles-title  {
   letter-spacing: 2px;
@@ -198,5 +218,14 @@ blockquote {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+}
+
+@media screen and (max-width: 375px) {
+.home1-flex1, .home1,
+.home2-flex2, .home2 {
+  display: block;
+  padding: 15px;
+  width: 90%;
 }
 }

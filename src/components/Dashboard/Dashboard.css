@@ -7,6 +7,7 @@
 .dashbrd h1 {
   text-align: left;
   font-size: 1.9em;
+  font-family: 'Flamenco', cursive;
   color: #4F3274;
 }
 
@@ -38,12 +39,14 @@
   background-color: #71BA88;
   border-radius: .4em;
   height: 41px;
+  color: white;
 }
 
 .btn-add-category:hover {
   border: 2px solid #538863;
   background-color: #538863;
   color: white;
+  transition: background-color 0.5s ease-in;
 }
 
 .add-category-label {
@@ -93,6 +96,7 @@
   border: 2px solid #538863;
   background-color: #538863;
   color: white;
+  transition: background-color 0.5s ease-in;
 }
 
 .edit-category-label {
@@ -132,7 +136,7 @@
   align-items: center;
   margin-bottom: 1.1em;
   padding: 20px;
-  background-color: #F9F5F1;
+  background-color: #F4E5E3;
   border-radius: 5px;
   box-shadow: 7px 7px 5px lightgray;
   height: 150px;
@@ -143,6 +147,7 @@
   box-shadow: 5px 10px 5px gray;
   border: 2px solid #F9F5F1;
   height: 155px;
+  transition: background-color 0.5s ease-in;
 }
 
 .category-name-box {
@@ -151,7 +156,7 @@
   padding: 5px 9px;
   height: 35%;
   width: 95%;
-  background-color: #F4E5E3;
+  background-color: #EACCC7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,9 +168,9 @@
 }
 .category-name-box:hover {
   box-shadow: 5px 10px 5px gray;
-  border: 2px solid #71BA88;
-  background-color: #71BA88;
-  height: 46%;
+  border: 1px solid #E5C0B9;
+  background-color: #E5C0B9;
+  transition: background-color 0.5s ease-in;
 }
 
 .category-name {
@@ -193,26 +198,23 @@
   border: 2px solid #538863;
   background-color: #538863;
   color: white;
+  transition: background-color 0.5s ease-in;
 }
 /* Responsive for tablet */
 @media screen and (max-width: 770px) {
 .add-container {
   margin: 15% auto;
 }
-/* .btn-group-edit-category {
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
-}
-.btn-edit-category {
-  padding: 0 39px;
-}
-.btn-edit-update {
-  margin-right: 15px;
-} */
+
 }
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
+.intro {
+  padding: 20px;
+}
+.total {
+  padding-left: 20px;
+}
 .add-container {
   margin: 30% auto;
   padding: 5px 10px;
