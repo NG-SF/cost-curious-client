@@ -1,0 +1,9 @@
+.notFound {
+  margin: 20% auto;
+  width: 300px;
+}
+
+.notFound h3 {
+  font-size: 1.3em;
+  text-align: center;
+}

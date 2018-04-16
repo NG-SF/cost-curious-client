@@ -1,21 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Home.css';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   return (
     <div className="App">
       <div className='img1'>
-        <h1 className='firstQuestion'>Do you know how much is your Starbucks habit costing you?</h1>
+        <h1 className='firstQuestion'>Do you know how much is your coffee habit costing you?</h1>
       </div>   
 
       <section className='home1'>
         <div className='home1-flex1'>
-          <h1>About</h1>
-          <p>There are many articles that try to teach us how to manage our finances better, with many tips and recommendations of changing our spending habits: 'buy this, not that' or 'do not buy that'. </p>
-          <p>One of the popular topics of such articles is coffee. Particularly, buying coffee vs making it at home. Does that really can make a difference? One of the articles from Business insider argues it can:</p>
+          <h2>About</h2>
+          <p> The statistics about how Americans are handling their personal finances are troubling. According to <a target="_blank" rel="noopener noreferrer" href="http://www.usfinancialcapability.org/results.php?region=US#managing-financial-products">FINRA’s National Financial Capability Study</a> almost 33% of Americans pay the minimum due on their credit card each month.</p>
+          <p>Two-thirds of Americans would struggle to come up with $1,000 for an emergency, according to  <a target="_blank" rel="noopener noreferrer" href="http://www.apnorc.org/news-media/Pages/News+Media/Poll-Two-thirds-of-US-would-struggle-to-cover-$1,000-crisis.aspx">The Associated Press-NORC Center for Public Affairs Research</a>   
+          </p>
+
+          <p>Many articles exist about personal finance and spending habits. One of the popular topics of such articles is coffee. Particularly, buying coffee vs making it at home. Does that really can make a difference? </p>
         </div>
         <div className='home1-flex1'>
+        <p>One of the articles from Business insider argues it can make a difference:</p>
         <h3 className='quote'>"Here's how much money you could save by making coffee at home"</h3>
         <h4 className='left'>by Gabrielle Moss, Bustle</h4>
           <blockquote cite="http://www.businessinsider.com/heres-how-much-money-you-could-save-by-making-coffee-at-home-2015-10">
@@ -55,13 +60,7 @@ const Home = () => {
         </ol>
       </div>
     </section>
-
-    <footer className='footer'>   
-      <h3>Designed and developed</h3>
-      <h4>by Nataliya Gapochka</h4>
-      <a href="https://github.com/NG-SF" target="_blank" aria-label="link" rel="noopener noreferrer">GitHub</a>
-    </footer>
-
+    <Footer />
     </div>
   );
 }

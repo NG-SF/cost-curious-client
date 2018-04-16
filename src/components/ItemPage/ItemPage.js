@@ -161,9 +161,7 @@ export class ItemPage extends React.Component {
   let limit = limitObj[0] ? limitObj[0].limit : '';
   let limitId = limitObj[0] ? limitObj[0]._id : '';
   let diff = Math.abs((total/100) - limit);
-console.log('max======', max);
-console.log('max type', typeof max.createdAt);
-console.log('min type', typeof min.createdAt);
+
   return (
   <section id='item-page'> 
     <div className='itemPage-container' >
@@ -172,6 +170,7 @@ console.log('min type', typeof min.createdAt);
       <p>Selecting Show/Hide transactions button will reveal table with all the transactions, where you can edit and delete each transaction. </p>
       <p>Hovering over each data point on the chart will show the details of that transaction</p>
     </div>
+    {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
     <h1 className='item-title'>Category: <strong>{description}</strong></h1> 
     <LimitContent total={total} limit={limit} diff={diff} max={max} min={min} />
     
@@ -250,6 +249,7 @@ console.log('min type', typeof min.createdAt);
 }
 const mapStateToProps = state => ({ 
   items: state.items.data,
+  error: state.items.error,
   userId: state.auth.currentUser.id,
   limitData: state.filters.data
    });

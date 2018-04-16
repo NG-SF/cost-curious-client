@@ -75,17 +75,17 @@ componentDidMount() {
         }],
         labels: pieChartData(this.props.items)[1]
       };
-  
     return (
       <div className='add-container dashbrd'>
       <div className='intro'>
+        {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
         <h1>{`${this.props.username}'s data:`}</h1>
         <p>1. Start by creating a category that will hold all the information/transactions about that item. For example, since we talked a lot about coffee, we can create category named "Coffee".</p>
         <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you will start gathering your data.</p> 
         <p>3. Clicking on Remove button will delete that category with all the data. This action can't be undone.</p>
       </div>
       <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
-       <Pie data={pieData} options={pieOptions} />
+      {totalPieAmount > 0 && <Pie data={pieData} options={pieOptions} />}
        <div id='addCategory-box'>
         <div className='addCategory-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>
@@ -122,6 +122,7 @@ componentDidMount() {
 
 const mapStateToProps = state => ({
   items: state.items.data,
+  error: state.items.error,
   userId: state.auth.currentUser.id,
   username: state.auth.currentUser.username
   });

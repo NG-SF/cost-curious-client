@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import LoginForm from './LoginForm';
 import {Redirect} from 'react-router-dom';
+import Spinner from 'react-spinkit';
 import './Login.css';
 
 export function LoginPage(props) {
@@ -10,6 +11,10 @@ export function LoginPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/api/dashboard" />;
     }
+    if (props.loading) {
+        return <Spinner name="circle" color="green"/>;
+    }
+
     return (
             <div className='login-form-wrapper'>
                 <h1>Welcome</h1>
@@ -23,6 +28,8 @@ export function LoginPage(props) {
     );
 }
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    loading: state.auth.loading
+
 });
 export default connect(mapStateToProps)(LoginPage);

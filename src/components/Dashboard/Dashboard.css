@@ -11,6 +11,12 @@
   color: #4F3274;
 }
 
+.dataError {
+  text-align: center;
+  color: rgb(205, 38, 38);
+  font-size: 1.3em;
+}
+
 .dashbrd .total {
   font-size: 1.3em;
 }

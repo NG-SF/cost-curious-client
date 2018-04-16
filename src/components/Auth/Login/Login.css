@@ -25,7 +25,9 @@
   font-size: 1.1em;
   font-weight: bold;
   letter-spacing: 2px;
-  color: red;
+  color: rgb(210, 44, 44);
+  padding: 5px;
+  text-align: center;
 }
 
 .demo-box {

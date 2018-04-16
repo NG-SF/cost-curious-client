@@ -15,7 +15,7 @@
 }
 
 .img1 {
-  background-image: url('./starbucks.jpg');
+  background-image: url('./coffeeBills.jpg');
   min-height: 90%;
 }
 
@@ -30,12 +30,11 @@
 }
 
 .firstQuestion {
-  /* margin: 0 40px; */
   font-size: 3.5em;
-  text-shadow: 3px 3px 2px #E5F2E9;
+  text-shadow: 3px 3px 2px black;
   letter-spacing: 4px;
   line-height: 80px;
-  color: black;
+  color: rgb(102, 165, 122);
   align-self: center;
   max-width: 750px;
 }
@@ -160,20 +159,6 @@ blockquote footer {
   padding: 7px 3px;
 }
 
-.footer {
-  padding: 40px;
-  background-color: #E5F2E9;
-  height: 150px;
-  text-align: center;
-}
-
-.footer h3 {
-  margin: 15px 0 2px 0;
-}
-
-.footer h4 {
-  margin: 0;
-}
 
 @media screen and (max-width: 768px) {
   .firstQuestion {

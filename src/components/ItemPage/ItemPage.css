@@ -12,7 +12,7 @@
   border: 2px solid #F5EFE8;
   border-radius: 5px;
   box-shadow: 7px 7px 5px lightgray;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 90%;
   margin-bottom: 40px;
 }
@@ -251,8 +251,13 @@ tr:hover,
     margin: 11% auto;
     max-width: 700px;
 }
+
+  .item-intro {
+    margin-top: 35px;
+  }
+
   .btn-dateRange {
-  margin-left: 27px;
+  margin-left: 20px;
   margin-bottom: 4px;
   vertical-align: bottom;
 }
@@ -551,7 +556,6 @@ th {
     margin: 20px 0;
   }
   .table-box {
-    /* width: 270px; */
     font-size: .9em;
   }
   td {

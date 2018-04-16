@@ -27,11 +27,9 @@ describe('<NewItemForm />', () => {
             "createdAt": value.createdAt.valueOf(), 
             "place": "Rose"}
       
-        // wrapper.find('input[type="text"]').instance().value = value.place;
         wrapper.setState({  amount: value.amount,
                             createdAt: value.createdAt,
                             place: value.place});
-        // wrapper.update();
         wrapper.instance().onSubmit({preventDefault: ()=>{}});      
         expect(dispatch).toHaveBeenCalledWith(output);
     });
