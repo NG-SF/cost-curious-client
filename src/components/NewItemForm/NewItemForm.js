@@ -17,21 +17,25 @@ export default class NewItemForm extends React.Component {
     error: ''
   };
   }
+
   onAmountChange = (e) => {
     const amount = e.target.value;
     if(!amount || amount.match(/^\d{1,10}(\.\d{0,2})?$/)) {
     this.setState(() => ({amount}));
     }
   };
+
   onDateChange = (createdAt) => {
     if(createdAt) {
       this.setState(() => ({createdAt}));
     }
   };
+
    onPlaceChange = (e) => {
     const place = e.target.value ? e.target.value : '';
     this.setState(() => ({place}));
   };
+
   onFocusChange = ({focused}) => {
     this.setState(() => ({calendarFocused: focused}));
   };
@@ -70,11 +74,11 @@ export default class NewItemForm extends React.Component {
           <div className='singleDatePicker'>
           <label htmlFor="date" className='date'>Date:</label>
             <SingleDatePicker date={this.state.createdAt} required
-                              onDateChange={this.onDateChange}                     focused={this.state.calendarFocused} 
+                              onDateChange={this.onDateChange}      
+                              focused={this.state.calendarFocused} 
                               onFocusChange={this.onFocusChange} 
                               numberOfMonths={1} isOutsideRange={() => false} />
           </div>
-
           <button className='btn btn-addItem' type="submit">Submit</button>
         </form>
       </div>

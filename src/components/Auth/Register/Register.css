@@ -83,32 +83,33 @@
 }
 
 @media screen and (max-width: 500px) {
-.register-form-wrapper,
-.register-form-wrapper {
-  margin-top: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
+  .register-form-wrapper,
+  .register-form-wrapper {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 425px) {
-.register-form {
-  width: 255px;
-  padding: 20px;
-}
-.register-form label {
-  display: block;
-  padding: 0;
-}
+  .register-form {
+    width: 255px;
+    padding: 20px;
+  }
 
-.register-form input[type=text],
-.register-form input[type=password]{
-  width: 121%;
-}
-.input-group {
-  display: block;
-}
+  .register-form label {
+    display: block;
+    padding: 0;
+  }
+
+  .register-form input[type=text],
+  .register-form input[type=password]{
+    width: 121%;
+  }
+
+  .input-group {
+    display: block;
+  }
 }

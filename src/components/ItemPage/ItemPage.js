@@ -173,6 +173,7 @@ export class ItemPage extends React.Component {
     </div>
     {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
     <h1 className='item-title'>Category: <strong>{description}</strong></h1> 
+    
     <LimitContent total={total} limit={limit} diff={diff} max={max} min={min} />
     
     <div className='add-edit-group'>

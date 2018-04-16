@@ -160,49 +160,50 @@ blockquote footer {
 }
 
 @media screen and (max-width: 425px) {
-.img1, .img2, .img3 {
-    background-image: url('./coffeeBeans.jpg');
-    background-attachment: scroll;
+  .img1, .img2, .img3 {
+      background-image: url('./coffeeBeans.jpg');
+      background-attachment: scroll;
+    }
+
+  .App {
+    margin-top: 25%;
   }
 
-.App {
-  margin-top: 25%;
-}
+  .firstQuestion {
+    font-size: 2.6em;
+    letter-spacing: 2px;
+    line-height: 65px;
+  }
 
-.firstQuestion {
-  font-size: 2.6em;
-  letter-spacing: 2px;
-  line-height: 65px;
-}
+  .box {
+    width: 75%;
+  }
 
- .box {
-  width: 75%;
-}
+  .question {
+    font-size: 1.9em;
+  }
 
-.question {
-  font-size: 1.9em;
-}
+  .home1-flex1, .home1,
+  .home2-flex2, .home2 {
+    display: block;
+    padding: 15px;
+    width: 93%;
+  }
 
-.home1-flex1, .home1,
-.home2-flex2, .home2 {
-  display: block;
-  padding: 15px;
-  width: 93%;
-}
  .articles-title  {
-  letter-spacing: 2px;
-  line-height: 40px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+    letter-spacing: 2px;
+    line-height: 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 375px) {
-.home1-flex1, .home1,
-.home2-flex2, .home2 {
-  display: block;
-  padding: 15px;
-  width: 90%;
-}
+  .home1-flex1, .home1,
+  .home2-flex2, .home2 {
+    display: block;
+    padding: 15px;
+    width: 90%;
+  }
 }

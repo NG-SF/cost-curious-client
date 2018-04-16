@@ -251,17 +251,18 @@ tr:hover,
   #item-page {
     margin: 11% auto;
     max-width: 700px;
-}
+  }
 
   .item-intro {
     margin-top: 35px;
   }
 
   .btn-dateRange {
-  margin-left: 20px;
-  margin-bottom: 4px;
-  vertical-align: bottom;
-}
+    margin-left: 20px;
+    margin-bottom: 4px;
+    vertical-align: bottom;
+  }
+
   .add-limit-input {
     width: 45%;
   }
@@ -277,85 +278,102 @@ tr:hover,
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
   #item-page {
-  margin: 30% auto;
-  max-width: 400px;
-}
-.item-intro {
-  width: 92%;
-  font-size: .9em;
-}
-.item-title {
-  font-size: 1.7em;
-  color: #4F3274;
-}
-.item-title strong {
-  font-size: 1.5em;
-}
-.limit-box {
-  font-size: .95em;
-}
-.add-edit-group {
-  display: block;
-  width: 300px;
-  padding: 5px 15px;
-  margin: 0 auto;
-}
-.btn-add-trns {
-  font-size: .95em;
-  line-height: 16px;
-  width: 90%;
-  height: 40px;
-  margin-bottom: 30px;
-}
-.btn-limit {
-  width: 96%;
-  height: 40px;
-  font-size: .95em;
-}
-.btn-dateRange {
-  display: block;
-  margin: 30px auto;
-  font-size: 1.2em;
-  width: 50%;
-}
-.add-limit-label {
-  margin-bottom: 10px;
-  display: block;
-}
-.add-limit-input {
-  display: inline-block;
-  margin: 0;
-  width: 160px;
-  margin-right: 10px;
-}
-.btn-add-limit {
-  display: inline-block;
-  width: 155px;
-}
-.btn-remove-limit {
-  margin: 0 20px;
-}
-.btn-show-hide {
-  font-size: 1em;
-  width: 83%;
-  margin: 0 auto;
-  height: 40px;
-}
-.table-box {
-  width: 380px;
-  margin-top: 30px;
-}
-.table {
-  font-size: .7em;
-  padding: 0;
-  margin: 0;
-}
-td {
-  padding: 1px;
-}
-th {
-  padding: 3px;
-}
+    margin: 30% auto;
+    max-width: 400px;
+  }
+
+  .item-intro {
+    width: 92%;
+    font-size: .9em;
+  }
+
+  .item-title {
+    font-size: 1.7em;
+    color: #4F3274;
+  }
+
+  .item-title strong {
+    font-size: 1.5em;
+  }
+
+  .limit-box {
+    font-size: .95em;
+  }
+
+  .add-edit-group {
+    display: block;
+    width: 300px;
+    padding: 5px 15px;
+    margin: 0 auto;
+  }
+
+  .btn-add-trns {
+    font-size: .95em;
+    line-height: 16px;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .btn-limit {
+    width: 96%;
+    height: 40px;
+    font-size: .95em;
+  }
+
+  .btn-dateRange {
+    display: block;
+    margin: 30px auto;
+    font-size: 1.2em;
+    width: 50%;
+  }
+
+  .add-limit-label {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .add-limit-input {
+    display: inline-block;
+    margin: 0;
+    width: 160px;
+    margin-right: 10px;
+  }
+
+  .btn-add-limit {
+    display: inline-block;
+    width: 155px;
+  }
+
+  .btn-remove-limit {
+    margin: 0 20px;
+  }
+
+  .btn-show-hide {
+    font-size: 1em;
+    width: 83%;
+    margin: 0 auto;
+    height: 40px;
+  }
+
+  .table-box {
+    width: 380px;
+    margin-top: 30px;
+  }
+
+  .table {
+    font-size: .7em;
+    padding: 0;
+    margin: 0;
+  }
+
+  td {
+    padding: 1px;
+  }
+
+  th {
+    padding: 3px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -363,44 +381,53 @@ th {
     margin-top: 40%;
     margin-left: 0;
     margin-right: 0;
-}
+  }
+
   .item-title {
     font-size: 1.5em;
     color: #4F3274;
     margin-top: 30px;
     padding-left: 20px;
     text-align: center;
-}
+ }
+
   .item-title strong {
     font-size: 1.3em;
-}
- .item-intro {
+  }
+
+  .item-intro {
     margin: 0 auto;
     padding: 0 20px;
     width: 260px;
-}
+  }
+
   .limit-box {
     font-size: 1em;
     padding: 5px;
     width: 260px;
     margin: 0 auto;
-}
+  }
+
   .add-limit-box {
     width: 260px;
     padding: 20px;
     margin: 20px auto;
   }
+
   .add-limit-box form {
     width: 95%;
   }
+
   .add-limit-label {
     margin-bottom: 10px;
   }
+
   .add-limit-input {
     width: 99%;
     margin-right: 0;
     margin-left: 0;
   }
+
   .btn-add-limit {
     display: block;
     width: 105%;
@@ -411,98 +438,116 @@ th {
     padding: 0;
     font-size: 1em;
   }
+
   .btn-group-limit {
     width: 95%;
     display: block;
     font-size: 1em;
     margin: 0;
   }
+
   .btn-remove-limit {
     margin: 10% 0;
     width: 105%;
     height: 35px;
   }
+
   .btn-cancel-limit {
     width: 105%;
     margin: 0;
     height: 35px;
   }
+
   .add-edit-group {
     margin: 0;
     padding: 0 30px;
-}
+  }
+
   .btn-add-trns {
     width: 225px;
     margin: 10px auto;
     margin-bottom: 25px;
     font-size: 1.1em;
-}
+  }
+
   .btn-limit {
     width: 245px;
     margin: 10px auto;
     display: block;
-}
+  }
+
   .dateRange {
     width: 265px;
     padding: 10px 20px;
     margin: 40px auto;
   }
+
   .btn-dateRange {
     width: 98%;
     font-size: 1em;
     height: 40px;
   }
+
   .chart-box {
     margin: 20px 0;
   }
+
   .table-box {
     width: 300px;
     font-size: .9em;
   }
+
   td, th {
     padding:0;
-}
+  }
 }
 
 @media screen and (max-width: 320px) {
   #item-page {
     margin-top: 40%;
-}
+  }
+
  .item-intro {
     padding: 15px;
     width: 270px;
-}
+  }
+
   .item-title {
     font-size: 1.5em;
     color: #4F3274;
     margin-top: 30px;
     padding-left: 20px;
     text-align: center;
-}
+  }
+
   .item-title strong {
     font-size: 1.3em;
-}
+  }
+
   .limit-box {
     font-size: 1em;
     padding: 5px;
+  }
 
-}
   .add-limit-box {
-    /* width: 250px; */
     padding: 10px 7px;
     margin: 15px 0;
   }
+
   .add-limit-box form {
     width: 95%;
   }
+
   .add-limit-label {
     margin-bottom: 10px;
   }
+
   .add-limit-input {
     width: 99%;
     margin-right: 0;
     margin-left: 0;
   }
+
   .btn-add-limit {
     display: block;
     width: 105%;
@@ -513,12 +558,14 @@ th {
     padding: 0;
     font-size: 1em;
   }
+
   .btn-group-limit {
     width: 95%;
     display: block;
     font-size: 1em;
     margin: 0;
   }
+
   .btn-remove-limit {
     margin-bottom: 10%;
     margin-top: 10%;
@@ -526,40 +573,50 @@ th {
     width: 105%;
     height: 35px;
   }
+
   .btn-cancel-limit {
     width: 105%;
     margin: 0;
     height: 35px;
   }
+
   .add-edit-group {
     margin: 0;
     padding: 0;
-}
+  }
+
   .btn-add-trns {
     width: 77%;
-}
+  }
+
   .btn-limit {
     width: 83%;
-}
+  }
+
   .dateRange {
     width: 250px;
     padding: 0 20px;
   }
+
   .btn-dateRange {
     width: 98%;
     font-size: 1em;
     height: 40px;
   }
+
   .chart-box {
     margin: 20px 0;
   }
+
   .table-box {
     font-size: .9em;
   }
+
   td {
     padding:0;
-}
+  }
+
   th {
     padding:0;
-}  
+  }  
 }

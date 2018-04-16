@@ -86,7 +86,8 @@ componentDidMount() {
         <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you can start gathering your data.</p> 
         <p>3. Clicking on Remove button will <strong>delete</strong> that category with <strong>all the data</strong>. <em>This action cannot be undone</em>.</p>
       </div>
-      <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
+      {totalPieAmount > 0 && <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
+      }
       {totalPieAmount > 0 && <Pie data={pieData} options={pieOptions} />}
        <div id='addCategory-box'>
         <div className='addCategory-form'>

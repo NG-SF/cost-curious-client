@@ -13,7 +13,7 @@ const LimitContent = (props) => {
  
   return (
     <div className='limit-box'>
-      <p>Total amount: <strong>{total}</strong></p>
+      {props.total > 0 && <p>Total amount: <strong>{total}</strong></p>}
          
       {parseFloat(props.limit, 10) > props.total/100 &&
         <p><strong>{difference}</strong> untill your reach your limit of <strong>{limit}</strong></p>} 

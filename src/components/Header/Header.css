@@ -47,14 +47,16 @@ nav li {
 
 /* Responsive for tablet */
 @media screen and (max-width: 770px) and (min-width: 450px) {
- nav ul {
+  nav ul {
    justify-content: flex-end;
  }
- .title {
-  font-size: 1.9em;
-  width: 20%;
+
+  .title {
+    font-size: 1.9em;
+    width: 20%;
+  }
 }
-}
+
 /* Responsive for smartphone */
 @media screen and (max-width: 430px) {
  nav ul {

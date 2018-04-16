@@ -209,72 +209,87 @@
 }
 /* Responsive for tablet */
 @media screen and (max-width: 770px) {
-.add-container {
-  margin: 15% auto;
+  .add-container {
+    margin: 15% auto;
+  }
 }
 
-}
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
-.intro {
-  padding: 20px;
-}
-.total {
-  padding-left: 20px;
-}
-.add-container {
-  margin: 30% auto;
-  padding: 5px 10px;
-}
-.add-category-input {
-  width: 73%;
-}
-.edit-category-input {
-  width: 96%;
-}
-.btn-group-edit-category {
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
-  display: block;
-}
-.btn-edit-category {
-  padding: 0 58px;
-}
-.btn-edit-update {
-  margin-right: 15px;
-}
+  .intro {
+    padding: 20px;
+  }
+
+  .total {
+    padding-left: 20px;
+  }
+
+  .add-container {
+    margin: 30% auto;
+    padding: 5px 10px;
+  }
+
+  .add-category-input {
+    width: 73%;
+  }
+
+  .edit-category-input {
+    width: 96%;
+  }
+
+  .btn-group-edit-category {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .btn-edit-category {
+    padding: 0 58px;
+  }
+
+  .btn-edit-update {
+    margin-right: 15px;
+  }
 }
 
 @media screen and (max-width: 375px) {
-.add-container {
-  margin: 35% auto;
-  padding: 5px 10px;
-}
-.add-category-input {
-  width: 65%;
-}
-.btn-add-category {
-  margin-top: 10px;
-}
-.edit-category-input {
-  width: 96%;
-}
-.btn-group-edit-category {
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
-}
-.btn-edit-category {
-  padding: 0 39px;
-}
-.btn-edit-update {
-  margin-right: 15px;
-}
-.category-box {
-  justify-content: space-around;
-}
-.category {
-  width: 240px;
-}
+  .add-container {
+    margin: 35% auto;
+    padding: 5px 10px;
+  }
+
+  .add-category-input {
+    width: 65%;
+  }
+
+  .btn-add-category {
+    margin-top: 10px;
+  }
+
+  .edit-category-input {
+    width: 96%;
+  }
+
+  .btn-group-edit-category {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .btn-edit-category {
+    padding: 0 39px;
+  }
+
+  .btn-edit-update {
+    margin-right: 15px;
+  }
+
+  .category-box {
+    justify-content: space-around;
+  }
+
+  .category {
+    width: 240px;
+  }
 }

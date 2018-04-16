@@ -33,5 +33,4 @@ describe('<NewItemForm />', () => {
         wrapper.instance().onSubmit({preventDefault: ()=>{}});      
         expect(dispatch).toHaveBeenCalledWith(output);
     });
-
 });
