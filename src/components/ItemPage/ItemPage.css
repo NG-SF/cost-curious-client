@@ -73,7 +73,7 @@
   border-radius: .4em;
   height: 41px;
   padding: 0 12px;
-  color: white;
+  font-weight: bold;
 }
 
 .btn-add-limit:hover,
@@ -81,7 +81,6 @@
 .btn-cancel-limit:hover,
 .btn-limit:hover, 
 .btn-add-trns:hover,
-.btn-remove-transaction:hover,
 .btn-show-hide:hover {
   border: 2px solid #538863;
   background-color: #538863;
@@ -232,11 +231,12 @@ tr:nth-child(even){
 }
 
 tr:hover,
-.table a:hover {
+.table a:hover,
+.btn-remove-transaction:hover {
   background-color: #71BA88;
   color: white;
-  font-size: 1.18em;
-  transition: background-color 0.5s ease-in;
+  font-size: 1.05em;
+  padding: 5px 15px;
 }
 
 .btn-remove-transaction {
@@ -244,6 +244,7 @@ tr:hover,
   background:none;
   cursor: pointer;
   padding: 5px 7px;
+  font-size: 1em;
 }
 
 @media screen and (max-width: 770px) {
@@ -409,7 +410,6 @@ th {
     margin-right: 0;
     padding: 0;
     font-size: 1em;
-    color: white;
   }
   .btn-group-limit {
     width: 95%;
@@ -421,13 +421,11 @@ th {
     margin: 10% 0;
     width: 105%;
     height: 35px;
-    color: white;
   }
   .btn-cancel-limit {
     width: 105%;
     margin: 0;
     height: 35px;
-    color: white;
   }
   .add-edit-group {
     margin: 0;

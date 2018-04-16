@@ -14,7 +14,7 @@ import LimitContent from './LimitContent';
 import {DateRangePicker} from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import dateRange from './dateRange';
-
+import Footer from '../Footer/Footer';
 import './ItemPage.css';
 
 export class ItemPage extends React.Component {
@@ -163,11 +163,12 @@ export class ItemPage extends React.Component {
   let diff = Math.abs((total/100) - limit);
 
   return (
+  <div>
   <section id='item-page'> 
     <div className='itemPage-container' >
     <div className='item-intro'>
-      <p>This section contains summary information about single category item.</p>
-      <p>Selecting Show/Hide transactions button will reveal table with all the transactions, where you can edit and delete each transaction. </p>
+      <p>This section contains summary information about a single category item.</p>
+      <p>Selecting Show/Hide transactions button under the chart will reveal table with all the transactions, where you can edit and delete each transaction. </p>
       <p>Hovering over each data point on the chart will show the details of that transaction</p>
     </div>
     {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
@@ -244,6 +245,8 @@ export class ItemPage extends React.Component {
         </div>
   </div>
 </section>
+<Footer />
+</div>
     );
   }
 }

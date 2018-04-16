@@ -8,6 +8,7 @@ import pieChartData, {pieOptions, totalPieAmount} from './pieData';
 import numeral from 'numeral';
 import {Pie} from 'react-chartjs-2';
 import colors from '../colors';
+import Footer from '../Footer/Footer';
 import './Dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -76,13 +77,14 @@ componentDidMount() {
         labels: pieChartData(this.props.items)[1]
       };
     return (
+      <div>
       <div className='add-container dashbrd'>
       <div className='intro'>
         {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
         <h1>{`${this.props.username}'s data:`}</h1>
-        <p>1. Start by creating a category that will hold all the information/transactions about that item. For example, since we talked a lot about coffee, we can create category named "Coffee".</p>
-        <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you will start gathering your data.</p> 
-        <p>3. Clicking on Remove button will delete that category with all the data. This action can't be undone.</p>
+        <p>1. Start by creating a category that will hold all the information/transactions about that item. For example, since we talked a lot about coffee, you can create category named "Coffee".</p>
+        <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you can start gathering your data.</p> 
+        <p>3. Clicking on Remove button will <strong>delete</strong> that category with <strong>all the data</strong>. <em>This action cannot be undone</em>.</p>
       </div>
       <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
       {totalPieAmount > 0 && <Pie data={pieData} options={pieOptions} />}
@@ -100,7 +102,7 @@ componentDidMount() {
           <div id='editCategory-box'>
             <div className='editCategory-form'>
               <form onSubmit={(e) => this.onChangeName(e)}>
-                <label className='edit-category-label' htmlFor='editItem'>Edit <strong>{this.state.description}</strong> category:</label>
+                <label className='edit-category-label' htmlFor='editItem'>Edit <strong>{this.state.description}</strong> category (update or change name):</label>
                 <input className='edit-category-input' type='text' name='editItem' id='editItem' 
                  ref={input => this.textInput = input} />
                  <div className='btn-group-edit-category'>
@@ -115,6 +117,8 @@ componentDidMount() {
        <div className='category-box'>
           {list}  
        </div>
+      </div>
+       <Footer />
       </div>
     );
   }

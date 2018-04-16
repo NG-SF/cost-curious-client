@@ -4,8 +4,8 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className='footer'>   
-      <h3>Designed and developed</h3>
-      <h4>by Nataliya Gapochka</h4>
+      <h2>Designed and developed</h2>
+      <h3>by Nataliya Gapochka</h3>
       <a href="https://github.com/NG-SF" target="_blank" aria-label="link" rel="noopener noreferrer">GitHub</a>
     </footer>
   );

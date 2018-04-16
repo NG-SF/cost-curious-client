@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="App">
       <div className='img1'>
-        <h1 className='firstQuestion'>Do you know how much is your coffee habit costing you?</h1>
+        <h1 className='firstQuestion'>Do you know how much your coffee habit is costing you?</h1>
       </div>   
 
       <section className='home1'>
@@ -42,9 +42,8 @@ const Home = () => {
       <div className='home2-flex2'>
         <div className='home2-flex2-box'>
         <div>
-          <h3 className='question2'>Are you curious yet how much do you spend on coffee?</h3>
           <p>Check out these articles for the motivation to get your expenses in order.</p>
-          <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and see for yourself how much is your coffee habit costing you.</p>
+          <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and start collecting data about your spending patterns.</p>
         </div>
         <img  className='curious-img' src="./images/curious.jpg" alt="questions" />
         </div>
