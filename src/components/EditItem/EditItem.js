@@ -16,7 +16,7 @@ export class EditItem extends React.Component {
   render() {
     // find single transaction that needs to be updated 
     // pass it to the form
-    const item = this.props.parentItem[0].history.filter(el => el._id === this.props.match.params.itemId)[0];
+    const item = this.props.parentItem[0] ? this.props.parentItem[0].history.filter(el => el._id === this.props.match.params.itemId)[0] : [];
 
     return (
             <div>

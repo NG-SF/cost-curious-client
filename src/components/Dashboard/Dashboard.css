@@ -45,7 +45,6 @@
   background-color: #71BA88;
   border-radius: .4em;
   height: 41px;
-  color: white;
 }
 
 .btn-add-category:hover {
@@ -158,7 +157,7 @@
 }
 
 .category-name-box {
-  border-radius: 5px;
+  border-radius: 5px 20px 5px;
   box-shadow: 7px 7px 5px lightgray;
   padding: 5px 9px;
   height: 35%;
@@ -210,7 +209,7 @@
 /* Responsive for tablet */
 @media screen and (max-width: 770px) {
   .add-container {
-    margin: 15% auto;
+    margin: 16% auto;
   }
 }
 

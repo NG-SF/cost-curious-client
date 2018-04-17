@@ -231,14 +231,20 @@ tr:nth-child(even){
   background-color:#F4E5E3;
 }
 
-tr:hover,
-.table a:hover,
-.btn-remove-transaction:hover {
+tr:hover {
   background-color: #71BA88;
   color: white;
   font-size: 1.05em;
   padding: 5px 15px;
 }
+
+.table a:hover,
+.btn-remove-transaction:hover {
+  background-color: #71BA88;
+  color: white;
+  font-size: 1.05em;
+}
+
 
 .btn-remove-transaction {
   border: none;
@@ -250,7 +256,7 @@ tr:hover,
 
 @media screen and (max-width: 770px) {
   #item-page {
-    margin: 11% auto;
+    margin: 12% auto;
     max-width: 700px;
   }
 
