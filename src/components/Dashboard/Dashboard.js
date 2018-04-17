@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {fetchData, removeItemData, setItemData,
         updateItemData} from '../../actions/items';
 import requiresLogin from '../Auth/RequiresLogin';
-import pieChartData, {pieOptions, totalPieAmount} from './pieData';
+import pieChartData, {pieOptions} from './pieData';
 import numeral from 'numeral';
 import {Pie} from 'react-chartjs-2';
 import colors from '../colors';
@@ -67,6 +67,7 @@ componentDidMount() {
               </div>);
       }) : []; 
   let chartData = this.props.items ? this.props.items : [];
+  let total = pieChartData(chartData)[2];
   let pieData = {
         datasets: [{
         data: pieChartData(chartData)[0],
@@ -86,9 +87,13 @@ componentDidMount() {
         <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you can start gathering your data.</p> 
         <p>3. Clicking on Remove button will <strong>delete</strong> that category with <strong>all the data</strong>. <em>This action cannot be undone</em>.</p>
       </div>
-      {totalPieAmount > 0 && <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
+
+      {total > 0 && this.props.items.length > 0 && 
+      <div>
+        <p className='total'>Total: <strong>{numeral((total)).format('$ 0,0')}</strong></p>
+        <Pie data={pieData} options={pieOptions} />
+      </div>
       }
-      {totalPieAmount > 0 && this.props.items.length > 0 && <Pie data={pieData} options={pieOptions} />}
        <div id='addCategory-box'>
         <div className='addCategory-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>

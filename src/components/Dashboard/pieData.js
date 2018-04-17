@@ -1,7 +1,5 @@
-let totalPieAmount = 0;
-
 let pieChartData = (data) => {
-  let labels, totals;
+  let labels, totals, totalPieAmount;
   if (data && data.length > 0) {
       labels = data.map(el => el.description);
       let amounts = data.map(el => el.history ? el.history.map(el => {
@@ -16,10 +14,8 @@ let pieChartData = (data) => {
     return total + amount;
     },0);
   }
-  return [totals,labels];
+  return [totals,labels, totalPieAmount];
 };
-
-export default pieChartData;
 
 const pieOptions = {
         redraw: true,
@@ -41,4 +37,6 @@ const pieOptions = {
       },
       responsive: true
     };
-export {pieOptions, totalPieAmount};
+    
+export default pieChartData;
+export {pieOptions};

@@ -19,6 +19,25 @@
   padding: 3px 4px;
 }
 
+.DateInput {
+  width: 120px;
+}
+
+.DateInput_input {
+  width: 80%;
+  font-size: 18px;
+  padding: 10px 5px;
+}
+
+.DateRangePickerInput_arrow_sv {
+  vertical-align: bottom;
+}
+
+.DateRangePickerInput_clearDates {
+  top: 42%;
+  margin: 0 15px 0 5px;
+}
+
 .CalendarMonth_caption {
   color: #4F3274;
   font-size: 21px;
@@ -53,6 +72,12 @@
   padding: 5px;
 }
 
+@media screen and (max-width:768px) {
+  .DateRangePickerInput {
+  width: 293px;
+}
+}
+
 /* Responsive for smartphones */
 @media screen and (max-width: 425px) {
   .DateRangePickerInput {
@@ -60,6 +85,11 @@
     padding: 5px;
     height: 90px;
     margin-left: 34px;
+  }
+
+  .DateInput {
+    width: 127px;
+    text-align: center;
   }
 
   .DateInput_input {
@@ -72,9 +102,9 @@
     display: none;
   }
 
-  .DateRangePickerInput_clearDates_svg {
-    width: 11px;
-    vertical-align: text-top;
+  .DateRangePickerInput_clearDates{
+    top: 50px;
+    margin: 0 30px 0 5px;
   }
 }
 
@@ -95,6 +125,7 @@
   .DateRangePickerInput_arrow_sv {
     display: none;
   }
+
   .DateRangePickerInput {
     width: 220px;
     padding: 5px;

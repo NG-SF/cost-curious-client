@@ -259,7 +259,8 @@ tr:hover,
   }
 
   .btn-dateRange {
-    margin-left: 20px;
+    margin-left: 18px;
+    margin-right: 0;
     margin-bottom: 4px;
     vertical-align: bottom;
   }

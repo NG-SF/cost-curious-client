@@ -11,12 +11,12 @@ export function RegistrationPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/api/dashboard" />;
     }
-    if (props.loading) {
-        return <Spinner name="circle" color="green"/>;
-    }
 
     return (
         <div className="register-form-wrapper">
+
+        {props.loading && <Spinner name="circle" color="green"/>}
+
             <h1>Sign up</h1>
             <RegistrationForm />
             <h2>Already registered?  <Link to="/login">Login</Link></h2>       
