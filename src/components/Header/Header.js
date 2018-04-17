@@ -31,7 +31,7 @@ export class Header extends React.Component {
             <li>{login}</li>
             <li>{register}</li>
             <li>{link}</li> 
-            <li> {logOutButton} </li>
+            <li className='test-logout'> {logOutButton} </li>
           </ul>      
         </div>   
       </nav>

@@ -35,3 +35,6 @@ h1, h2, h3, h4 {
   font-family: 'Flamenco', cursive;
 }
 
+p, ol {
+  word-spacing: 4px;
+}

@@ -69,7 +69,7 @@ export default class NewItemForm extends React.Component {
           <div>
             <label className='add-place-label' htmlFor='place'>Place:</label>
             <input className='place-input' type="text" value={this.state.place} 
-                  onChange={this.onPlaceChange} name='place' id='place' />
+                  onChange={this.onPlaceChange} name='place' id='place' placeholder='optional' />
           </div>
           <div className='singleDatePicker'>
           <label htmlFor="date" className='date'>Date:</label>

@@ -8,7 +8,6 @@ import pieChartData, {pieOptions, totalPieAmount} from './pieData';
 import numeral from 'numeral';
 import {Pie} from 'react-chartjs-2';
 import colors from '../colors';
-import Footer from '../Footer/Footer';
 import './Dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -56,7 +55,7 @@ componentDidMount() {
   }
 
   render() {
-    const list = this.props.items.map(item => {    
+    const list = this.props.items ? this.props.items.map(item => {    
       return (<div key={item._id} className='category'>
                 <div className='category-name-box'>
                   <h2 className='category-name'><Link to={`/api/${item._id}`}>{item.description}</Link></h2>
@@ -66,18 +65,19 @@ componentDidMount() {
                   <button className='btn btn-category' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
                 </div>
               </div>);
-      }); 
+      }) : []; 
+  let chartData = this.props.items ? this.props.items : [];
   let pieData = {
         datasets: [{
-        data: pieChartData(this.props.items)[0],
+        data: pieChartData(chartData)[0],
         backgroundColor: colors,
         hoverBackgroundColor: 'snow',
         hoverBorderColor: '#71BA88'
         }],
-        labels: pieChartData(this.props.items)[1]
+        labels: pieChartData(chartData)[1]
       };
+
     return (
-      <div>
       <div className='add-container dashbrd'>
       <div className='intro'>
         {this.props.error && <h2 className='dataError'>{this.props.error.message}</h2>}
@@ -88,7 +88,7 @@ componentDidMount() {
       </div>
       {totalPieAmount > 0 && <p className='total'>Total: <strong>{numeral((totalPieAmount)).format('$ 0,0')}</strong></p>
       }
-      {totalPieAmount > 0 && <Pie data={pieData} options={pieOptions} />}
+      {totalPieAmount > 0 && this.props.items.length > 0 && <Pie data={pieData} options={pieOptions} />}
        <div id='addCategory-box'>
         <div className='addCategory-form'>
         <form onSubmit={(e) => this.onSubmit(e)}>
@@ -118,8 +118,6 @@ componentDidMount() {
        <div className='category-box'>
           {list}  
        </div>
-      </div>
-       <Footer />
       </div>
     );
   }

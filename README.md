@@ -1,5 +1,7 @@
 <h1> Cost curious app </h1> 
 
+[![Travis](https://travis-ci.org/NG-SF/cost-curious-client.svg?branch=master)](https://travis-ci.org/NG-SF/cost-curious-client)
+
 <p><a href="https://cost-curious.netlify.com/" target="_blank" rel="noopener">Cost curious</a> is a responsive full-stack app that helps users to discover their spending habits.</p>
 
 ## Technology Used  🛠
@@ -57,8 +59,7 @@
 
 ## Screenshots 📸
 
-![screenshot of homepage](/screenshots/HomePage.png) 
+![screenshot of homepage](/screenshots/Home.png) 
 ![screenshot of dashboard](/screenshots/Dashboard.png)
-![screenshot of category summary](/screenshots/ItemPage.png)
-
-
+![screenshot of single item in category summary](/screenshots/ItemPage1.png)
+![screenshot of single item in category summary](/screenshots/ItemPage2.png)
