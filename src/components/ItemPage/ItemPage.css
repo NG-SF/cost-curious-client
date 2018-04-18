@@ -309,11 +309,11 @@ tr:hover {
   }
 
   .add-edit-group {
-    display: block;
-    width: 300px;
-    padding: 5px 15px;
-    margin: 0 auto;
-  }
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
 
   .btn-add-trns {
     font-size: .95em;
@@ -326,7 +326,7 @@ tr:hover {
   .btn-limit {
     width: 96%;
     height: 40px;
-    font-size: .95em;
+    font-size: 1em;
   }
 
   .btn-dateRange {
@@ -466,11 +466,6 @@ tr:hover {
     height: 35px;
   }
 
-  .add-edit-group {
-    margin: 0;
-    padding: 0 30px;
-  }
-
   .btn-add-trns {
     width: 225px;
     margin: 10px auto;
@@ -586,11 +581,6 @@ tr:hover {
     width: 105%;
     margin: 0;
     height: 35px;
-  }
-
-  .add-edit-group {
-    margin: 0;
-    padding: 0;
   }
 
   .btn-add-trns {
