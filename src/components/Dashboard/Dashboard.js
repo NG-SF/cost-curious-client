@@ -62,7 +62,7 @@ componentDidMount() {
                 </div>
                 <div className='btn-group'>
                   <button className='btn btn-category btn-edit' onClick={() => this.onClick(item._id, item.description)}>Edit</button>  
-                  <button className='btn btn-category' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
+                  <button className='btn btn-category test-remove-btn' onClick={() => this.props.removeItemData(this.props.userId, item._id)} >Remove</button>
                 </div>
               </div>);
       }) : []; 
@@ -87,7 +87,7 @@ componentDidMount() {
         <p>2. In the created box click on the name of category you just created and you will be redirected to that individual item section, where you can start gathering your data.</p> 
         <p>3. Clicking on Remove button will <strong>delete</strong> that category with <strong>all the data</strong>. <em>This action cannot be undone</em>.</p>
       </div>
-
+      {/* show total and pie chart only when there is data */}
       {total > 0 && this.props.items.length > 0 && 
       <div>
         <p className='total'>Total: <strong>{numeral((total)).format('$ 0,0')}</strong></p>
@@ -96,7 +96,7 @@ componentDidMount() {
       }
        <div id='addCategory-box'>
         <div className='addCategory-form'>
-        <form onSubmit={(e) => this.onSubmit(e)}>
+        <form className='test-AddCategory' onSubmit={(e) => this.onSubmit(e)}>
           <label className='add-category-label' htmlFor='newItem'>Add new category:</label>
           <input className='add-category-input' type='text' name='newItem' id='newItem' ref={input => this.textInput = input} required />
           <button type="submit" className='btn btn-add-category'>+ Add</button>
@@ -104,16 +104,17 @@ componentDidMount() {
         </div> 
        </div>
        <div>
+         {/* show when edit bnt is clicked */}
           {this.state.selected && this.state.itemId && 
           <div id='editCategory-box'>
             <div className='editCategory-form'>
-              <form onSubmit={(e) => this.onChangeName(e)}>
+              <form className='test-EditCategory' onSubmit={(e) => this.onChangeName(e)}>
                 <label className='edit-category-label' htmlFor='editItem'>Edit <strong>{this.state.description}</strong> category (update or change name):</label>
                 <input className='edit-category-input' type='text' name='editItem' id='editItem' 
                  ref={input => this.textInput = input} />
                  <div className='btn-group-edit-category'>
                   <button className='btn btn-edit-category btn-edit-update' type="submit">Update</button>
-                  <button className='btn btn-edit-category' onClick={() => this.onNameCancel()} >Cancel</button>
+                  <button className='btn btn-edit-category test-cancel' onClick={() => this.onNameCancel()} >Cancel</button>
                  </div>
               </form>
             </div>

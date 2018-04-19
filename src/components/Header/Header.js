@@ -12,7 +12,7 @@ export class Header extends React.Component {
     }
 
   render() {
-  // Only render the log out button if we are logged in
+  // Only render the log out button and dashboard link if we are logged in
     let logOutButton, link, register, login;
       if (this.props.loggedIn) {
           logOutButton = (

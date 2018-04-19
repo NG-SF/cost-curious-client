@@ -1,16 +1,21 @@
-import filtersReduser from './filters';
-import {fetchFeaturesDataSuccess, fetchFeaturesDataError} from '../actions/filters';
+import itemsReduser from './items';
+import {fetchDataSuccess, fetchDataError, updateHistoryData} from '../actions/items';
 
 describe('filtersReducer', () => {
-  const data1 = [{
+  const data = [{
     "_id": '38f83j3j3',
-    limit: '4000',
-    dataCategory: 'Grocery',
-    dataId: 'jjj33j3j3'
+    history: [{
+      "_id": '38888',
+      amount: 500,
+      createdAt: 1515777000000,
+      place: 'Whole Foods'
+    }],
+    description: 'Grocery',
+    userId: 'jjj33j3j3'
   }];
 
   it('Should set the initial state when nothing is passed in', () => {
-      const state = filtersReduser(undefined, {type: '__UNKNOWN'});
+      const state = itemsReduser(undefined, {type: '__UNKNOWN'});
       expect(state).toEqual({
           data: [],
           error: null
@@ -19,15 +24,15 @@ describe('filtersReducer', () => {
      
   it('Should return the current state on an unknown action', () => {
       let currentState = {};
-      const state = filtersReduser(currentState, {type: '__UNKNOWN'});
+      const state = itemsReduser(currentState, {type: '__UNKNOWN'});
       expect(state).toBe(currentState);
     });
 
   it('Should set data', () => {
       let state;
-      state = filtersReduser(state, fetchFeaturesDataSuccess(data1));
+      state = itemsReduser(state, fetchDataSuccess(data));
       expect(state).toEqual({
-              data: data1,
+              data: data,
               error: null
             });
         });
@@ -37,7 +42,7 @@ describe('filtersReducer', () => {
       let err = {
         message: 'Server error'
       };
-      state = filtersReduser(state, fetchFeaturesDataError(err));
+      state = itemsReduser(state, fetchDataError(err));
       expect(state).toEqual({
               data: [],
               error: err

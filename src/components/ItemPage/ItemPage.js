@@ -49,9 +49,8 @@ export class ItemPage extends React.Component {
     this.setState(() => ({showFilter: true}));
   }
 
-   hideFilter() {
-     this.setState(() => ({showFilter: false}));
-    // this.setState(() => ({showFilter: !this.state.showFilter}));
+  hideFilter() {
+    this.setState(() => ({showFilter: false}));
   }
 
   changeLimit(dataCategory, limitId, limit) {
@@ -62,12 +61,14 @@ export class ItemPage extends React.Component {
     limit
     }));
   };
+
   onAmountChange = (e) => {
     const amount = e.target.value;
     if(!amount || amount.match(/^\d{1,10}(\.\d{0,2})?$/)) {
       this.setState(() => ({amount}));
     }
   };
+
   onSubmit(e) {
     e.preventDefault();
     if(!this.state.amount) {
@@ -156,7 +157,7 @@ export class ItemPage extends React.Component {
       };
 
   let description = singleItemObj[0] ? singleItemObj[0].description: '';
-  let limitObj = this.props.limitData.filter(el => el.dataId === dataId);
+  let limitObj = this.props.limitData ? this.props.limitData.filter(el => el.dataId === dataId) : [];
   let limit = limitObj[0] ? limitObj[0].limit : '';
   let limitId = limitObj[0] ? limitObj[0]._id : '';
   let diff = Math.abs((total/100) - limit);

@@ -33,5 +33,4 @@ describe('<AddItem />', () => {
     instance.onSubmit(transaction);
     expect(dispatch).toHaveBeenCalledWith(dataId, transaction);
   });
-
 });
