@@ -44,6 +44,7 @@ const Home = () => {
         <div>
           <p>Check out these articles for the motivation to get your expenses in order.</p>
           <p>Better yet, <NavLink to='/register' exact={true}>sign up</NavLink> today and start collecting data about your spending patterns.</p>
+          <p>Use <NavLink to='/login' exact={true}>demo account</NavLink> to see app in action.</p>
         </div>
         <img  className='curious-img' src="./images/curious.jpg" alt="questions" />
         </div>
