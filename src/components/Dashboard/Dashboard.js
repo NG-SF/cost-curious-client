@@ -58,7 +58,7 @@ componentDidMount() {
     const list = this.props.items ? this.props.items.map(item => {    
       return (<div key={item._id} className='category'>
                 <div className='category-name-box'>
-                  <h2 className='category-name'><Link to={`/api/${item._id}`}>{item.description}</Link></h2>
+                  <h2 className='category-name' title='go to summary page'><Link to={`/api/${item._id}`}>{item.description}</Link></h2>
                 </div>
                 <div className='btn-group'>
                   <button className='btn btn-category btn-edit' onClick={() => this.onClick(item._id, item.description)}>Edit</button>  

@@ -121,8 +121,8 @@ export class ItemPage extends React.Component {
       return a.createdAt < b.createdAt ? 1 : -1;
     }).map((item) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
-      const date = moment(item.createdAt).format('MMMM Do, YYYY');
-      const chartDate = moment(item.createdAt).format('D-MMM-YY');
+      const date = moment.utc(item.createdAt).format('MMMM Do, YYYY');
+      const chartDate = moment.utc(item.createdAt).format('D-MMM-YY');
       const chartAmount = (item.amount/100).toFixed(2);
       const itemId = item._id;
       total += item.amount;

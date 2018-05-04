@@ -7,9 +7,9 @@ const LimitContent = (props) => {
   const difference = numeral(props.diff).format('$ 0,0.00');
   const limit = numeral(props.limit).format('$ 0,0.00');
   const maxAmount = props.max ? numeral(props.max.amount/100).format('$ 0,0.00') : '';
-  const maxCreatedAt = props.max ? moment(props.max.createdAt).format('MMMM Do, YYYY') : '';
+  const maxCreatedAt = props.max ? moment.utc(props.max.createdAt).format('MMMM Do, YYYY') : '';
   const minAmount = props.max ? numeral(props.min.amount/100).format('$ 0,0.00') : '';
-  const minCreatedAt = props.max ? moment(props.min.createdAt).format('MMMM Do, YYYY') : '';
+  const minCreatedAt = props.max ? moment.utc(props.min.createdAt).format('MMMM Do, YYYY') : '';
  
   return (
     <div className='limit-box'>

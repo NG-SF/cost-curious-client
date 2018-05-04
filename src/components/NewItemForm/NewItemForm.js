@@ -11,7 +11,7 @@ export default class NewItemForm extends React.Component {
     super(props);
     this.state = {
     amount: props.item ? (props.item.amount/100).toString() : '',
-    createdAt: props.item ? moment(props.item.createdAt) : moment(),
+    createdAt: props.item ? moment.utc(props.item.createdAt) : moment(),
     place: props.item ? props.item.place : '',
     calendarFocused: false,
     error: ''
