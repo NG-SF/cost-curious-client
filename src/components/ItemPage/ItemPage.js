@@ -123,7 +123,7 @@ export class ItemPage extends React.Component {
     }).map((item) => {
       const amount = numeral((item.amount)/100).format('$0,0.00');
       const date = moment(timeConverter(item.createdAt), 'YYYY MM DD').format('MMMM Do, YYYY');
-      const chartDate = moment(timeConverter(item.createdAt), 'YYYY MM DD').format('D-MMM-YY');
+      const chartDate = moment(timeConverter(item.createdAt), 'YYYY MM DD');
       const chartAmount = (item.amount/100).toFixed(2);
       const itemId = item._id;
       total += item.amount;
