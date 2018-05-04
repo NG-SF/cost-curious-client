@@ -55,7 +55,7 @@ componentDidMount() {
   }
 
   render() {
-    const list = this.props.items ? this.props.items.map(item => {    
+    const list = this.props.items ? this.props.items.sort().map(item => {    
       return (<div key={item._id} className='category'>
                 <div className='category-name-box'>
                   <h2 className='category-name' title='go to summary page'><Link to={`/api/${item._id}`}>{item.description}</Link></h2>
