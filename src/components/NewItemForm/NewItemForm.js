@@ -2,6 +2,7 @@ import React from 'react';
 import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
 import moment from 'moment';
+import {timeConverter} from '../ItemPage/dateRange';
 import './NewItemForm.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates_overrides.css';
@@ -11,7 +12,7 @@ export default class NewItemForm extends React.Component {
     super(props);
     this.state = {
     amount: props.item ? (props.item.amount/100).toString() : '',
-    createdAt: props.item ? moment.utc(props.item.createdAt) : moment(),
+    createdAt: props.item ? moment(timeConverter(props.item.createdAt), 'YYYY MM DD') : moment(),
     place: props.item ? props.item.place : '',
     calendarFocused: false,
     error: ''
