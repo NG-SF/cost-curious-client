@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "author": "Nataliya Gapochka",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NG-SF/cost-curious-client"
+  },
   "dependencies": {
     "chart.js": "^2.7.2",
     "jwt-decode": "^2.2.0",
