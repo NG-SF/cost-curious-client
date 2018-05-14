@@ -2,7 +2,7 @@
 
 [![Travis](https://travis-ci.org/NG-SF/cost-curious-client.svg?branch=master)](https://travis-ci.org/NG-SF/cost-curious-client)
 
-<p><a href="https://cost-curious.netlify.com/" target="_blank" rel="noopener">Cost curious</a> is a responsive full-stack app that helps users to discover their spending habits.</p>
+<p><a href="https://cost-curious.netlify.com/" target="_blank" rel="noopener">Cost curious</a> is a responsive full-stack app that helps users discover their spending habits.</p>
 
 ## Technology Used  🛠
 <h3>Front End</h3>
@@ -13,7 +13,7 @@
   <li><a href="https://reactjs.org/" target="_blank" rel="noopener">React</a></li>
   <li><a href="http://www.chartjs.org/docs/latest/" target="_blank" rel="noopener">Chart.js</a></li>
 </ul>
-<h3>Back End</h3>
+<h3><a href="https://github.com/NG-SF/cost-curious-api" target="_blank" rel="noopener">Back End</a></h3>
 <ul>
   <li><a href="https://nodejs.org/en/" target="_blank" rel="noopener"> Node.js</a></li>
   <li><a href="https://expressjs.com/" target="_blank" rel="noopener">Express</a></li>
