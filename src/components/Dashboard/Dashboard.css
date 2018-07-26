@@ -159,10 +159,10 @@
 .category-name-box {
   border-radius: 5px 20px 5px;
   box-shadow: 7px 7px 5px lightgray;
-  padding: 5px 9px;
-  height: 35%;
+  padding: 10px 8px;
   width: 95%;
-  background-color: #EACCC7;
+  /* background-color: #EACCC7; */
+  background-color: rgba(149,80,53,.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,12 +170,12 @@
 
 .category-name a:visited,
 .category-name a {
-  color: #4F3274;
+  color: white;
 }
 .category-name-box:hover {
   box-shadow: 5px 10px 5px gray;
   border: 1px solid #E5C0B9;
-  background-color: #E5C0B9;
+  background-color: rgba(149,80,53,1);
   transition: background-color 0.5s ease-in;
 }
 
@@ -275,6 +275,7 @@
   color: white;
   transition: background-color 0.5s ease-in;
 }
+
 /* Responsive for tablet */
 @media screen and (max-width: 770px) {
   .add-container {
@@ -359,5 +360,12 @@
 
   .category {
     width: 240px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .add-container {
+    margin: 35% 0;
+    padding: 5px 10px;
   }
 }

@@ -287,17 +287,18 @@ tr:hover {
 @media screen and (max-width: 425px) {
   #item-page {
     margin: 30% auto;
-    max-width: 400px;
+    padding: 5px;
   }
 
   .item-intro {
-    width: 92%;
+    width: 300px;
     font-size: .9em;
   }
 
   .item-title {
     font-size: 1.7em;
     color: #4F3274;
+    margin: 30px auto;
   }
 
   .item-title strong {
@@ -306,6 +307,13 @@ tr:hover {
 
   .limit-box {
     font-size: .95em;
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .add-limit-box {
+    width: 350px;
+    margin: 20px auto;
   }
 
   .add-edit-group {
@@ -327,6 +335,11 @@ tr:hover {
     width: 96%;
     height: 40px;
     font-size: 1em;
+  }
+
+  .dateRange {
+    width: 320px;
+    margin: 20px auto;
   }
 
   .btn-dateRange {
@@ -365,8 +378,8 @@ tr:hover {
   }
 
   .table-box {
-    width: 380px;
-    margin-top: 30px;
+    width: 350px;
+    margin: 30px auto;
   }
 
   .table {
@@ -412,7 +425,7 @@ tr:hover {
   .limit-box {
     font-size: 1em;
     padding: 5px;
-    width: 260px;
+    width: 300px;
     margin: 0 auto;
   }
 
@@ -508,6 +521,7 @@ tr:hover {
 @media screen and (max-width: 320px) {
   #item-page {
     margin-top: 40%;
+    max-width: 310px;
   }
 
  .item-intro {
@@ -534,7 +548,13 @@ tr:hover {
 
   .add-limit-box {
     padding: 10px 7px;
-    margin: 15px 0;
+    margin: 15px auto;
+  }
+
+  .add-edit-group {
+    width: 310px;
+    margin: 10px auto;
+    padding: 5px;
   }
 
   .add-limit-box form {
@@ -583,12 +603,12 @@ tr:hover {
     height: 35px;
   }
 
-  .btn-add-trns {
-    width: 77%;
-  }
-
+  .btn-add-trns,
   .btn-limit {
-    width: 83%;
+    margin: 20px auto;
+    padding: 0;
+    width: 230px;
+    font-size: 1.1em;
   }
 
   .dateRange {
