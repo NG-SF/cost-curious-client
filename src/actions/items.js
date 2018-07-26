@@ -52,6 +52,10 @@ export const updateItemData = (userId, itemId, name) => (dispatch, getState) => 
 };
 
 export const removeItemData = (userId, itemId) => (dispatch, getState) => {
+  if(userId === '5ac404351511e88b029ccf4f'){
+    alert('Please login first.');
+    return;
+  }
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/api/dashboard/${userId}/${itemId}`, {
               method: 'DELETE',

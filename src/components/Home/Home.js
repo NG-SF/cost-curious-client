@@ -1,14 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
+import {connect} from 'react-redux';
 import './Home.css';
 import Footer from '../Footer/Footer';
+import Dashboard from '../Dashboard/Dashboard';
+import {login} from '../../actions/auth';
 
-const Home = () => {
+class Home extends Component {
+    constructor () {
+    super()
+    this.state = {
+      selected: false
+    }
+  }
+
+  onClick() {
+   this.setState(() => ({
+    selected: true}));
+    this.props.login('demo', 'demo123');
+  }
+
+  render(){
+
   return (
     <div className="App">
       <div className='img1'>
         <h1 className='firstQuestion'>Do you know how much your coffee habit is costing you?</h1>
+        <button className='demo' onClick={() => this.onClick()}>Check out demo account</button>
       </div>   
+
+    {this.props.username && this.state.selected && <Dashboard />}
 
       <section className='home1'>
         <div className='home1-flex1'>
@@ -63,6 +84,17 @@ const Home = () => {
     <Footer />
     </div>
   );
+
+  }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  userId: state.auth.currentUser && state.auth.currentUser.id,
+  username: state.auth.currentUser && state.auth.currentUser.username
+  });
+
+const mapDispatchToProps = (dispatch) => ({
+    login: (username, password) => dispatch(login(username, password))
+  });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

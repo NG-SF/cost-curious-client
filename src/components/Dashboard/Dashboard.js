@@ -58,7 +58,7 @@ componentDidMount() {
     const list = this.props.items ? this.props.items.sort().map(item => {    
       return (<div key={item._id} className='category'>
                 <div className='category-name-box'>
-                  <h2 className='category-name' title='go to summary page'><Link to={`/api/${item._id}`}>{item.description}</Link></h2>
+                  <h2 className='category-name' title='go to summary page'><Link to={`/api/${item._id}`}>{item.description}<span className="arrow"></span> </Link></h2>
                 </div>
                 <div className='btn-group'>
                   <button className='btn btn-category btn-edit' onClick={() => this.onClick(item._id, item.description)}>Edit</button>  
@@ -135,10 +135,12 @@ const mapStateToProps = state => ({
   userId: state.auth.currentUser.id,
   username: state.auth.currentUser.username
   });
+
 const mapDispatchToProps = (dispatch) => ({
     fetchData: (userId) => dispatch(fetchData(userId)),
     setItemData: (userId, name) => dispatch(setItemData(userId, name)),
     updateItemData: (userId, itemId, name) => dispatch(updateItemData(userId, itemId, name)),
     removeItemData: (userId, itemId) => dispatch(removeItemData(userId, itemId))
   });
+
 export default requiresLogin()(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

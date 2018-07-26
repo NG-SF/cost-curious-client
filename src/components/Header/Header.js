@@ -20,7 +20,7 @@ export class Header extends React.Component {
           link = (<NavLink to={`/api/dashboard`} activeClassName='is-active'>Dashboard</NavLink>);
         } else { 
           register = (<NavLink to='/register' activeClassName='is-active' exact={true}>Sign up </NavLink>);
-          login = (<NavLink to='/login' activeClassName='is-active' exact={true}>Login </NavLink>);
+          login = (<NavLink to='/login' activeClassName='is-active' exact={true}>Login</NavLink>);
         }
     return (
       <nav>   
