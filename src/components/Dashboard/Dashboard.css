@@ -197,8 +197,8 @@
 
 /* assign bounce */
 .arrow {
-  -webkit-animation: bounceRight 8s infinite;
-  animation: bounceRight 8s infinite;
+  -webkit-animation: bounceRight 7s infinite;
+  animation: bounceRight 7s infinite;
   float:right;
 }
 
