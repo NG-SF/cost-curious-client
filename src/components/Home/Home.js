@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import Dashboard from '../Dashboard/Dashboard';
 import {login} from '../../actions/auth';
 
-class Home extends Component {
+export class Home extends Component {
     constructor () {
     super()
     this.state = {
